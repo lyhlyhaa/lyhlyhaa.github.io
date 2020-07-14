@@ -1,12 +1,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="##矩形面积的并
-1.相交矩形的四边
-xc1 = max(min(x1,x2),min(x3,x4));
-xc2 = min(max(x1,x2),max(x3,x4));
-yc1 = max(min(y1,y2),min(y3,y4));..." />
-    <meta name="keywords" content="程设" />
+    <meta name="description" content="首先要包含头文件    #include
+定义：priority_queue&lt;Type, Container, Functional&gt;
+//升序队列
+priority_queue &lt;int,vector,greater &..." />
+    <meta name="keywords" content="数据结构" />
     <link rel="stylesheet" href="https://lyhlyhaa.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://lyhlyhaa.github.io/styles/main.css">
     
@@ -317,68 +316,52 @@ yc1 = max(min(y1,y2),min(y3,y4));..." />
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-07-11</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-07-14</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
             <div class="posttag">
                 
-                <a href="https://lyhlyhaa.github.io/tag/ceCOQnfAj/" class="postlink">
-                    <i class="fa fa-tag"></i> 程设
+                <a href="https://lyhlyhaa.github.io/tag/5w0uDkeF5/" class="postlink">
+                    <i class="fa fa-tag"></i> 数据结构
                 </a>
                 
             </div>
         </div>
         
         <div id="texttitle" style="text-align: center">
-            <h2>程设</h2>
+            <h2>优先队列</h2>
             <!-- id 将作为查询条件 -->
-            <div id="pl" style="display:none">https://lyhlyhaa.github.io/post/cheng-she/</div>
+            <div id="pl" style="display:none">https://lyhlyhaa.github.io/post/you-xian-dui-lie/</div>
             <div id="rootaddr" style="display:none">https://lyhlyhaa.github.io</div>
-            <span id="hotnum" class="leancloud_visitors" data-flag-title="程设">
+            <span id="hotnum" class="leancloud_visitors" data-flag-title="优先队列">
                 <h4 class="readercount">热度🔥: <i class="leancloud-visitors-count">loading...</i></h4>
             </span>
         </div>
         <div class="text ">
-            <p>##矩形面积的并<br>
-1.相交矩形的四边<br>
-xc1 = max(min(x1,x2),min(x3,x4));<br>
-xc2 = min(max(x1,x2),max(x3,x4));<br>
-yc1 = max(min(y1,y2),min(y3,y4));<br>
-yc2 = min(max(y1,y2),max(y3,y4));<br>
-2.判断矩形是否相交<br>
-xc1 &lt;= xc2&amp;&amp;yc1 &lt;= yc2</p>
-<hr>
-<p>##Matrix Word<br>
-1.判断矩阵中该行以及该列是否有一样的字符<br>
-int j(int i, int j,char c){<br>
-for(int k = 0; k &lt; m; k++)<br>
-if(mat[i][k] == c &amp;&amp; k != j) return 0;<br>
-for(int k = 0; k &lt; n; k++)<br>
-if(mat[k][j] == c &amp;&amp; k != i) return 0;<br>
-return 1;<br>
-}<br>
-2.遍历矩阵，如果遍历到的啊a[i][j]是行，列中唯一的，则输出</p>
-<hr>
-<p>##1251哥伦比亚数<br>
-1.如果n是自我数，则必定有一个小于n的数m+m的数码之和等于n，由题目可知m的数码之和不会超过81，由此可得：从后往前开始找a，因为数码和最大81，所以a&gt;(原数字n)-81</p>
-<hr>
-<p>##1253Robot<br>
-有N个任务需要Robot去完成，这个N个任务的地点在一个数轴上，坐标为1到n。<br>
-每个任务需要先完成ai个任务才能开始去做。<br>
-Robot可以在直线上左右移动，初始位置位于任务1的地点，<br>
-方向朝向数轴正方向。请问Robot最少转换多少次方向可以完成所有的任务。</p>
-<p>1.已经完成的任务数  &gt;= ai<br>
-2.先从左到右遍历，设置一个标记数组，符合条件置1<br>
-3.如果没有全部完成，则从右到左遍历</p>
+            <p>首先要包含头文件    #include<queue><br>
+定义：priority_queue&lt;Type, Container, Functional&gt;<br>
+//升序队列<br>
+priority_queue &lt;int,vector<int>,greater<int> &gt; q;<br>
+//降序队列<br>
+priority_queue &lt;int,vector<int>,less<int> &gt;q;</p>
+<p>和队列基本操作相同:<br>
+top 访问队头元素<br>
+empty 队列是否为空<br>
+size 返回队列内元素个数<br>
+push 插入元素到队尾 (并排序)<br>
+emplace 原地构造一个元素并插入队列<br>
+pop 弹出队头元素<br>
+swap 交换内容</p>
+<p>发现一个说的很好的博客<a href="https://blog.csdn.net/weixin_44820625/article/details/104088362">贪心算法总结</a></p>
 
         </div>
         
-        <div class="prev-post">
-            上一篇
-            <a href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/">
-                优先队列
+        
+        <div class="next-post">
+            下一篇
+            <a href="https://lyhlyhaa.github.io/post/cheng-she/">
+                程设
             </a>
         </div>
-        
         
     </div>
     </div>
@@ -562,68 +545,52 @@ Robot可以在直线上左右移动，初始位置位于任务1的地点，<br>
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-07-11</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-07-14</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
             <div class="posttag">
                 
-                <a href="https://lyhlyhaa.github.io/tag/ceCOQnfAj/" class="postlink">
-                    <i class="fa fa-tag"></i> 程设
+                <a href="https://lyhlyhaa.github.io/tag/5w0uDkeF5/" class="postlink">
+                    <i class="fa fa-tag"></i> 数据结构
                 </a>
                 
             </div>
         </div>
         
         <div id="texttitle" style="text-align: center">
-            <h2>程设</h2>
+            <h2>优先队列</h2>
             <!-- id 将作为查询条件 -->
-            <div id="pl" style="display:none">https://lyhlyhaa.github.io/post/cheng-she/</div>
+            <div id="pl" style="display:none">https://lyhlyhaa.github.io/post/you-xian-dui-lie/</div>
             <div id="rootaddr" style="display:none">https://lyhlyhaa.github.io</div>
-            <span id="hotnum" class="leancloud_visitors" data-flag-title="程设">
+            <span id="hotnum" class="leancloud_visitors" data-flag-title="优先队列">
                 <h4 class="readercount">热度🔥: <i class="leancloud-visitors-count">loading...</i></h4>
             </span>
         </div>
         <div class="text ">
-            <p>##矩形面积的并<br>
-1.相交矩形的四边<br>
-xc1 = max(min(x1,x2),min(x3,x4));<br>
-xc2 = min(max(x1,x2),max(x3,x4));<br>
-yc1 = max(min(y1,y2),min(y3,y4));<br>
-yc2 = min(max(y1,y2),max(y3,y4));<br>
-2.判断矩形是否相交<br>
-xc1 &lt;= xc2&amp;&amp;yc1 &lt;= yc2</p>
-<hr>
-<p>##Matrix Word<br>
-1.判断矩阵中该行以及该列是否有一样的字符<br>
-int j(int i, int j,char c){<br>
-for(int k = 0; k &lt; m; k++)<br>
-if(mat[i][k] == c &amp;&amp; k != j) return 0;<br>
-for(int k = 0; k &lt; n; k++)<br>
-if(mat[k][j] == c &amp;&amp; k != i) return 0;<br>
-return 1;<br>
-}<br>
-2.遍历矩阵，如果遍历到的啊a[i][j]是行，列中唯一的，则输出</p>
-<hr>
-<p>##1251哥伦比亚数<br>
-1.如果n是自我数，则必定有一个小于n的数m+m的数码之和等于n，由题目可知m的数码之和不会超过81，由此可得：从后往前开始找a，因为数码和最大81，所以a&gt;(原数字n)-81</p>
-<hr>
-<p>##1253Robot<br>
-有N个任务需要Robot去完成，这个N个任务的地点在一个数轴上，坐标为1到n。<br>
-每个任务需要先完成ai个任务才能开始去做。<br>
-Robot可以在直线上左右移动，初始位置位于任务1的地点，<br>
-方向朝向数轴正方向。请问Robot最少转换多少次方向可以完成所有的任务。</p>
-<p>1.已经完成的任务数  &gt;= ai<br>
-2.先从左到右遍历，设置一个标记数组，符合条件置1<br>
-3.如果没有全部完成，则从右到左遍历</p>
+            <p>首先要包含头文件    #include<queue><br>
+定义：priority_queue&lt;Type, Container, Functional&gt;<br>
+//升序队列<br>
+priority_queue &lt;int,vector<int>,greater<int> &gt; q;<br>
+//降序队列<br>
+priority_queue &lt;int,vector<int>,less<int> &gt;q;</p>
+<p>和队列基本操作相同:<br>
+top 访问队头元素<br>
+empty 队列是否为空<br>
+size 返回队列内元素个数<br>
+push 插入元素到队尾 (并排序)<br>
+emplace 原地构造一个元素并插入队列<br>
+pop 弹出队头元素<br>
+swap 交换内容</p>
+<p>发现一个说的很好的博客<a href="https://blog.csdn.net/weixin_44820625/article/details/104088362">贪心算法总结</a></p>
 
         </div>
         
-        <div class="prev-post">
-            上一篇
-            <a href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/">
-                优先队列
+        
+        <div class="next-post">
+            下一篇
+            <a href="https://lyhlyhaa.github.io/post/cheng-she/">
+                程设
             </a>
         </div>
-        
         
     </div>
     </div>

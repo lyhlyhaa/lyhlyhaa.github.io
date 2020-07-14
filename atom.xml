@@ -2,13 +2,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>lyh的博客</title>
-    <updated>2020-07-14T02:44:04.796Z</updated>
+    <updated>2020-07-14T08:06:31.939Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, lyh的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[优先队列]]></title>
+        <id>https://lyhlyhaa.github.io/post/you-xian-dui-lie/</id>
+        <link href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/">
+        </link>
+        <updated>2020-07-14T02:46:41.000Z</updated>
+        <content type="html"><![CDATA[<p>首先要包含头文件    #include<queue><br>
+定义：priority_queue&lt;Type, Container, Functional&gt;<br>
+//升序队列<br>
+priority_queue &lt;int,vector<int>,greater<int> &gt; q;<br>
+//降序队列<br>
+priority_queue &lt;int,vector<int>,less<int> &gt;q;</p>
+<p>和队列基本操作相同:<br>
+top 访问队头元素<br>
+empty 队列是否为空<br>
+size 返回队列内元素个数<br>
+push 插入元素到队尾 (并排序)<br>
+emplace 原地构造一个元素并插入队列<br>
+pop 弹出队头元素<br>
+swap 交换内容</p>
+<p>发现一个说的很好的博客<a href="https://blog.csdn.net/weixin_44820625/article/details/104088362">贪心算法总结</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[程设]]></title>
         <id>https://lyhlyhaa.github.io/post/cheng-she/</id>
