@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1594902245236">
+<link rel="shortcut icon" href="/favicon.ico?v=1594902489569">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -297,9 +297,14 @@
               
               
             
+              
+              
+              
+            
             
               <p><h1 id="1127数列">1127数列</h1>
 <p>1.刚开始没有找规律，先是一个一个往后找，超时。然后另一种方法开了一个数组，全部存到数组里，内存超限了。之后找到规律，在一段时间的无序后，会开始循环，循环的内容可以自己定（从1，2开始或者从4，8开始等等）<br>
+2.找到规律后考虑两种特殊情况，<em>a或者b中有0，a=b=1</em>，单独处理，其他的按题循环，找到循环开始的数（例如1，2），则跳出循环。对循环数组长度取余来获得所求的值。在循环中还要考虑出现5，乘起来出现整10的情况。</p>
 
                 
               <p>
@@ -375,9 +380,14 @@
               
               
             
+              
+              
+              
+            
             
               <p><h1 id="优先队列">优先队列</h1>
-<p>首先要包含头文件    <code>#include&lt;queue&gt;</code><br>
+<p>首先要包含头文件</p>
+<pre><code>#include&lt;queue&gt;
 
                 
                   <!-- 自动摘要出来的内容有<code则补上结尾,防止格式错误 -->
@@ -654,8 +664,10 @@
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/"" data-c="
           &lt;h1 id=&#34;优先队列&#34;&gt;优先队列&lt;/h1&gt;
-&lt;p&gt;首先要包含头文件    &lt;code&gt;#include&amp;lt;queue&amp;gt;&lt;/code&gt;&lt;br&gt;
-定义：&lt;/p&gt;
+&lt;p&gt;首先要包含头文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;queue&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;定义：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;priority_queue&amp;lt;Type, Container, Functional&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;//升序队列&lt;/p&gt;
