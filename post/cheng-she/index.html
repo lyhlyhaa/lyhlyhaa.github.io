@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>程设 | lyh的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1594889110877">
+<link rel="shortcut icon" href="/favicon.ico?v=1594890435774">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -190,7 +190,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -233,6 +234,198 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper  auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#1127%E6%95%B0%E5%88%97">1127数列</a></li>
+<li><a href="#%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E7%9A%84%E5%B9%B6">矩形面积的并</a></li>
+<li><a href="#matrix-word">Matrix Word</a></li>
+<li><a href="#1251%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E6%95%B0">1251哥伦比亚数</a></li>
+<li><a href="#1253robot">1253Robot</a></li>
+<li><a href="#1262fish">1262Fish</a></li>
+<li><a href="#1281-cute-string">1281  Cute String</a></li>
+<li><a href="#1294-enquiry">1294  Enquiry</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -373,12 +566,12 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>##1127数列<br>
-1.刚开始没有找规律，先是一个一个往后找，超时。然后另一种方法开了一个数组，全部存到数组里，内存超限了。之后找到规律，在一段时间的无序后，会开始循环，循环的内容可以自己定（从1，2开始或者从4，8开始等等）<br>
+              <h1 id="1127数列">1127数列</h1>
+<p>1.刚开始没有找规律，先是一个一个往后找，超时。然后另一种方法开了一个数组，全部存到数组里，内存超限了。之后找到规律，在一段时间的无序后，会开始循环，循环的内容可以自己定（从1，2开始或者从4，8开始等等）<br>
 2.找到规律后考虑两种特殊情况，<em>a或者b中有0，a=b=1</em>，单独处理，其他的按题循环，找到循环开始的数（例如1，2），则跳出循环。对循环数组长度取余来获得所求的值。在循环中还要考虑出现5，乘起来出现整10的情况。</p>
 <hr>
-<p>##矩形面积的并<br>
-1.相交矩形的四边</p>
+<h1 id="矩形面积的并">矩形面积的并</h1>
+<p>1.相交矩形的四边</p>
 <pre><code>xc1 = max(min(x1,x2),min(x3,x4));
 xc2 = min(max(x1,x2),max(x3,x4));
 yc1 = max(min(y1,y2),min(y3,y4));
@@ -388,8 +581,8 @@ yc2 = min(max(y1,y2),max(y3,y4));
 <pre><code>xc1 &lt;= xc2&amp;&amp;yc1 &lt;= yc2
 </code></pre>
 <hr>
-<p>##Matrix Word<br>
-1.判断矩阵中该行以及该列是否有一样的字符</p>
+<h1 id="matrix-word">Matrix Word</h1>
+<p>1.判断矩阵中该行以及该列是否有一样的字符</p>
 <pre><code>int j(int i, int j,char c){
 	for(int k = 0; k &lt; m; k++)
 if(mat[i][k] == c &amp;&amp; k != j) return 0;
@@ -400,11 +593,11 @@ if(mat[k][j] == c &amp;&amp; k != i) return 0;
 </code></pre>
 <p>2.遍历矩阵，如果遍历到的啊a[i][j]是行，列中唯一的，则输出</p>
 <hr>
-<p>##1251哥伦比亚数<br>
-1.如果n是自我数，则必定有一个小于n的数m+m的数码之和等于n，由题目可知m的数码之和不会超过81，由此可得：从后往前开始找a，因为数码和最大81，所以a&gt;(原数字n)-81</p>
+<h1 id="1251哥伦比亚数">1251哥伦比亚数</h1>
+<p>1.如果n是自我数，则必定有一个小于n的数m+m的数码之和等于n，由题目可知m的数码之和不会超过81，由此可得：从后往前开始找a，因为数码和最大81，所以a&gt;(原数字n)-81</p>
 <hr>
-<p>##1253Robot<br>
-有N个任务需要Robot去完成，这个N个任务的地点在一个数轴上，坐标为1到n。<br>
+<h1 id="1253robot">1253Robot</h1>
+<p>有N个任务需要Robot去完成，这个N个任务的地点在一个数轴上，坐标为1到n。<br>
 每个任务需要先完成ai个任务才能开始去做。<br>
 Robot可以在直线上左右移动，初始位置位于任务1的地点，<br>
 方向朝向数轴正方向。请问Robot最少转换多少次方向可以完成所有的任务。</p>
@@ -412,8 +605,8 @@ Robot可以在直线上左右移动，初始位置位于任务1的地点，<br>
 2.先从左到右遍历，设置一个标记数组，符合条件置1<br>
 3.如果没有全部完成，则从右到左遍历</p>
 <hr>
-<p>##1262Fish<br>
-1.开始用数组做，超时了。<br>
+<h1 id="1262fish">1262Fish</h1>
+<p>1.开始用数组做，超时了。<br>
 2.使用<a href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/">优先队列</a>和贪心算法（其实并不是很明白贪心），定义一个结构体</p>
 <pre><code>struct node
 {
@@ -430,12 +623,12 @@ now.a = max(0,now.a-now.b);
 m--;
 </code></pre>
 <hr>
-<p>##1281  Cute String<br>
-1.条件：单词（每个单词之间用一个空格隔开）数量超过10，或者句子中字母种类（不区分大小写）超过10个则不成立<br>
+<h1 id="1281-cute-string">1281  Cute String</h1>
+<p>1.条件：单词（每个单词之间用一个空格隔开）数量超过10，或者句子中字母种类（不区分大小写）超过10个则不成立<br>
 2.非常简单，就不写了😀</p>
 <hr>
-<p>##1294  Enquiry<br>
-1.直接打表解决🙏<br>
+<h1 id="1294-enquiry">1294  Enquiry</h1>
+<p>1.直接打表解决🙏<br>
 2.有个小问题，区分字符串和字符数组<br>
 <img src="https://lyhlyhaa.github.io/post-images/1594888443566.png" alt="" loading="lazy"></p>
 
@@ -959,12 +1152,12 @@ swap 交换内容&lt;/p&gt;
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/cheng-she/"" data-c="
-          &lt;p&gt;##1127数列&lt;br&gt;
-1.刚开始没有找规律，先是一个一个往后找，超时。然后另一种方法开了一个数组，全部存到数组里，内存超限了。之后找到规律，在一段时间的无序后，会开始循环，循环的内容可以自己定（从1，2开始或者从4，8开始等等）&lt;br&gt;
+          &lt;h1 id=&#34;1127数列&#34;&gt;1127数列&lt;/h1&gt;
+&lt;p&gt;1.刚开始没有找规律，先是一个一个往后找，超时。然后另一种方法开了一个数组，全部存到数组里，内存超限了。之后找到规律，在一段时间的无序后，会开始循环，循环的内容可以自己定（从1，2开始或者从4，8开始等等）&lt;br&gt;
 2.找到规律后考虑两种特殊情况，&lt;em&gt;a或者b中有0，a=b=1&lt;/em&gt;，单独处理，其他的按题循环，找到循环开始的数（例如1，2），则跳出循环。对循环数组长度取余来获得所求的值。在循环中还要考虑出现5，乘起来出现整10的情况。&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;##矩形面积的并&lt;br&gt;
-1.相交矩形的四边&lt;/p&gt;
+&lt;h1 id=&#34;矩形面积的并&#34;&gt;矩形面积的并&lt;/h1&gt;
+&lt;p&gt;1.相交矩形的四边&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;xc1 = max(min(x1,x2),min(x3,x4));
 xc2 = min(max(x1,x2),max(x3,x4));
 yc1 = max(min(y1,y2),min(y3,y4));
@@ -974,8 +1167,8 @@ yc2 = min(max(y1,y2),max(y3,y4));
 &lt;pre&gt;&lt;code&gt;xc1 &amp;lt;= xc2&amp;amp;&amp;amp;yc1 &amp;lt;= yc2
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;p&gt;##Matrix Word&lt;br&gt;
-1.判断矩阵中该行以及该列是否有一样的字符&lt;/p&gt;
+&lt;h1 id=&#34;matrix-word&#34;&gt;Matrix Word&lt;/h1&gt;
+&lt;p&gt;1.判断矩阵中该行以及该列是否有一样的字符&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;int j(int i, int j,char c){
 	for(int k = 0; k &amp;lt; m; k++)
 if(mat[i][k] == c &amp;amp;&amp;amp; k != j) return 0;
@@ -986,11 +1179,11 @@ if(mat[k][j] == c &amp;amp;&amp;amp; k != i) return 0;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;2.遍历矩阵，如果遍历到的啊a[i][j]是行，列中唯一的，则输出&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;##1251哥伦比亚数&lt;br&gt;
-1.如果n是自我数，则必定有一个小于n的数m+m的数码之和等于n，由题目可知m的数码之和不会超过81，由此可得：从后往前开始找a，因为数码和最大81，所以a&amp;gt;(原数字n)-81&lt;/p&gt;
+&lt;h1 id=&#34;1251哥伦比亚数&#34;&gt;1251哥伦比亚数&lt;/h1&gt;
+&lt;p&gt;1.如果n是自我数，则必定有一个小于n的数m+m的数码之和等于n，由题目可知m的数码之和不会超过81，由此可得：从后往前开始找a，因为数码和最大81，所以a&amp;gt;(原数字n)-81&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;##1253Robot&lt;br&gt;
-有N个任务需要Robot去完成，这个N个任务的地点在一个数轴上，坐标为1到n。&lt;br&gt;
+&lt;h1 id=&#34;1253robot&#34;&gt;1253Robot&lt;/h1&gt;
+&lt;p&gt;有N个任务需要Robot去完成，这个N个任务的地点在一个数轴上，坐标为1到n。&lt;br&gt;
 每个任务需要先完成ai个任务才能开始去做。&lt;br&gt;
 Robot可以在直线上左右移动，初始位置位于任务1的地点，&lt;br&gt;
 方向朝向数轴正方向。请问Robot最少转换多少次方向可以完成所有的任务。&lt;/p&gt;
@@ -998,8 +1191,8 @@ Robot可以在直线上左右移动，初始位置位于任务1的地点，&lt;b
 2.先从左到右遍历，设置一个标记数组，符合条件置1&lt;br&gt;
 3.如果没有全部完成，则从右到左遍历&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;##1262Fish&lt;br&gt;
-1.开始用数组做，超时了。&lt;br&gt;
+&lt;h1 id=&#34;1262fish&#34;&gt;1262Fish&lt;/h1&gt;
+&lt;p&gt;1.开始用数组做，超时了。&lt;br&gt;
 2.使用&lt;a href=&#34;https://lyhlyhaa.github.io/post/you-xian-dui-lie/&#34;&gt;优先队列&lt;/a&gt;和贪心算法（其实并不是很明白贪心），定义一个结构体&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;struct node
 {
@@ -1016,12 +1209,12 @@ now.a = max(0,now.a-now.b);
 m--;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;p&gt;##1281  Cute String&lt;br&gt;
-1.条件：单词（每个单词之间用一个空格隔开）数量超过10，或者句子中字母种类（不区分大小写）超过10个则不成立&lt;br&gt;
+&lt;h1 id=&#34;1281-cute-string&#34;&gt;1281  Cute String&lt;/h1&gt;
+&lt;p&gt;1.条件：单词（每个单词之间用一个空格隔开）数量超过10，或者句子中字母种类（不区分大小写）超过10个则不成立&lt;br&gt;
 2.非常简单，就不写了😀&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;##1294  Enquiry&lt;br&gt;
-1.直接打表解决🙏&lt;br&gt;
+&lt;h1 id=&#34;1294-enquiry&#34;&gt;1294  Enquiry&lt;/h1&gt;
+&lt;p&gt;1.直接打表解决🙏&lt;br&gt;
 2.有个小问题，区分字符串和字符数组&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1594888443566.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 ">程设</a>
