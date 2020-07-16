@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
-    <title>lyh的博客</title>
-    <updated>2020-07-16T12:20:18.312Z</updated>
+    <title>混子协会会长</title>
+    <updated>2020-07-16T12:21:06.112Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, lyh的博客</rights>
+    <rights>All rights reserved 2020, 混子协会会长</rights>
     <entry>
         <title type="html"><![CDATA[优先队列&&贪心算法]]></title>
         <id>https://lyhlyhaa.github.io/post/you-xian-dui-lie/</id>
