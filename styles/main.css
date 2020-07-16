@@ -2141,23 +2141,23 @@ body {
       color: #fff;
       border-bottom-color: #fff;
     }.active-current > a {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #f03e3e !important;
+      border-bottom-color: #f03e3e !important;
     }
     .sidebar-title-active {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #f03e3e;
+      border-bottom-color: #f03e3e;
     }
     .sidebar-title-item:hover {
-      color: #fc6423 !important;
+      color: #f03e3e !important;
     }
     .active-show > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #f03e3e;
+      border-bottom-color: #f03e3e;
     }
     .active-hidden > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #f03e3e;
+      border-bottom-color: #f03e3e;
     }.bg-color {
       background-color: #fffffffe;
     }
