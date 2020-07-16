@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>lyh的博客</title>
-    <updated>2020-07-16T09:16:14.625Z</updated>
+    <updated>2020-07-16T09:22:19.804Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -10,12 +10,13 @@
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, lyh的博客</rights>
     <entry>
-        <title type="html"><![CDATA[优先队列]]></title>
+        <title type="html"><![CDATA[优先队列&&贪心算法]]></title>
         <id>https://lyhlyhaa.github.io/post/you-xian-dui-lie/</id>
         <link href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/">
         </link>
         <updated>2020-07-14T02:46:41.000Z</updated>
-        <content type="html"><![CDATA[<p>首先要包含头文件</p>
+        <content type="html"><![CDATA[<h1 id="优先队列">优先队列</h1>
+<p>首先要包含头文件</p>
 <pre><code>#include&lt;queue&gt;
 </code></pre>
 <p>定义：</p>
@@ -35,6 +36,7 @@ push 插入元素到队尾 (并排序)<br>
 emplace 原地构造一个元素并插入队列<br>
 pop 弹出队头元素<br>
 swap 交换内容</p>
+<h1 id="贪心算法">贪心算法</h1>
 <p>发现一个说的很好的博客<a href="https://blog.csdn.net/weixin_44820625/article/details/104088362">贪心算法总结</a></p>
 ]]></content>
     </entry>
