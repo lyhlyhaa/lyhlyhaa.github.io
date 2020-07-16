@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>lyh的博客</title>
-    <updated>2020-07-16T03:15:39.238Z</updated>
+    <updated>2020-07-16T04:02:57.012Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -99,6 +99,9 @@ Robot可以在直线上左右移动，初始位置位于任务1的地点，<br>
 now.a = max(0,now.a-now.b);
 m--;
 </code></pre>
+<p>##1281  Cute String<br>
+1.条件：单词（每个单词之间用一个空格隔开）数量超过10，或者句子中字母种类（不区分大小写）超过10个则不成立<br>
+2.非常简单，就不写了😀</p>
 ]]></content>
     </entry>
 </feed>
