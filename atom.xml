@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>lyh的博客</title>
-    <updated>2020-07-16T03:12:11.642Z</updated>
+    <updated>2020-07-16T03:15:39.238Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -15,12 +15,18 @@
         <link href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/">
         </link>
         <updated>2020-07-14T02:46:41.000Z</updated>
-        <content type="html"><![CDATA[<p>首先要包含头文件    #include<queue><br>
-定义：priority_queue&lt;Type, Container, Functional&gt;<br>
-//升序队列<br>
-priority_queue &lt;int,vector<int>,greater<int> &gt; q;<br>
-//降序队列<br>
-priority_queue &lt;int,vector<int>,less<int> &gt;q;</p>
+        <content type="html"><![CDATA[<p>首先要包含头文件</p>
+<pre><code>#include&lt;queue&gt;
+</code></pre>
+<p>定义：</p>
+<pre><code>priority_queue&lt;Type, Container, Functional&gt;
+</code></pre>
+<p>//升序队列</p>
+<pre><code>priority_queue &lt;int,vector&lt;int&gt;,greater&lt;int&gt; &gt; q;
+</code></pre>
+<p>//降序队列</p>
+<pre><code>priority_queue &lt;int,vector&lt;int&gt;,less&lt;int&gt; &gt;q;
+</code></pre>
 <p>和队列基本操作相同:<br>
 top 访问队头元素<br>
 empty 队列是否为空<br>
