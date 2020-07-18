@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-17T04:02:26.171Z</updated>
+    <updated>2020-07-18T03:09:00.336Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -120,6 +120,12 @@ m--;
 <hr>
 <h1 id="1272-robot">1272  Robot</h1>
 <p>1.成立条件，四个方向必有一方是为0的，然后暴力就ok</p>
+<hr>
+<h1 id="12791295">1279&amp;&amp;1295</h1>
+<p>之前做过，直接交了以前的代码</p>
+<hr>
+<h1 id="1172-因子和">1172 因子和</h1>
+<p>没什么好说的，可能是最简单的一个</p>
 ]]></content>
     </entry>
 </feed>
