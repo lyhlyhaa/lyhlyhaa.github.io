@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-18T13:03:55.839Z</updated>
+    <updated>2020-07-18T13:07:55.240Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -156,8 +156,8 @@ m--;
 <h1 id="1172-因子和">1172 因子和</h1>
 <p>没什么好说的，可能是最简单的一个</p>
 <hr>
-<h1 id="1294-enquiry-2">1294  Enquiry</h1>
-<p>设计一个数组，记录到每一个位置之前的全部相邻排列的次数</p>
+<h1 id="1251-colombian-number">1251  Colombian Number</h1>
+<p>哥伦比亚数，额忘了😬</p>
 <hr>
 ]]></content>
     </entry>
