@@ -2,13 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-18T03:09:00.336Z</updated>
+    <updated>2020-07-18T12:38:02.651Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[GitHub Page+Gridea搭建博客]]></title>
+        <id>https://lyhlyhaa.github.io/post/github-pagegridea-da-jian-bo-ke/</id>
+        <link href="https://lyhlyhaa.github.io/post/github-pagegridea-da-jian-bo-ke/">
+        </link>
+        <updated>2020-07-18T11:31:46.000Z</updated>
+        <content type="html"><![CDATA[<p>起初我打算用github page和hexo搭博客，折腾了半天终于好了，但是第二天，我突然发现他不能添加新文章了，我当时心态就炸了，hexo g，hexo d 命令都没报错，可是网页就是没反应，一开始还以为是github有延迟，但是我本地预览也没有变化就很搞心态。所以就放弃了。后来发现了Gridea，简单无比。<br>
+接下来是正文</p>
+<hr>
+<p>1.首先要创建一个github账号，这应该很简单。<br>
+2.创建一个名为 自己用户名.github.io 的仓库，如图：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1595073914323.png" alt="" loading="lazy"><br>
+3.创建完毕之后到这个界面<br>
+<img src="https://lyhlyhaa.github.io/post-images/1595073947839.png" alt="" loading="lazy"><br>
+点击settings，一直往下翻，找到GitHub Pages<br>
+<img src="https://lyhlyhaa.github.io/post-images/1595074042781.png" alt="" loading="lazy"><br>
+点击choose a theme<br>
+<img src="https://lyhlyhaa.github.io/post-images/1595074364625.png" alt="" loading="lazy"><br>
+选一个主题，select就行，之后你就拥有了了一个简单的博客，域名就是你刚刚创建的仓库的名字。<br>
+如果你想全部都自己完成的话，那你可以下载一个git客户端，把你这个仓库clone下来，然后在你自己本地写html文件，之后push上去就ok了。不过这样还是太麻烦，所以我们要继续往下。<br>
+4.下载Gridea，直接搜就行。下载安装后，点击远程，填上你的信息<br>
+<img src="https://lyhlyhaa.github.io/post-images/1595074816460.png" alt="" loading="lazy"><br>
+第一个域名和你的仓库名一样，分支默认master，仓库用户名就是你github用户名，邮箱就是你github账号创建时用的邮箱，令牌在github中生成，随便找了个<a href="https://blog.csdn.net/u014175572/article/details/55510825">教程</a>,最后的CNAME，如果你有自己的域名的话，就填上你自己的域名，记得在你的域名的控制台添加两条解析记录，打开cmd，ping你的 http://xxxx.github.io 的ip地址，填入进去。第二个记录类型是CNAME，CNAME的记录值是：你的用户名.http://github.io 这里千万别弄错了。<br>
+<img src="https://lyhlyhaa.github.io/post-images/1595075665549.png" alt="" loading="lazy"><br>
+（这里因为用的是另一个号，所以用户名为lyhlyhaa）<br>
+检测远程链接，成功之后保存，同步，成功就ok了<br>
+5.之后就可以在Gridea上写文章了，写完之后同步就行。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[优先队列&&贪心算法]]></title>
         <id>https://lyhlyhaa.github.io/post/you-xian-dui-lie/</id>
