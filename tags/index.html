@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1595235074234">
+<link rel="shortcut icon" href="/favicon.ico?v=1595235409801">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -591,30 +591,29 @@
 （4）没有键值相等的结点。&lt;br&gt;
 可以用递归建树，似乎涉及二叉树的题目，大部分是递归。&lt;/p&gt;
 &lt;h2 id=&#34;建树&#34;&gt;建树&lt;/h2&gt;
-&lt;p&gt;这一篇博客挺容易理解 &lt;a href=&#34;https://blog.csdn.net/jeffleo/article/details/53072878?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight&#34;&gt;查看&lt;/a&gt;&lt;br&gt;
-要建立一个二叉查找树，首先要定义一个结构体，一般来说定义的结构体都是一样的；&lt;/p&gt;
+&lt;p&gt;要建立一个二叉查找树，首先要定义一个结构体，一般来说定义的结构体都是一样的；&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;typedef struct BitNode{
    int data;
    struct BitNode *lchild, *rchild; 
-}BitNode, *BiTree;
+};
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;一个数据域，还有左右节点。&lt;br&gt;
-插入函数&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;bool BSTInsert(BitNode * &amp;amp;p, int element)  //插入函数 
+插入函数：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bool Insert(BitNode * &amp;amp;p, int n)  //插入函数 
 {  
     if(NULL == p) // 空树  
     {  
         p = new BitNode;  
-        p-&amp;gt;data = element;  
+        p-&amp;gt;data = n;  
         p-&amp;gt;lchild = p-&amp;gt;rchild = NULL;  
         return true;  
     }  
-    if(element == p-&amp;gt;data) // BST中不能有相等的值  
+    if(n == p-&amp;gt;data) // BST中不能有相等的值  
         return false;  
-    if(element &amp;lt; p-&amp;gt;data)  // 递归  
-        return BSTInsert(p-&amp;gt;lchild, element);  
+    if(n &amp;lt; p-&amp;gt;data)  // 递归  
+        return BSTInsert(p-&amp;gt;lchild, n);  
 
-    return BSTInsert(p-&amp;gt;rchild, element); // 递归  
+    return BSTInsert(p-&amp;gt;rchild, n); // 递归  
 }
 &lt;/code&gt;&lt;/pre&gt;
 ">二叉树</a>
