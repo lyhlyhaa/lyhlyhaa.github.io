@@ -2,13 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-18T13:07:55.240Z</updated>
+    <updated>2020-07-20T03:05:16.368Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[二叉树]]></title>
+        <id>https://lyhlyhaa.github.io/post/er-cha-shu/</id>
+        <link href="https://lyhlyhaa.github.io/post/er-cha-shu/">
+        </link>
+        <updated>2020-07-20T02:39:20.000Z</updated>
+        <content type="html"><![CDATA[<p>首先说一下一些基础知识。（查了一下，树的高度和深度好像有不同的说法，似乎初始值有 0 有 1）</p>
+<h1 id="基础知识">基础知识</h1>
+<p><em><strong>树的高度</strong></em>：<br>
+节点的深度是根节点到这个节点所经历的边的个数<br>
+节点的高度是该节点到叶子节点的最长路径（边数）<br>
+树的高度等于根节点的高度<br>
+<img src="https://lyhlyhaa.github.io/post-images/1595213437405.png" alt="" loading="lazy"><br>
+（好像有些是从1开始的）<br>
+插一句：<strong>二叉树深度算法如下：深度为m的满二叉树有2^m-1个结点；<br>
+具有n个结点的完全二叉树的深度为[log2n]+1.（log2n是以2为底n的对数）</strong></p>
+<hr>
+<h1 id="二叉树">二叉树</h1>
+<h2 id="定义">定义</h2>
+<p><em><strong>二叉查找树</strong></em><br>
+一棵空树，或者是具有下列性质的二叉树：<br>
+（1）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；<br>
+（2）若右子树不空，则右子树上所有结点的值均大于它的根结点的值；<br>
+（3）左、右子树也分别为二叉排序树；<br>
+（4）没有键值相等的结点。<br>
+可以用递归建树，似乎涉及二叉树的题目，大部分是递归。</p>
+<h2 id="建树">建树</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[GitHub Page+Gridea搭建博客]]></title>
         <id>https://lyhlyhaa.github.io/post/github-pagegridea-da-jian-bo-ke/</id>
