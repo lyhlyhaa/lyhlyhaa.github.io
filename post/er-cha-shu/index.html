@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>二叉树 | 混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1595235409801">
+<link rel="shortcut icon" href="/favicon.ico?v=1595235497312">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -545,7 +545,7 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>403<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>402<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
@@ -568,7 +568,7 @@
 <img src="https://lyhlyhaa.github.io/post-images/1595213437405.png" alt="" loading="lazy"><br>
 （好像有些是从1开始的）<br>
 递归计算高度</p>
-<pre><code>int height(BitNode * &amp;root){
+<pre><code>int height(BitNode  root){
 	if(root==NULL) return 0;
 	else 
 	return max(height(root-&gt;lchild),height(root-&gt;rchild))+1;
@@ -1113,7 +1113,7 @@
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1595213437405.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 （好像有些是从1开始的）&lt;br&gt;
 递归计算高度&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;int height(BitNode * &amp;amp;root){
+&lt;pre&gt;&lt;code&gt;int height(BitNode  root){
 	if(root==NULL) return 0;
 	else 
 	return max(height(root-&amp;gt;lchild),height(root-&amp;gt;rchild))+1;
