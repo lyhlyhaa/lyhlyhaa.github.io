@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>二叉树 | 混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1595236143798">
+<link rel="shortcut icon" href="/favicon.ico?v=1595256168876">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -545,7 +545,7 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>403<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>410<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
@@ -568,11 +568,11 @@
 <img src="https://lyhlyhaa.github.io/post-images/1595213437405.png" alt="" loading="lazy"><br>
 （好像有些是从1开始的）<br>
 递归计算高度</p>
-<pre><code>int height(BitNode * &amp;root){
+<pre><code>int height(BitNode *root){
 	if(root==NULL) return 0;
 	else 
 	return max(height(root-&gt;lchild),height(root-&gt;rchild))+1;
-}
+}//求二叉树的高度
 </code></pre>
 <h1 id="二叉查找树">二叉查找树</h1>
 <h2 id="定义">定义</h2>
@@ -588,25 +588,25 @@
 <pre><code>typedef struct BitNode{
    int data;
    struct BitNode *lchild, *rchild; 
-};
+}BitNode,*BiTree;
 </code></pre>
 <p>一个数据域，还有左右节点。<br>
 插入函数：</p>
-<pre><code>bool Insert(BitNode * &amp;p, int n)  //插入函数 
+<pre><code>bool BSTInsert(BitNode *p, int element)  //插入函数 
 {  
     if(NULL == p) // 空树  
     {  
         p = new BitNode;  
-        p-&gt;data = n;  
+        p-&gt;data = element;  
         p-&gt;lchild = p-&gt;rchild = NULL;  
         return true;  
     }  
-    if(n == p-&gt;data) // BST中不能有相等的值  
+    if(element == p-&gt;data) // BST中不能有相等的值  
         return false;  
-    if(n &lt; p-&gt;data)  // 递归  
-        return BSTInsert(p-&gt;lchild, n);  
+    if(element &lt; p-&gt;data)  // 递归  
+        return BSTInsert(p-&gt;lchild, element);  
 
-    return BSTInsert(p-&gt;rchild, n); // 递归  
+    return BSTInsert(p-&gt;rchild, element); // 递归  
 }
 </code></pre>
 
@@ -1108,9 +1108,37 @@
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/zhi-zhen-yi-wen/"" data-c="
-          &lt;p&gt;这个&lt;a href=&#34;https://blog.csdn.net/u012441145/article/details/45719279&#34;&gt;博客&lt;/a&gt;出现**&lt;br&gt;
-**p指的是&lt;br&gt;
-&lt;em&gt;p的地址，那么&lt;/em&gt;&amp;amp;又是什么意思，*和&amp;amp;的区别？有时间看这个(http://c.biancheng.net/view/291.html)&lt;/p&gt;
+          &lt;p&gt;指针&lt;br&gt;
+*号：指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。就像其他变量或常量一样，您必须在使用指针存储其他变量地址之前，对其进行声明。* 运算符，也称为间接访问运算符，返回指针指向存储单元的数值；也称为指向运算符号：&lt;br&gt;
+注意：&lt;br&gt;
+指针运算符是取地址运算符号的反运算符号&lt;br&gt;
+*(&amp;amp;a) = 10;&lt;br&gt;
+&amp;amp;号：每一个变量都有一个内存位置，每一个内存位置都定义了可使用连字号（&amp;amp;）运算符访问的地址，它表示了在内存中的一个地址，&amp;amp;运算符，返回操作数的内存地址&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;int  var = 20;   /* 实际变量的声明 */
+   int  *ip;        /* 指针变量的声明 */
+   ip = &amp;amp;var;  /* 在指针变量中存储 var 的地址 */
+   printf(&amp;quot;Address of var variable: %p\n&amp;quot;, &amp;amp;var  );//Address of var variable: bffd8b3c
+   /* 在指针变量中存储的地址 */
+   printf(&amp;quot;Address stored in ip variable: %p\n&amp;quot;, ip );//Address stored in ip variable: bffd8b3c
+   /* 使用指针访问值 */
+   printf(&amp;quot;Value of *ip variable: %d\n&amp;quot;, *ip );//Value of *ip variable: 20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;突然想起来定义的时候，int *p就是int* p,其实是相当于一个int*类型的变量p，p就是一个地址值，简而言之，p是一个地址值，而*p就是p所指向的东西，可以是一个整型变量，也可以指向一个链表节点，也可以是一个二叉树节点。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt; int a=1;
+ int *pa;
+ pa=&amp;amp;a; //&amp;amp;a 是一个指针表达式。
+ printf(&amp;quot;*a=%p\n&amp;quot;,&amp;amp;a);
+ printf(&amp;quot;*pa=%d\n&amp;quot;,*pa);//*pa是一个值，就是pa所指向的a的值 
+ printf(&amp;quot;pa=%p\n&amp;quot;,pa);//pa是一个地址，pa指向a，所以pa地址与a相同 
+ printf(&amp;quot;&amp;amp;*pa=%p\n&amp;quot;,&amp;amp;(*pa));//pa指向a，*pa就是a,&amp;amp;(*pa)即*pa的地址就是a的地址 
+ printf(&amp;quot;\n&amp;quot;); 
+ int** ptr;
+ ptr=&amp;amp;pa;//由此可知*ptr=pa、**ptr=*pa 
+ printf(&amp;quot;&amp;amp;pa=%p\n&amp;quot;,&amp;amp;pa);//pa指针本身的地址 
+ printf(&amp;quot;ptr=%p\n&amp;quot;,ptr);//ptr指向的是pa本身地址 
+ printf(&amp;quot;*ptr=%p\n&amp;quot;,*ptr);//*ptr指向的是pa指针所指向的地址，就是a的地址
+ printf(&amp;quot;**p=%d\n&amp;quot;,**ptr);// 
+&lt;/code&gt;&lt;/pre&gt;
 ">指针疑问</a>
       </div>
       
@@ -1125,11 +1153,11 @@
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1595213437405.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 （好像有些是从1开始的）&lt;br&gt;
 递归计算高度&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;int height(BitNode * &amp;amp;root){
+&lt;pre&gt;&lt;code&gt;int height(BitNode *root){
 	if(root==NULL) return 0;
 	else 
 	return max(height(root-&amp;gt;lchild),height(root-&amp;gt;rchild))+1;
-}
+}//求二叉树的高度
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;二叉查找树&#34;&gt;二叉查找树&lt;/h1&gt;
 &lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
@@ -1145,25 +1173,25 @@
 &lt;pre&gt;&lt;code&gt;typedef struct BitNode{
    int data;
    struct BitNode *lchild, *rchild; 
-};
+}BitNode,*BiTree;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;一个数据域，还有左右节点。&lt;br&gt;
 插入函数：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;bool Insert(BitNode * &amp;amp;p, int n)  //插入函数 
+&lt;pre&gt;&lt;code&gt;bool BSTInsert(BitNode *p, int element)  //插入函数 
 {  
     if(NULL == p) // 空树  
     {  
         p = new BitNode;  
-        p-&amp;gt;data = n;  
+        p-&amp;gt;data = element;  
         p-&amp;gt;lchild = p-&amp;gt;rchild = NULL;  
         return true;  
     }  
-    if(n == p-&amp;gt;data) // BST中不能有相等的值  
+    if(element == p-&amp;gt;data) // BST中不能有相等的值  
         return false;  
-    if(n &amp;lt; p-&amp;gt;data)  // 递归  
-        return BSTInsert(p-&amp;gt;lchild, n);  
+    if(element &amp;lt; p-&amp;gt;data)  // 递归  
+        return BSTInsert(p-&amp;gt;lchild, element);  
 
-    return BSTInsert(p-&amp;gt;rchild, n); // 递归  
+    return BSTInsert(p-&amp;gt;rchild, element); // 递归  
 }
 &lt;/code&gt;&lt;/pre&gt;
 ">二叉树</a>
