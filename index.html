@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1595256267574">
+<link rel="shortcut icon" href="/favicon.ico?v=1595302081356">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -184,7 +184,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-count">6</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -327,6 +327,79 @@
     <div class="article-wrapper bg-color">
       <section class="post-header">
   <h1 class="post-title">
+    <a class="post-title-link" href="https://lyhlyhaa.github.io/post/zhan/">
+      栈
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-07-21 09:59:07">2020-07-21</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>124<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+      <div class="post-body">
+        
+        
+          
+            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
+            
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+            
+              <p><p>栈（stack）说明及举例：</p>
+<p>使用栈，要先包含头文件 ： <code>#include&lt;stack&gt;</code></p>
+<p>定义栈，以如下形式实现： <code>stack&lt;Type&gt; s;</code> 其中Type为数据类型（如 int，float,char等）。</p>
+
+                
+                  <!-- 自动摘要出来的内容有<code则补上结尾,防止格式错误 -->
+                  </code></pre>
+                
+              <p>
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn language" data-lan="read-more" href="https://lyhlyhaa.github.io/post/zhan/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <section class="post-header">
+  <h1 class="post-title">
     <a class="post-title-link" href="https://lyhlyhaa.github.io/post/zhi-zhen-yi-wen/">
       指针疑问
     </a>
@@ -347,7 +420,7 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>564<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>582<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
@@ -898,6 +971,21 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/zhan/"" data-c="
+          &lt;p&gt;栈（stack）说明及举例：&lt;/p&gt;
+&lt;p&gt;使用栈，要先包含头文件 ： &lt;code&gt;#include&amp;lt;stack&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;定义栈，以如下形式实现： &lt;code&gt;stack&amp;lt;Type&amp;gt; s;&lt;/code&gt; 其中Type为数据类型（如 int，float,char等）。&lt;/p&gt;
+&lt;p&gt;栈的主要操作：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;s.push(item);		//将item压入栈顶
+s.pop();			//删除栈顶的元素，但不会返回
+s.top();			//返回栈顶的元素，但不会删除
+s.size();			//返回栈中元素的个数
+s.empty();			//检查栈是否为空，如果为空返回true，否则返回false 
+&lt;/code&gt;&lt;/pre&gt;
+">栈</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/zhi-zhen-yi-wen/"" data-c="
           &lt;p&gt;指针&lt;br&gt;
 *号：指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。就像其他变量或常量一样，您必须在使用指针存储其他变量地址之前，对其进行声明。* 运算符，也称为间接访问运算符，返回指针指向存储单元的数值；也称为指向运算符号：&lt;br&gt;
@@ -922,6 +1010,12 @@
  printf(&amp;quot;*pa=%d\n&amp;quot;,*pa);//*pa是一个值，就是pa所指向的a的值 
  printf(&amp;quot;pa=%p\n&amp;quot;,pa);//pa是一个地址，pa指向a，所以pa地址与a相同 
  printf(&amp;quot;&amp;amp;*pa=%p\n&amp;quot;,&amp;amp;(*pa));//pa指向a，*pa就是a,&amp;amp;(*pa)即*pa的地址就是a的地址 
+ /*
+ *a=000000000062FE14
+ *pa=1
+ pa=000000000062FE14
+ &amp;amp;*pa=000000000062FE14
+ */
  printf(&amp;quot;\n&amp;quot;); 
  int** ptr;
  ptr=&amp;amp;pa;//由此可知*ptr=pa、**ptr=*pa 
@@ -929,6 +1023,12 @@
  printf(&amp;quot;ptr=%p\n&amp;quot;,ptr);//ptr指向的是pa本身地址 
  printf(&amp;quot;*ptr=%p\n&amp;quot;,*ptr);//*ptr指向的是pa指针所指向的地址，就是a的地址
  printf(&amp;quot;**p=%d\n&amp;quot;,**ptr);// 
+ /*
+ &amp;amp;pa=000000000062FE08
+ *ptr=000000000062FE14
+ ptr=000000000062FE08
+ **p=1
+ */
 &lt;/code&gt;&lt;/pre&gt;
 ">指针疑问</a>
       </div>

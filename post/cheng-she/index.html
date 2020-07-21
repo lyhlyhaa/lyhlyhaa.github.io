@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>程设 | 混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1595256267574">
+<link rel="shortcut icon" href="/favicon.ico?v=1595302081356">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -202,7 +202,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-count">6</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1141,6 +1141,21 @@ m--;
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/zhan/"" data-c="
+          &lt;p&gt;栈（stack）说明及举例：&lt;/p&gt;
+&lt;p&gt;使用栈，要先包含头文件 ： &lt;code&gt;#include&amp;lt;stack&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;定义栈，以如下形式实现： &lt;code&gt;stack&amp;lt;Type&amp;gt; s;&lt;/code&gt; 其中Type为数据类型（如 int，float,char等）。&lt;/p&gt;
+&lt;p&gt;栈的主要操作：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;s.push(item);		//将item压入栈顶
+s.pop();			//删除栈顶的元素，但不会返回
+s.top();			//返回栈顶的元素，但不会删除
+s.size();			//返回栈中元素的个数
+s.empty();			//检查栈是否为空，如果为空返回true，否则返回false 
+&lt;/code&gt;&lt;/pre&gt;
+">栈</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/zhi-zhen-yi-wen/"" data-c="
           &lt;p&gt;指针&lt;br&gt;
 *号：指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。就像其他变量或常量一样，您必须在使用指针存储其他变量地址之前，对其进行声明。* 运算符，也称为间接访问运算符，返回指针指向存储单元的数值；也称为指向运算符号：&lt;br&gt;
@@ -1165,6 +1180,12 @@ m--;
  printf(&amp;quot;*pa=%d\n&amp;quot;,*pa);//*pa是一个值，就是pa所指向的a的值 
  printf(&amp;quot;pa=%p\n&amp;quot;,pa);//pa是一个地址，pa指向a，所以pa地址与a相同 
  printf(&amp;quot;&amp;amp;*pa=%p\n&amp;quot;,&amp;amp;(*pa));//pa指向a，*pa就是a,&amp;amp;(*pa)即*pa的地址就是a的地址 
+ /*
+ *a=000000000062FE14
+ *pa=1
+ pa=000000000062FE14
+ &amp;amp;*pa=000000000062FE14
+ */
  printf(&amp;quot;\n&amp;quot;); 
  int** ptr;
  ptr=&amp;amp;pa;//由此可知*ptr=pa、**ptr=*pa 
@@ -1172,6 +1193,12 @@ m--;
  printf(&amp;quot;ptr=%p\n&amp;quot;,ptr);//ptr指向的是pa本身地址 
  printf(&amp;quot;*ptr=%p\n&amp;quot;,*ptr);//*ptr指向的是pa指针所指向的地址，就是a的地址
  printf(&amp;quot;**p=%d\n&amp;quot;,**ptr);// 
+ /*
+ &amp;amp;pa=000000000062FE08
+ *ptr=000000000062FE14
+ ptr=000000000062FE08
+ **p=1
+ */
 &lt;/code&gt;&lt;/pre&gt;
 ">指针疑问</a>
       </div>

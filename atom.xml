@@ -2,13 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-20T14:44:30.261Z</updated>
+    <updated>2020-07-21T03:28:05.401Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[栈]]></title>
+        <id>https://lyhlyhaa.github.io/post/zhan/</id>
+        <link href="https://lyhlyhaa.github.io/post/zhan/">
+        </link>
+        <updated>2020-07-21T01:59:07.000Z</updated>
+        <content type="html"><![CDATA[<p>栈（stack）说明及举例：</p>
+<p>使用栈，要先包含头文件 ： <code>#include&lt;stack&gt;</code></p>
+<p>定义栈，以如下形式实现： <code>stack&lt;Type&gt; s;</code> 其中Type为数据类型（如 int，float,char等）。</p>
+<p>栈的主要操作：</p>
+<pre><code>s.push(item);		//将item压入栈顶
+s.pop();			//删除栈顶的元素，但不会返回
+s.top();			//返回栈顶的元素，但不会删除
+s.size();			//返回栈中元素的个数
+s.empty();			//检查栈是否为空，如果为空返回true，否则返回false 
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[指针疑问]]></title>
         <id>https://lyhlyhaa.github.io/post/zhi-zhen-yi-wen/</id>
@@ -38,6 +56,12 @@
  printf(&quot;*pa=%d\n&quot;,*pa);//*pa是一个值，就是pa所指向的a的值 
  printf(&quot;pa=%p\n&quot;,pa);//pa是一个地址，pa指向a，所以pa地址与a相同 
  printf(&quot;&amp;*pa=%p\n&quot;,&amp;(*pa));//pa指向a，*pa就是a,&amp;(*pa)即*pa的地址就是a的地址 
+ /*
+ *a=000000000062FE14
+ *pa=1
+ pa=000000000062FE14
+ &amp;*pa=000000000062FE14
+ */
  printf(&quot;\n&quot;); 
  int** ptr;
  ptr=&amp;pa;//由此可知*ptr=pa、**ptr=*pa 
@@ -45,6 +69,12 @@
  printf(&quot;ptr=%p\n&quot;,ptr);//ptr指向的是pa本身地址 
  printf(&quot;*ptr=%p\n&quot;,*ptr);//*ptr指向的是pa指针所指向的地址，就是a的地址
  printf(&quot;**p=%d\n&quot;,**ptr);// 
+ /*
+ &amp;pa=000000000062FE08
+ *ptr=000000000062FE14
+ ptr=000000000062FE08
+ **p=1
+ */
 </code></pre>
 ]]></content>
     </entry>
