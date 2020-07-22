@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-22T02:14:51.700Z</updated>
+    <updated>2020-07-22T11:59:45.501Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -296,6 +296,12 @@ m--;
 <h1 id="1251-colombian-number">1251  Colombian Number</h1>
 <p>哥伦比亚数，额忘了😬</p>
 <hr>
+<h1 id="1243-bobs-password">1243  Bob's Password</h1>
+<p>这题的思路是谢大的😂<br>
+1.设计一个9x9的矩阵，把每一个点能直接连接的点标记为0，不能连接的标记为-1，要通过别的点才能连接的标记为所需要的点号。<br>
+2.再定义一个标记数组，把已经走过的点标记为1。接下来循环判断就可以了。</p>
+<hr>
+<p>color、buying gifts在B站谢大都讲过思路，就不写了。</p>
 ]]></content>
     </entry>
 </feed>
