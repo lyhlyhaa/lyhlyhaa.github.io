@@ -2,13 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-22T11:59:45.501Z</updated>
+    <updated>2020-07-22T12:28:28.474Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[最短路径算法]]></title>
+        <id>https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/</id>
+        <link href="https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/">
+        </link>
+        <updated>2020-07-22T12:05:34.000Z</updated>
+        <content type="html"><![CDATA[<p>说起来这个算法做过很多次了，学图论的时候写过实验报告，可是现在做题又给忘了，惭愧。</p>
+<hr>
+<h1 id="dijkstra算法">Dijkstra算法</h1>
+<p>1.<strong>初始化</strong>:先找出从源点vo到各终点v的直达路径(Vo,Vk) ,<br>
+即通过一条弧到达的路径。<br>
+2.<strong>选择</strong>:从这些路径中找出一条长度最短的路径(Vo,u) 。<br>
+3.<strong>更新</strong>:然后对其余各条路径进行适当调整:<br>
+若在图中存在弧(u,Vk) ，且(V,U) + (u,Vk) &lt; (Vo,Vk),<br>
+则以路径(Vo,U,Vk) 代替(Vo,Vk) 。<br>
+在调整后的各条路径中，再找长度最短的路径，依此类推。<br>
+设计一个s[]数组，来存已经在最短路径中的点</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[dp]]></title>
         <id>https://lyhlyhaa.github.io/post/dp/</id>
