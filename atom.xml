@@ -2,13 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-21T03:35:28.063Z</updated>
+    <updated>2020-07-22T02:14:51.700Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[dp]]></title>
+        <id>https://lyhlyhaa.github.io/post/dp/</id>
+        <link href="https://lyhlyhaa.github.io/post/dp/">
+        </link>
+        <updated>2020-07-22T01:53:51.000Z</updated>
+        <content type="html"><![CDATA[<p>先是不说人话的概念：dp（动态规划）是求解决策过程最优化的数学方法。利用各个阶段之间的关系，逐个求解，最终求得全局最优解，需要确认原问题与子问题、动态规划状态、边界状态、边界状态结值、状态转移方程<br>
+看不懂啊！！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[栈]]></title>
         <id>https://lyhlyhaa.github.io/post/zhan/</id>
