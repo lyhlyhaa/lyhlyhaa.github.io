@@ -2,13 +2,60 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-23T08:33:36.722Z</updated>
+    <updated>2020-07-26T08:57:06.336Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[最小生成树]]></title>
+        <id>https://lyhlyhaa.github.io/post/zui-xiao-sheng-cheng-shu/</id>
+        <link href="https://lyhlyhaa.github.io/post/zui-xiao-sheng-cheng-shu/">
+        </link>
+        <updated>2020-07-26T07:00:12.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="克鲁斯卡尔算法">克鲁斯卡尔算法：</h1>
+<p>1.把边进行排序，按从从小到大的顺序。<br>
+2.贪心算法，找未加入通路的权值最小的边<br>
+3.判断是否形成环，如果形成，则跳过这一条边，返回第二步，如果没有，则把找到的边加入通路中，返回第二步<br>
+4.当通路中的的边的个数等于点的个数-1，则最小生成树已经形成。</p>
+<p><em>排序可以用sort函数，边的存储可以用结构体数组</em><br>
+<strong>主要是判断是否形成环：</strong><br>
+使用<a href="https://blog.csdn.net/qq_41593380/article/details/81146850">并查集</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[斐波拉契数列]]></title>
+        <id>https://lyhlyhaa.github.io/post/fei-bo-la-qi-shu-lie/</id>
+        <link href="https://lyhlyhaa.github.io/post/fei-bo-la-qi-shu-lie/">
+        </link>
+        <updated>2020-07-24T07:30:17.000Z</updated>
+        <content type="html"><![CDATA[<p>。。。。<br>
+今晚整理</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[骨牌问题（铺地砖）]]></title>
+        <id>https://lyhlyhaa.github.io/post/gu-pai-wen-ti-pu-di-zhuan/</id>
+        <link href="https://lyhlyhaa.github.io/post/gu-pai-wen-ti-pu-di-zhuan/">
+        </link>
+        <updated>2020-07-24T07:14:41.000Z</updated>
+        <content type="html"><![CDATA[<p>暂时看一下别的博客（https://blog.csdn.net/xiangAccepted/article/details/80229187?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param）</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[三色旗问题]]></title>
+        <id>https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/</id>
+        <link href="https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/">
+        </link>
+        <updated>2020-07-24T02:54:57.000Z</updated>
+        <content type="html"><![CDATA[<p>要用到三个指针：一个前指针begin，一个中指针current，一个后指针end，current指针遍历整个数组序列，当</p>
+<p>current指针所指元素为0时，与begin指针所指的元素交换，而后current++，begin++ ；<br>
+current指针所指元素为1时，不做任何交换（即球不动），而后current++ ；<br>
+current指针所指元素为2时，与end指针所指的元素交换，而后，current指针不动，end-- 。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[计算机网络]]></title>
         <id>https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/</id>
@@ -188,164 +235,6 @@ s.empty();			//检查栈是否为空，如果为空返回true，否则返回fals
     return BSTInsert(p-&gt;rchild, element); // 递归  
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[GitHub Page+Gridea搭建博客]]></title>
-        <id>https://lyhlyhaa.github.io/post/github-pagegridea-da-jian-bo-ke/</id>
-        <link href="https://lyhlyhaa.github.io/post/github-pagegridea-da-jian-bo-ke/">
-        </link>
-        <updated>2020-07-18T11:31:46.000Z</updated>
-        <content type="html"><![CDATA[<p>起初我打算用github page和hexo搭博客，折腾了半天终于好了，但是第二天，我突然发现他不能添加新文章了，我当时心态就炸了，hexo g，hexo d 命令都没报错，可是网页就是没反应，一开始还以为是github有延迟，但是我本地预览也没有变化就很搞心态。所以就放弃了。后来发现了Gridea，简单无比。<br>
-接下来是正文</p>
-<hr>
-<p>1.首先要创建一个github账号，这应该很简单。<br>
-2.创建一个名为 自己用户名.github.io 的仓库，如图：<br>
-<img src="https://lyhlyhaa.github.io/post-images/1595073914323.png" alt="" loading="lazy"><br>
-3.创建完毕之后到这个界面<br>
-<img src="https://lyhlyhaa.github.io/post-images/1595073947839.png" alt="" loading="lazy"><br>
-点击settings，一直往下翻，找到GitHub Pages<br>
-<img src="https://lyhlyhaa.github.io/post-images/1595074042781.png" alt="" loading="lazy"><br>
-点击choose a theme<br>
-<img src="https://lyhlyhaa.github.io/post-images/1595074364625.png" alt="" loading="lazy"><br>
-选一个主题，select就行，之后你就拥有了了一个简单的博客，域名就是你刚刚创建的仓库的名字。<br>
-如果你想全部都自己完成的话，那你可以下载一个git客户端，把你这个仓库clone下来，然后在你自己本地写html文件，之后push上去就ok了。不过这样还是太麻烦，所以我们要继续往下。<br>
-4.下载Gridea，直接搜就行。下载安装后，点击远程，填上你的信息<br>
-<img src="https://lyhlyhaa.github.io/post-images/1595074816460.png" alt="" loading="lazy"><br>
-第一个域名和你的仓库名一样，分支默认master，仓库用户名就是你github用户名，邮箱就是你github账号创建时用的邮箱，令牌在github中生成，随便找了个<a href="https://blog.csdn.net/u014175572/article/details/55510825">教程</a>,最后的CNAME，如果你有自己的域名的话，就填上你自己的域名，记得在你的域名的控制台添加两条解析记录，打开cmd，ping你的 http://xxxx.github.io 的ip地址，填入进去。第二个记录类型是CNAME，CNAME的记录值是：你的用户名.http://github.io 这里千万别弄错了。<br>
-<img src="https://lyhlyhaa.github.io/post-images/1595075665549.png" alt="" loading="lazy"><br>
-（这里因为用的是另一个号，所以用户名为lyhlyhaa）<br>
-检测远程链接，成功之后保存，同步，成功就ok了<br>
-5.之后就可以在Gridea上写文章了，写完之后同步就行。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[优先队列&&贪心算法]]></title>
-        <id>https://lyhlyhaa.github.io/post/you-xian-dui-lie/</id>
-        <link href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/">
-        </link>
-        <updated>2020-07-14T02:46:41.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="优先队列">优先队列</h1>
-<p>首先要包含头文件</p>
-<pre><code>#include&lt;queue&gt;
-</code></pre>
-<p>定义：</p>
-<pre><code>priority_queue&lt;Type, Container, Functional&gt;
-</code></pre>
-<p>//升序队列</p>
-<pre><code>priority_queue &lt;int,vector&lt;int&gt;,greater&lt;int&gt; &gt; q;
-</code></pre>
-<p>//降序队列</p>
-<pre><code>priority_queue &lt;int,vector&lt;int&gt;,less&lt;int&gt; &gt;q;
-</code></pre>
-<p>和队列基本操作相同:<br>
-top 访问队头元素<br>
-empty 队列是否为空<br>
-size 返回队列内元素个数<br>
-push 插入元素到队尾 (并排序)<br>
-emplace 原地构造一个元素并插入队列<br>
-pop 弹出队头元素<br>
-swap 交换内容</p>
-<h1 id="贪心算法">贪心算法</h1>
-<p><img src="https://lyhlyhaa.github.io/post-images/1594901952410.png" alt="" loading="lazy"><br>
-<a href="https://blog.nowcoder.net/n/c3df2ee180fe4657b64ce09c571c99bc">原博客</a><br>
-发现一个说的很好的博客<a href="https://blog.csdn.net/weixin_44820625/article/details/104088362">贪心算法总结</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[程设]]></title>
-        <id>https://lyhlyhaa.github.io/post/cheng-she/</id>
-        <link href="https://lyhlyhaa.github.io/post/cheng-she/">
-        </link>
-        <updated>2020-07-11T03:05:21.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="1127数列">1127数列</h1>
-<p>1.刚开始没有找规律，先是一个一个往后找，超时。然后另一种方法开了一个数组，全部存到数组里，内存超限了。之后找到规律，在一段时间的无序后，会开始循环，循环的内容可以自己定（从1，2开始或者从4，8开始等等）<br>
-2.找到规律后考虑两种特殊情况，<em>a或者b中有0，a=b=1</em>，单独处理，其他的按题循环，找到循环开始的数（例如1，2），则跳出循环。对循环数组长度取余来获得所求的值。在循环中还要考虑出现5，乘起来出现整10的情况。</p>
-<hr>
-<h1 id="1263-矩形面积的并">1263 矩形面积的并</h1>
-<p>1.相交矩形的四边</p>
-<pre><code>xc1 = max(min(x1,x2),min(x3,x4));
-xc2 = min(max(x1,x2),max(x3,x4));
-yc1 = max(min(y1,y2),min(y3,y4));
-yc2 = min(max(y1,y2),max(y3,y4));
-</code></pre>
-<p>2.判断矩形是否相交</p>
-<pre><code>xc1 &lt;= xc2&amp;&amp;yc1 &lt;= yc2
-</code></pre>
-<hr>
-<h1 id="1252-matrix-word">1252 Matrix Word</h1>
-<p>1.判断矩阵中该行以及该列是否有一样的字符</p>
-<pre><code>int j(int i, int j,char c){
-	for(int k = 0; k &lt; m; k++)
-if(mat[i][k] == c &amp;&amp; k != j) return 0;
-	for(int k = 0; k &lt; n; k++)
-if(mat[k][j] == c &amp;&amp; k != i) return 0;
-	return 1;
-}
-</code></pre>
-<p>2.遍历矩阵，如果遍历到的啊a[i][j]是行，列中唯一的，则输出</p>
-<hr>
-<h1 id="1251哥伦比亚数">1251哥伦比亚数</h1>
-<p>1.如果n是自我数，则必定有一个小于n的数m+m的数码之和等于n，由题目可知m的数码之和不会超过81，由此可得：从后往前开始找a，因为数码和最大81，所以a&gt;(原数字n)-81</p>
-<hr>
-<h1 id="1253robot">1253Robot</h1>
-<p>有N个任务需要Robot去完成，这个N个任务的地点在一个数轴上，坐标为1到n。<br>
-每个任务需要先完成ai个任务才能开始去做。<br>
-Robot可以在直线上左右移动，初始位置位于任务1的地点，<br>
-方向朝向数轴正方向。请问Robot最少转换多少次方向可以完成所有的任务。</p>
-<p>1.已经完成的任务数  &gt;= ai<br>
-2.先从左到右遍历，设置一个标记数组，符合条件置1<br>
-3.如果没有全部完成，则从右到左遍历</p>
-<hr>
-<h1 id="1262fish">1262Fish</h1>
-<p>1.开始用数组做，超时了。<br>
-2.使用<a href="https://lyhlyhaa.github.io/post/you-xian-dui-lie/">优先队列</a>和贪心算法（其实并不是很明白贪心），定义一个结构体</p>
-<pre><code>struct node
-{
-    int a,b;
-    friend bool operator &lt;(node A,node B)//价值高的优先级高
-    {
-        return A.a&lt;B.a;
-    }
-};
-</code></pre>
-<p>a是第一次捕鱼数，b是每次减少的捕鱼数，利用优先队列将输入的值按a排序，每次改变a的值，相当于每次都是第一次捕鱼</p>
-<pre><code>ans+=now.a;
-now.a = max(0,now.a-now.b);
-m--;
-</code></pre>
-<hr>
-<h1 id="1281-cute-string">1281  Cute String</h1>
-<p>1.条件：单词（每个单词之间用一个空格隔开）数量超过10，或者句子中字母种类（不区分大小写）超过10个则不成立<br>
-2.非常简单，就不写了😀</p>
-<hr>
-<h1 id="1294-enquiry">1294  Enquiry</h1>
-<p>1.直接打表解决🙏<br>
-2.有个小问题，区分字符串和字符数组<br>
-<img src="https://lyhlyhaa.github.io/post-images/1594888443566.png" alt="" loading="lazy"></p>
-<hr>
-<h1 id="1280-string-hash">1280  String Hash</h1>
-<p>1.思路比较简单，就26进制转换10进制，取余就行。但是不可以完全转换之后再去取余，数字太大，<br>
-所以要在每一位转换的时候都取余一次，加起来就是答案</p>
-<hr>
-<h1 id="1272-robot">1272  Robot</h1>
-<p>1.成立条件，四个方向必有一方是为0的，然后暴力就ok</p>
-<hr>
-<h1 id="12791295">1279&amp;&amp;1295</h1>
-<p>之前做过，直接交了以前的代码</p>
-<hr>
-<h1 id="1172-因子和">1172 因子和</h1>
-<p>没什么好说的，可能是最简单的一个</p>
-<hr>
-<h1 id="1251-colombian-number">1251  Colombian Number</h1>
-<p>哥伦比亚数，额忘了😬</p>
-<hr>
-<h1 id="1243-bobs-password">1243  Bob's Password</h1>
-<p>这题的思路是谢大的😂<br>
-1.设计一个9x9的矩阵，把每一个点能直接连接的点标记为0，不能连接的标记为-1，要通过别的点才能连接的标记为所需要的点号。<br>
-2.再定义一个标记数组，把已经走过的点标记为1。接下来循环判断就可以了。</p>
-<hr>
-<p>color、buying gifts在B站谢大都讲过思路，就不写了。</p>
 ]]></content>
     </entry>
 </feed>
