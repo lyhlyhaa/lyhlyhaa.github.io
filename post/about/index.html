@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>关于 | 混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1595753818894">
+<link rel="shortcut icon" href="/favicon.ico?v=1595836541417">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1026,7 +1026,26 @@
 4.当通路中的的边的个数等于点的个数-1，则最小生成树已经形成。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;排序可以用sort函数，边的存储可以用结构体数组&lt;/em&gt;&lt;br&gt;
 &lt;strong&gt;主要是判断是否形成环：&lt;/strong&gt;&lt;br&gt;
-使用&lt;a href=&#34;https://blog.csdn.net/qq_41593380/article/details/81146850&#34;&gt;并查集&lt;/a&gt;&lt;/p&gt;
+使用&lt;a href=&#34;https://blog.csdn.net/qq_41593380/article/details/81146850&#34;&gt;并查集&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;初始化&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;void init(int n)
+{
+    for (int i = 1; i &amp;lt;= n; ++i)
+        fa[i] = i;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;路径压缩查找&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;int find(int x)
+{
+    return x == fa[x] ? x : (fa[x] = find(fa[x]));//
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;合并&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ivoid merge(int i, int j)
+{
+    fa[find(i)] = find(j);
+}//合并
+&lt;/code&gt;&lt;/pre&gt;
 ">最小生成树</a>
       </div>
       
