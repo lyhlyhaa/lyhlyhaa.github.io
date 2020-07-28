@@ -2,13 +2,74 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-28T08:39:46.274Z</updated>
+    <updated>2020-07-28T13:21:59.993Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[计网-物理层]]></title>
+        <id>https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/</id>
+        <link href="https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/">
+        </link>
+        <updated>2020-07-28T11:44:36.000Z</updated>
+        <content type="html"><![CDATA[<p>1.假定某信道受奈氏准则限制的最高码元速率为20000码元/秒。如果采用振幅调制，把码元的振幅划分为16个不同等级来传送，那么可以获得多高的数据率（bit/s）？<br>
+解：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><mi>R</mi><mo>∗</mo><mi>L</mi><mi>o</mi><mi>g</mi><mn>2</mn><mi mathvariant="normal">（</mi><mn>16</mn><mi mathvariant="normal">）</mi><mo>=</mo><mn>20000</mn><mi>b</mi><mi mathvariant="normal">/</mi><mi>s</mi><mo>∗</mo><mn>4</mn><mo>=</mo><mn>80000</mn><mi>b</mi><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">C=R*Log2（16）=20000b/s*4=80000b/s
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span><span class="mord cjk_fallback">（</span><span class="mord">1</span><span class="mord">6</span><span class="mord cjk_fallback">）</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathdefault">b</span><span class="mord">/</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">8</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathdefault">b</span><span class="mord">/</span><span class="mord mathdefault">s</span></span></span></span></span></p>
+<p>最基本的二元制调制方法有以下几种：<br>
+调幅(AM)：载波的振幅随基带数字信号而变化。<br>
+调频(FM)：载波的频率随基带数字信号而变化。<br>
+调相(PM) ：载波的初始相位随基带数字信号而变化。<br>
+调制方法就是改变码元携带的比特的信息，码元传输速率一般固定，调制之后，传输比特的速率就上升了</p>
+<hr>
+<p>2.用香农公式计算一下，假定信道带宽为3100Hz，最大信息传输速率为35kbit/s，那么若想使最大信息传输速率增加60％，问信噪比S/N应增大到多少倍？如果在刚才计算出的基础上将信噪比S/N再增大到10倍，问最大信息速率能否再增加20％？<br>
+解：<br>
+C=Wlog2(1+S/N)b/s-àSN1=2*（C1/W）-1=2*（35000/3100）-1<br>
+SN2=2*（C2/W）-1=2*（1.6<em>C1/w）-1=2</em>（1.6<em>35000/3100）-1<br>
+SN2/SN1=100信噪比应增大到约100倍。C3=Wlong2（1+SN3）=Wlog2（1+10</em>SN2）C3/C2=18.5%如果在此基础上将信噪比S/N再增大到10倍，最大信息通率只能再增加18.5%左右</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">香</mi><mi mathvariant="normal">农</mi><mi mathvariant="normal">公</mi><mi mathvariant="normal">式</mi><mi mathvariant="normal">：</mi><mi>C</mi><mo>=</mo><mi>W</mi><mi>l</mi><mi>o</mi><mi>g</mi><mn>2</mn><mo>(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mi mathvariant="normal">/</mi><mi>N</mi><mo>)</mo><mo>(</mo><mi>b</mi><mi>i</mi><mi>t</mi><mi mathvariant="normal">/</mi><mi>s</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">香农公式：C = W log2(1+S/N) (bit/s)   
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">香</span><span class="mord cjk_fallback">农</span><span class="mord cjk_fallback">公</span><span class="mord cjk_fallback">式</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord">/</span><span class="mord mathdefault">s</span><span class="mclose">)</span></span></span></span></span></p>
+<p>W 为信道的带宽（以 Hz 为单位）<br>
+信噪比（dB）：10 log10(S/N) (dB)<br>
+S 为信道内所传信号的平均功率；N 为信道内部的高斯噪声功率</p>
+<hr>
+<p>3.　假定有一种双绞线的衰减是0.7dB/km（在1kHz时），若容许有20dB的衰减，试问使用这种双绞线的链路的工作距离有多长？如果要使这种双绞线的工作距离增大到100公里，问应当使衰减降低到多少？<br>
+解：使用这种双绞线的链路的工作距离为=20/0.7=28.6km   衰减应降低到20/100=0.2db</p>
+<hr>
+<p>4.共有四个站进行码分多址CDMA通信。四个站的码片序列为：<br>
+A：（–1–1–1＋1＋1–1＋1＋1）<br>
+B：（–1–1＋1–1＋1＋1＋1–1）<br>
+C：（–1＋1–1＋1＋1＋1–1–1）<br>
+D：（–1＋1–1–1–1–1＋1–1）<br>
+现收到这样的码片序列:（–1＋1–3＋1–1–3＋1＋1）。问哪个站发送数据了？发送数据的站发送的是1还是0？<br>
+解：<br>
+S•A=（＋1－1＋3＋1－1＋3＋1＋1）／8=1，A发送1<br>
+S•B=（＋1－1－3－1－1－3＋1－1）／8=－1，B发送0<br>
+S•C=（＋1＋1＋3＋1－1－3－1－1）／8=0，C无发送<br>
+S•D=（＋1＋1＋3－1＋1＋3＋1－1）／8=1，D发送1</p>
+<p>码片序列：<br>
+每个站被指派一个唯一的 m bit 码片序列。<br>
+如发送比特 1，则发送自己的 m bit 码片序列。<br>
+如发送比特 0，则发送该码片序列的二进制反码<br>
+为表示方便，将0写为-1，1写为+1</p>
+<p><strong>注意：两个不同站的码片序列正交</strong><br>
+不同站的码片向量规格化内积为0<br>
+任何一个码片向量和该码片向量自己的规格化内积都是1 。<br>
+一个码片向量和该码片反码的向量的规格化内积值是 –1。</p>
+<hr>
+<p>5.　试比较ADSL、HFC以及FTTx接入技术的优缺点。解：<br>
+ADSL技术就是用数字技术对现有的模拟电话用户线进行改造，使它能够承载宽带业务。成本低，易实现，但带宽和质量差异性大。HFC网的最大的优点具有很宽的频带，并且能够利用已经有相当大的覆盖面的有线电视网。要将现有的450MHz单向传输的有线电视网络改造为750MHz双向传输的HFC网需要相当的资金和时间。FTTx（光纤到……）这里字母x可代表不同意思。可提供最好的带宽和质量、但现阶段线路和工程成本太大。</p>
+<p>补充问答题1、怎样更改自己电脑的MAC地址（用文字描述操作步骤）解：</p>
+<p>打开设备管理器<br>
+右键点击适配器。从菜单中点击属性来打开网络适配器的属性窗口。<br>
+点击高级选项卡。找到“网络地址”或“本地管理地址”条目。点击该条目，将在右侧看到“值”（Value）的字样和输入框。点击单选按钮来启用“值”（Value）的输入框。<br>
+输入新的MAC地址。MAC地址的格式是，不包含破折号和冒号的12位数值。<br>
+重启计算机来启用变更。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[最小生成树]]></title>
         <id>https://lyhlyhaa.github.io/post/zui-xiao-sheng-cheng-shu/</id>
@@ -83,6 +144,7 @@ current指针所指元素为2时，与end指针所指的元素交换，而后，
         <updated>2020-07-23T08:31:33.000Z</updated>
         <content type="html"><![CDATA[<p><em>图文无关😂</em></p>
 <hr>
+<h2 id="一-选择题">一、选择题</h2>
 <p>(1)	Socket是由（ 　D    ）组成的。<br>
 A.主机名   <strong>B. MAC地址及端口号</strong><br>
 C.IP地址以及MAC地址       D. IP地址及端口号<br>
@@ -111,9 +173,17 @@ C. 将应用程序下载到本地执行；　　　　　　D.许多终端共享
 (9)一个16端口的二层以太交换机，冲突域和广播域的个数分别是(      )。<br>
 　　　A. １，１        B . １６，１６      C. １，１６        <strong>D . １６，１</strong><br>
 <img src="https://lyhlyhaa.github.io/post-images/1595924992303.png" alt="" loading="lazy"></p>
-<p>二、	填空题（每题2分，共20分）<br>
-<img src="https://lyhlyhaa.github.io/post-images/1595925256313.png" alt="" loading="lazy"><br>
-1.</p>
+<h2 id="二-填空题每题2分共20分">二、	填空题（每题2分，共20分）</h2>
+<p>1、假设某信道能传输最高码元速率为1200码元/秒，使用幅度-相位调制技术，由幅度和相位组成32种码元，那么它在信道上可以达到数据传输速率是_________波特 。<br>
+2、128二进制位的IPv6地址2819:00AF:00000:0000:0035:0CB2：B217，我们使用IPv6的压缩表示方式可将它记_____________ 。<br>
+3、在路由信息协议RIP中，更新路由表依据是：若相邻X路由器说“我到目的网络Y距离为N，则收到此信息K路由器知道“若将下一站路由器为X，则我的网络Y的距离为________ ”。<br>
+4、在TCP中首部的可选项中最多可指明已收到的信息块___________个字节块。<br>
+5、设有下面４个网络：170.58.129.0/24、176.58.130.0/24、176.58.132.0/24和176.58.133.0/24，如果进行路由汇聚，能覆盖4条路由地址是______________________。<br>
+6、若在发送端HDLC帧的数据部分出现比特串是“010111110101”，为了解决透明问题，采用比特填充后，     则接收端收到的是____________ 。<br>
+7、A向B发送消息Y，并使用公钥体制进行数字签名。 设私有密秘钥SKA和公开秘钥PKA, E表示加密算法，    D表示解密算法，则B要保留的证据是____________。<br>
+8、SNMP规定了5种PDU，当代理者进程向 管理者 进程报告发生的事件是采用___________报文。<br>
+9、现有  IP Address   193.18.14.8,查表知道 IP地址在TLV编码中T字段值是40，那么该地址的TLV编码是___________。<br>
+10、在TCP协议中，采用___________来区分不同的应用进程。</p>
 ]]></content>
     </entry>
     <entry>
@@ -211,64 +281,6 @@ s.empty();			//检查栈是否为空，如果为空返回true，否则返回fals
  ptr=000000000062FE08
  **p=1
  */
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[二叉树]]></title>
-        <id>https://lyhlyhaa.github.io/post/er-cha-shu/</id>
-        <link href="https://lyhlyhaa.github.io/post/er-cha-shu/">
-        </link>
-        <updated>2020-07-20T02:39:20.000Z</updated>
-        <content type="html"><![CDATA[<p>首先说一下一些基础知识。（查了一下，树的高度和深度好像有不同的说法，似乎初始值有 0 有 1）</p>
-<h1 id="基础知识">基础知识</h1>
-<p><em><strong>树的高度</strong></em>：<br>
-节点的深度是根节点到这个节点所经历的边的个数<br>
-节点的高度是该节点到叶子节点的最长路径（边数）<br>
-树的高度等于根节点的高度<br>
-<img src="https://lyhlyhaa.github.io/post-images/1595213437405.png" alt="" loading="lazy"><br>
-（好像有些是从1开始的）<br>
-递归计算高度</p>
-<pre><code>int height(BitNode *root){
-	if(root==NULL) return 0;
-	else 
-	return max(height(root-&gt;lchild),height(root-&gt;rchild))+1;
-}//求二叉树的高度
-</code></pre>
-<h1 id="二叉查找树">二叉查找树</h1>
-<h2 id="定义">定义</h2>
-<p><em><strong>二叉查找树</strong></em><br>
-一棵空树，或者是具有下列性质的二叉树：<br>
-（1）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；<br>
-（2）若右子树不空，则右子树上所有结点的值均大于它的根结点的值；<br>
-（3）左、右子树也分别为二叉排序树；<br>
-（4）没有键值相等的结点。<br>
-可以用递归建树，似乎涉及二叉树的题目，大部分是递归。</p>
-<h2 id="建树">建树</h2>
-<p>要建立一个二叉查找树，首先要定义一个结构体，一般来说定义的结构体都是一样的；</p>
-<pre><code>typedef struct BitNode{
-   int data;
-   struct BitNode *lchild, *rchild; 
-}BitNode,*BiTree;
-</code></pre>
-<p>一个数据域，还有左右节点。<br>
-插入函数：</p>
-<pre><code>bool BSTInsert(BitNode *p, int element)  //插入函数 
-{  
-    if(NULL == p) // 空树  
-    {  
-        p = new BitNode;  
-        p-&gt;data = element;  
-        p-&gt;lchild = p-&gt;rchild = NULL;  
-        return true;  
-    }  
-    if(element == p-&gt;data) // BST中不能有相等的值  
-        return false;  
-    if(element &lt; p-&gt;data)  // 递归  
-        return BSTInsert(p-&gt;lchild, element);  
-
-    return BSTInsert(p-&gt;rchild, element); // 递归  
-}
 </code></pre>
 ]]></content>
     </entry>

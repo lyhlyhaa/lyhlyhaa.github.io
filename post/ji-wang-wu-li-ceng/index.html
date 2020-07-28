@@ -8,7 +8,7 @@
 <meta name="keywords" content="&lt;meta name=&#34;keywords&#34; content=&#34;湘潭大学程设&#34;/&gt;">
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
-<title>最短路径算法 | 混子协会会长</title>
+<title>计网-物理层 | 混子协会会长</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1595942516171">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="最短路径算法" />
-  <meta name="keywords" content="算法,数据结构" />
+  <meta name="description" content="计网-物理层" />
+  <meta name="keywords" content="计网" />
 </head>
 
 <body>
@@ -190,8 +190,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -234,191 +233,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#dijkstra%E7%AE%97%E6%B3%95">Dijkstra算法</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -506,8 +320,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/">
-      最短路径算法
+    <a class="post-title-link" href="https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/">
+      计网-物理层
     </a>
   </h1>
   <div class="post-meta">
@@ -515,7 +329,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-07-22 20:05:34">2020-07-22</span>
+      <span class="publish-time" data-t="2020-07-28 19:44:36">2020-07-28</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -524,14 +338,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://lyhlyhaa.github.io/tag/Zli6A4xUv/">
-        <span>算法</span>
-      </a>、
-      
-      
-      
-      <a href="https://lyhlyhaa.github.io/tag/5w0uDkeF5/">
-        <span>数据结构</span>
+      <a href="https://lyhlyhaa.github.io/tag/VCWDD0xto/">
+        <span>计网</span>
       </a>
       
       
@@ -540,17 +348,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>5<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>183<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1233<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/zui-duan-lu-jing-suan-fa/" data-flag-title="最短路径算法" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/ji-wang-wu-li-ceng/" data-flag-title="计网-物理层" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -559,17 +367,59 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>说起来这个算法做过很多次了，学图论的时候写过实验报告，可是现在做题又给忘了，惭愧。</p>
+              <p>1.假定某信道受奈氏准则限制的最高码元速率为20000码元/秒。如果采用振幅调制，把码元的振幅划分为16个不同等级来传送，那么可以获得多高的数据率（bit/s）？<br>
+解：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><mi>R</mi><mo>∗</mo><mi>L</mi><mi>o</mi><mi>g</mi><mn>2</mn><mi mathvariant="normal">（</mi><mn>16</mn><mi mathvariant="normal">）</mi><mo>=</mo><mn>20000</mn><mi>b</mi><mi mathvariant="normal">/</mi><mi>s</mi><mo>∗</mo><mn>4</mn><mo>=</mo><mn>80000</mn><mi>b</mi><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">C=R*Log2（16）=20000b/s*4=80000b/s
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span><span class="mord cjk_fallback">（</span><span class="mord">1</span><span class="mord">6</span><span class="mord cjk_fallback">）</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathdefault">b</span><span class="mord">/</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">8</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathdefault">b</span><span class="mord">/</span><span class="mord mathdefault">s</span></span></span></span></span></p>
+<p>最基本的二元制调制方法有以下几种：<br>
+调幅(AM)：载波的振幅随基带数字信号而变化。<br>
+调频(FM)：载波的频率随基带数字信号而变化。<br>
+调相(PM) ：载波的初始相位随基带数字信号而变化。<br>
+调制方法就是改变码元携带的比特的信息，码元传输速率一般固定，调制之后，传输比特的速率就上升了</p>
 <hr>
-<h1 id="dijkstra算法">Dijkstra算法</h1>
-<p>1.<strong>初始化</strong>:先找出从源点vo到各终点v的直达路径(Vo,Vk) ,<br>
-即通过一条弧到达的路径。<br>
-2.<strong>选择</strong>:从这些路径中找出一条长度最短的路径(Vo,u) 。<br>
-3.<strong>更新</strong>:然后对其余各条路径进行适当调整:<br>
-若在图中存在弧(u,Vk) ，且(V,U) + (u,Vk) &lt; (Vo,Vk),<br>
-则以路径(Vo,U,Vk) 代替(Vo,Vk) 。<br>
-在调整后的各条路径中，再找长度最短的路径，依此类推。<br>
-设计一个s[]数组，来存已经在最短路径中的点</p>
+<p>2.用香农公式计算一下，假定信道带宽为3100Hz，最大信息传输速率为35kbit/s，那么若想使最大信息传输速率增加60％，问信噪比S/N应增大到多少倍？如果在刚才计算出的基础上将信噪比S/N再增大到10倍，问最大信息速率能否再增加20％？<br>
+解：<br>
+C=Wlog2(1+S/N)b/s-àSN1=2*（C1/W）-1=2*（35000/3100）-1<br>
+SN2=2*（C2/W）-1=2*（1.6<em>C1/w）-1=2</em>（1.6<em>35000/3100）-1<br>
+SN2/SN1=100信噪比应增大到约100倍。C3=Wlong2（1+SN3）=Wlog2（1+10</em>SN2）C3/C2=18.5%如果在此基础上将信噪比S/N再增大到10倍，最大信息通率只能再增加18.5%左右</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">香</mi><mi mathvariant="normal">农</mi><mi mathvariant="normal">公</mi><mi mathvariant="normal">式</mi><mi mathvariant="normal">：</mi><mi>C</mi><mo>=</mo><mi>W</mi><mi>l</mi><mi>o</mi><mi>g</mi><mn>2</mn><mo>(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mi mathvariant="normal">/</mi><mi>N</mi><mo>)</mo><mo>(</mo><mi>b</mi><mi>i</mi><mi>t</mi><mi mathvariant="normal">/</mi><mi>s</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">香农公式：C = W log2(1+S/N) (bit/s)   
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">香</span><span class="mord cjk_fallback">农</span><span class="mord cjk_fallback">公</span><span class="mord cjk_fallback">式</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord">/</span><span class="mord mathdefault">s</span><span class="mclose">)</span></span></span></span></span></p>
+<p>W 为信道的带宽（以 Hz 为单位）<br>
+信噪比（dB）：10 log10(S/N) (dB)<br>
+S 为信道内所传信号的平均功率；N 为信道内部的高斯噪声功率</p>
+<hr>
+<p>3.　假定有一种双绞线的衰减是0.7dB/km（在1kHz时），若容许有20dB的衰减，试问使用这种双绞线的链路的工作距离有多长？如果要使这种双绞线的工作距离增大到100公里，问应当使衰减降低到多少？<br>
+解：使用这种双绞线的链路的工作距离为=20/0.7=28.6km   衰减应降低到20/100=0.2db</p>
+<hr>
+<p>4.共有四个站进行码分多址CDMA通信。四个站的码片序列为：<br>
+A：（–1–1–1＋1＋1–1＋1＋1）<br>
+B：（–1–1＋1–1＋1＋1＋1–1）<br>
+C：（–1＋1–1＋1＋1＋1–1–1）<br>
+D：（–1＋1–1–1–1–1＋1–1）<br>
+现收到这样的码片序列:（–1＋1–3＋1–1–3＋1＋1）。问哪个站发送数据了？发送数据的站发送的是1还是0？<br>
+解：<br>
+S•A=（＋1－1＋3＋1－1＋3＋1＋1）／8=1，A发送1<br>
+S•B=（＋1－1－3－1－1－3＋1－1）／8=－1，B发送0<br>
+S•C=（＋1＋1＋3＋1－1－3－1－1）／8=0，C无发送<br>
+S•D=（＋1＋1＋3－1＋1＋3＋1－1）／8=1，D发送1</p>
+<p>码片序列：<br>
+每个站被指派一个唯一的 m bit 码片序列。<br>
+如发送比特 1，则发送自己的 m bit 码片序列。<br>
+如发送比特 0，则发送该码片序列的二进制反码<br>
+为表示方便，将0写为-1，1写为+1</p>
+<p><strong>注意：两个不同站的码片序列正交</strong><br>
+不同站的码片向量规格化内积为0<br>
+任何一个码片向量和该码片向量自己的规格化内积都是1 。<br>
+一个码片向量和该码片反码的向量的规格化内积值是 –1。</p>
+<hr>
+<p>5.　试比较ADSL、HFC以及FTTx接入技术的优缺点。解：<br>
+ADSL技术就是用数字技术对现有的模拟电话用户线进行改造，使它能够承载宽带业务。成本低，易实现，但带宽和质量差异性大。HFC网的最大的优点具有很宽的频带，并且能够利用已经有相当大的覆盖面的有线电视网。要将现有的450MHz单向传输的有线电视网络改造为750MHz双向传输的HFC网需要相当的资金和时间。FTTx（光纤到……）这里字母x可代表不同意思。可提供最好的带宽和质量、但现阶段线路和工程成本太大。</p>
+<p>补充问答题1、怎样更改自己电脑的MAC地址（用文字描述操作步骤）解：</p>
+<p>打开设备管理器<br>
+右键点击适配器。从菜单中点击属性来打开网络适配器的属性窗口。<br>
+点击高级选项卡。找到“网络地址”或“本地管理地址”条目。点击该条目，将在右侧看到“值”（Value）的字样和输入框。点击单选按钮来启用“值”（Value）的输入框。<br>
+输入新的MAC地址。MAC地址的格式是，不包含破折号和冒号的12位数值。<br>
+重启计算机来启用变更。</p>
 
             </div>
             
@@ -582,7 +432,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/" title="最短路径算法">https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/</a>
+      <a href="https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/" title="计网-物理层">https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -591,23 +441,17 @@
   </ul>
   <div class="tags">
     
-      <a href="https://lyhlyhaa.github.io/tag/Zli6A4xUv/"># 算法</a>
-    
-      <a href="https://lyhlyhaa.github.io/tag/5w0uDkeF5/"># 数据结构</a>
+      <a href="https://lyhlyhaa.github.io/tag/VCWDD0xto/"># 计网</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="计算机网络（考试）" href="https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/">计算机网络（考试）</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="计算机网络（考试）" href="https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="dp" href="https://lyhlyhaa.github.io/post/dp/">dp</a>
-        <a class="nav-mobile-next" title="dp" href="https://lyhlyhaa.github.io/post/dp/">下一篇</a>
+        <a class="nav-pc-next" title="最小生成树" href="https://lyhlyhaa.github.io/post/zui-xiao-sheng-cheng-shu/">最小生成树</a>
+        <a class="nav-mobile-next" title="最小生成树" href="https://lyhlyhaa.github.io/post/zui-xiao-sheng-cheng-shu/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
