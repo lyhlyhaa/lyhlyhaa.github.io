@@ -2,13 +2,60 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-28T13:25:13.710Z</updated>
+    <updated>2020-07-29T07:39:22.865Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[计网-链路层]]></title>
+        <id>https://lyhlyhaa.github.io/post/ji-wang-lian-lu-ceng/</id>
+        <link href="https://lyhlyhaa.github.io/post/ji-wang-lian-lu-ceng/">
+        </link>
+        <updated>2020-07-29T02:41:35.000Z</updated>
+        <content type="html"><![CDATA[<p>作业三</p>
+<ol>
+<li>要发送的数据为101110。采用CRC的生成 多项式是P（X）＝X3＋1。试求应添加在数据后面的余数<br>
+解：<br>
+被除数为101110000，除数为1001，得到余数为011。<br>
+<strong>CRC校验码</strong><br>
+在发送端，先把数据划分为组。假定每组 k 个比特。<br>
+假设待传送的一组数据 M = 101001（现在 k = 6）。我们在数据M 的后面再添加供差错检测用的 n 位冗余码一起发送。<br>
+用二进制的模 2 运算进行 2n 乘 M 的运算，这相当于在 M 后面添加 n 个 0。<br>
+得到的 (k + n) 位的新数Mx除以事先选定好的长度为 (n + 1) 位的除数 P，得出商是 Q 而余数是 R，余数 R 比除数 P 少1 位，即 R 是 n 位,为冗余码[^补充]。<br>
+[^补充]：在数据后面添加上的冗余码称为帧检验序列 FCS (Frame Check Sequence)<br>
+<img src="https://lyhlyhaa.github.io/post-images/1596007436517.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1596007443448.png" alt="" loading="lazy"></li>
+</ol>
+<hr>
+<ol>
+<li>PPP协议使用同步传输技术传送比特串 0110111111111100。试问经过零比特填充后变成 怎样的比特串？若接收端收到的PPP帧的数据部 分是0001110111110111110110，问删除发送端加 入的零比特后变成怎样的比特串？<br>
+解：<br>
+011011111  11111 00    011011111011111000 0001110111110111110110    000111011111 11111 110<br>
+<strong>零比特填充</strong>：在发送端，只要发现有 5 个连续 1，则立即填入一个 0。接收端对帧中的比特流进行扫描。每当发现 5 个连续1时，就把这 5 个连续 1 后的一个 0 删除，还原信息 。</li>
+</ol>
+<p>3.　 假定1km长的CSMA/CD网络的数据率为 1Gbit/s。设信号在网络上的传播速率为 200000km/s。求能够使用此协议的最短帧长。<br>
+解：对于1km电缆，单程传播时间为1/200000=5为微秒，来回路程传播时间为10微秒，为了能够按照CSMA/CD工作，最小帧的发射时间不能小于10微秒，以Gb/s速率工作，10微秒可以发送的比特数等于10*10<sup>-6/1*10</sup>-9=10000,因此，最短帧是10000位或1250字节长<br>
+ <br>
+4. 以太网上只有两个站，它们同时发送数 据，产生了碰撞。于是按截断二进制指数退避算 法进行重传。重传次数记为i，i＝1，2，3，…。 试计算第1次重传失败的概率、第2次重传失败的 概率、第3次重传失败的概率，以及一个站成功 发送数据之前的平均重传次数I。<br>
+解：<br>
+将第i次重传成功的概率记为pi。显然第一次重传失败的概率为0.5，第二次重传失败的概率为0.25，第三次重传失败的概率为0.125.平均重传次数I=1.637 <br>
+5.　 假定在图3-30中的所有链路的速率仍然为 100Mbit/s，但所有的以太网交换机都换成为 100Mbit/s的集线器。试计算这9台主机和两个服 务器产生的总的吞吐量的最大值。为什么<br>
+解：<br>
+一个网络中无论有多少台服务器和主机，如果全部连接在一个集线器上，那么该网络最大吞吐量 = 集线器最大值。如果接口全部与交换机相连，那么最大吞吐量 = Σ 各链路最大值<br>
+3-30：<br>
+吞吐量 = 2服务器 + 9主机 = 2 * 100 Mbit/s + 9 * 100 Mbit/s= 1100 Mbit/s<br>
+3-31：<br>
+吞吐量 = 2服务器 + A组 + B组 + C组 = 2 * 100 Mbit/s + 100 Mbit/s + 100 Mbit/s + 100 Mbit/s= 500 Mbit/s<br>
+3-32：<br>
+吞吐量 = 整个系统 = 100 Mbit<br>
+补充问答题<br>
+家中电脑TCP/IP属性中默认网关是指哪一个端口（在家的拓扑图标出）？怎样查看这个接口的IP地址(查看的步骤）？解：<br>
+Windows10中可以打开设置，打开网络与Internet，打开状态，点击查看网络属性，就可以看到该接口的ip地址。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[计网-物理层]]></title>
         <id>https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/</id>
@@ -230,57 +277,6 @@ s.pop();			//删除栈顶的元素，但不会返回
 s.top();			//返回栈顶的元素，但不会删除
 s.size();			//返回栈中元素的个数
 s.empty();			//检查栈是否为空，如果为空返回true，否则返回false 
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[指针疑问]]></title>
-        <id>https://lyhlyhaa.github.io/post/zhi-zhen-yi-wen/</id>
-        <link href="https://lyhlyhaa.github.io/post/zhi-zhen-yi-wen/">
-        </link>
-        <updated>2020-07-20T09:05:40.000Z</updated>
-        <content type="html"><![CDATA[<p>指针<br>
-*号：指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。就像其他变量或常量一样，您必须在使用指针存储其他变量地址之前，对其进行声明。* 运算符，也称为间接访问运算符，返回指针指向存储单元的数值；也称为指向运算符号：<br>
-注意：<br>
-指针运算符是取地址运算符号的反运算符号<br>
-*(&amp;a) = 10;<br>
-&amp;号：每一个变量都有一个内存位置，每一个内存位置都定义了可使用连字号（&amp;）运算符访问的地址，它表示了在内存中的一个地址，&amp;运算符，返回操作数的内存地址</p>
-<pre><code class="language-cpp">int  var = 20;   /* 实际变量的声明 */
-   int  *ip;        /* 指针变量的声明 */
-   ip = &amp;var;  /* 在指针变量中存储 var 的地址 */
-   printf(&quot;Address of var variable: %p\n&quot;, &amp;var  );//Address of var variable: bffd8b3c
-   /* 在指针变量中存储的地址 */
-   printf(&quot;Address stored in ip variable: %p\n&quot;, ip );//Address stored in ip variable: bffd8b3c
-   /* 使用指针访问值 */
-   printf(&quot;Value of *ip variable: %d\n&quot;, *ip );//Value of *ip variable: 20
-</code></pre>
-<p><strong>突然想起来定义的时候，int *p就是int* p,其实是相当于一个int*类型的变量p，p就是一个地址值，简而言之，p是一个地址值，而*p就是p所指向的东西，可以是一个整型变量，也可以指向一个链表节点，也可以是一个二叉树节点。</strong></p>
-<pre><code class="language-cpp"> int a=1;
- int *pa;
- pa=&amp;a; //&amp;a 是一个指针表达式。
- printf(&quot;*a=%p\n&quot;,&amp;a);
- printf(&quot;*pa=%d\n&quot;,*pa);//*pa是一个值，就是pa所指向的a的值 
- printf(&quot;pa=%p\n&quot;,pa);//pa是一个地址，pa指向a，所以pa地址与a相同 
- printf(&quot;&amp;*pa=%p\n&quot;,&amp;(*pa));//pa指向a，*pa就是a,&amp;(*pa)即*pa的地址就是a的地址 
- /*
- *a=000000000062FE14
- *pa=1
- pa=000000000062FE14
- &amp;*pa=000000000062FE14
- */
- printf(&quot;\n&quot;); 
- int** ptr;
- ptr=&amp;pa;//由此可知*ptr=pa、**ptr=*pa 
- printf(&quot;&amp;pa=%p\n&quot;,&amp;pa);//pa指针本身的地址 
- printf(&quot;ptr=%p\n&quot;,ptr);//ptr指向的是pa本身地址 
- printf(&quot;*ptr=%p\n&quot;,*ptr);//*ptr指向的是pa指针所指向的地址，就是a的地址
- printf(&quot;**p=%d\n&quot;,**ptr);// 
- /*
- &amp;pa=000000000062FE08
- *ptr=000000000062FE14
- ptr=000000000062FE08
- **p=1
- */
 </code></pre>
 ]]></content>
     </entry>
