@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>栈 | 混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1596011854990">
+<link rel="shortcut icon" href="/favicon.ico?v=1596012862985">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -911,12 +911,7 @@ s.empty();			//检查栈是否为空，如果为空返回true，否则返回fals
 &lt;li&gt;以太网上只有两个站，它们同时发送数据，产生了碰撞。于是按截断二进制指数退避算法进行重传。重传次数记为i，i＝1，2，3，…。 试计算第1次重传失败的概率、第2次重传失败的概率、第3次重传失败的概率，以及一个站成功发送数据之前的平均重传次数I。&lt;br&gt;
 解：&lt;br&gt;
 将第i次重传成功的概率记为pi。显然第一次重传失败的概率为0.5，第二次重传失败的概率为0.25，第三次重传失败的概率为0.125.平均重传次数I=1.637 &lt;br&gt;
-&lt;em&gt;二进制指数类型退避算法 (truncated binary exponential type):&lt;/em&gt;&lt;br&gt;
-确定基本退避时间，一般是取为争用期 2τ 。&lt;br&gt;
-从整数集合[0,1,…, (2k -1)]中随机地取出一个数，记为 r。重传所需的时延就是 r 倍的基本退避时间。&lt;br&gt;
-定义重传次数 k ，k &amp;lt;=10，即&lt;br&gt;
-k = Min[重传次数, 10]&lt;br&gt;
-当重传达 16 次仍不能成功时即丢弃该帧，并向高层报告。&lt;/li&gt;
+&lt;a href=&#34;https://blog.csdn.net/xingchenhy/article/details/72848029&#34;&gt;二进制指数类型退避算法 (truncated binary exponential type):&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;5.　 假定在图3-30中的所有链路的速率仍然为 100Mbit/s，但所有的以太网交换机都换成为 100Mbit/s的集线器。试计算这9台主机和两个服 务器产生的总的吞吐量的最大值。为什么&lt;br&gt;
