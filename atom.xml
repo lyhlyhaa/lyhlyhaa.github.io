@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-29T08:56:03.789Z</updated>
+    <updated>2020-07-30T08:36:50.048Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[1286 比赛]]></title>
+        <id>https://lyhlyhaa.github.io/post/1286-bi-sai/</id>
+        <link href="https://lyhlyhaa.github.io/post/1286-bi-sai/">
+        </link>
+        <updated>2020-07-30T08:24:14.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2>
+<p>有n名选手参加比赛，从1∼n编号。每场比赛由两位选手对决，失败的被淘汰。为了增加比赛的观赏性，举办方并不想比赛双方实力相差太大的，所以决定，每场比赛的两位选手，之前胜场次数之差不能超过1。同时，鸡贼的举办方又不想冠军选手比赛太少了（严重影响比赛收入），希望冠军选手比赛场次越多越好。作为选手的你，当然不希望夺冠路上比赛场次太多，请问在这个赛制下，冠军最多比赛多少场？</p>
+<h2 id="输入">输入</h2>
+<p>存在不超过10000组样例。每行一个整数n(1≤n≤1018)。</p>
+<h2 id="输出">输出</h2>
+<p>每行输出一个样例的结果，为一个整数。</p>
+<h2 id="样例输入">样例输入</h2>
+<p>1<br>
+2<br>
+3<br>
+10<br>
+1000000000000000000</p>
+<h2 id="样例输出">样例输出</h2>
+<p>0<br>
+1<br>
+2<br>
+4<br>
+85</p>
+<hr>
+<p>全部比赛看作一棵树<br>
+<img src="https://lyhlyhaa.github.io/post-images/1596097884622.jpg" alt="" loading="lazy"><br>
+n 很容易看出来是一个斐波那契数列，之后设置一个数组记录，很容易就完成了<br>
+g(1)=1   g(2)=2<br>
+g(h)=g(h-1)+g(h-2)<br>
+<img src="https://lyhlyhaa.github.io/post-images/1596098127037.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[计网-链路层]]></title>
         <id>https://lyhlyhaa.github.io/post/ji-wang-lian-lu-ceng/</id>
@@ -53,7 +86,7 @@
 <a href="https://blog.csdn.net/xingchenhy/article/details/72848029">二进制指数类型退避算法 (truncated binary exponential type):</a></li>
 </ol>
 <hr>
-<p>5.　 假定在图3-30中的所有链路的速率仍然为 100Mbit/s，但所有的以太网交换机都换成为 100Mbit/s的集线器。试计算这9台主机和两个服 务器产生的总的吞吐量的最大值。为什么<br>
+<p>5.　 假定在图3-30中的所有链路的速率仍然为 100Mbit/s，但所有的以太网交换机都换成为 100Mbit/s的集线器。试计算这9台主机和两个服务器产生的总的吞吐量的最大值。为什么<br>
 解：<br>
 一个网络中无论有多少台服务器和主机，如果全部连接在一个集线器上，那么该网络最大吞吐量 = 集线器最大值。如果接口全部与交换机相连，那么最大吞吐量 = Σ 各链路最大值<br>
 3-30：<br>
@@ -272,24 +305,6 @@ C. 将应用程序下载到本地执行；　　　　　　D.许多终端共享
         <updated>2020-07-22T01:53:51.000Z</updated>
         <content type="html"><![CDATA[<p>先是不说人话的概念：dp（动态规划）是求解决策过程最优化的数学方法。利用各个阶段之间的关系，逐个求解，最终求得全局最优解，需要确认原问题与子问题、动态规划状态、边界状态、边界状态结值、状态转移方程<br>
 看不懂啊！！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[栈]]></title>
-        <id>https://lyhlyhaa.github.io/post/zhan/</id>
-        <link href="https://lyhlyhaa.github.io/post/zhan/">
-        </link>
-        <updated>2020-07-21T01:59:07.000Z</updated>
-        <content type="html"><![CDATA[<p>栈（stack）说明及举例：</p>
-<p>使用栈，要先包含头文件 ： <code>#include&lt;stack&gt;</code></p>
-<p>定义栈，以如下形式实现： <code>stack&lt;Type&gt; s;</code> 其中Type为数据类型（如 int，float,char等）。</p>
-<p>栈的主要操作：</p>
-<pre><code>s.push(item);		//将item压入栈顶
-s.pop();			//删除栈顶的元素，但不会返回
-s.top();			//返回栈顶的元素，但不会删除
-s.size();			//返回栈中元素的个数
-s.empty();			//检查栈是否为空，如果为空返回true，否则返回false 
-</code></pre>
 ]]></content>
     </entry>
 </feed>
