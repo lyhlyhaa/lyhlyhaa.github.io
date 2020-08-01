@@ -2,13 +2,54 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-07-30T08:36:50.048Z</updated>
+    <updated>2020-08-01T09:18:22.972Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[逆序数]]></title>
+        <id>https://lyhlyhaa.github.io/post/ni-xu-shu/</id>
+        <link href="https://lyhlyhaa.github.io/post/ni-xu-shu/">
+        </link>
+        <updated>2020-08-01T09:15:57.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/dlengong/article/details/7594919?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.channel_param">文章</a><br>
+1.两层循环<br>
+一猜就会超时，后来试了一下，果然。<br>
+2.归并排序<br>
+3.<a href="http://www.cppblog.com/Ylemzy/articles/98322.html">树状数组</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[操作系统]]></title>
+        <id>https://lyhlyhaa.github.io/post/cao-zuo-xi-tong/</id>
+        <link href="https://lyhlyhaa.github.io/post/cao-zuo-xi-tong/">
+        </link>
+        <updated>2020-08-01T02:21:33.000Z</updated>
+        <content type="html"><![CDATA[<p>1.1 什么是操作系统<br>
+<em>操作系统的定义（掌握）</em><br>
+操作系统是计算机系统中最基础，最重要的<strong>系统软件</strong>，是其他软件的支撑软件。<br>
+<em>计算机系统的组成（理解）</em><br>
+采用冯诺依曼体系结构，由运算器、控制器、存储器、输入输出（I/O）设备五大部件组成。<br>
+<em>操作系统与计算机系统（理解）</em><br>
+计算机系统由软件、硬件和数据三部分组成，操作系统是配置在计算机硬件上的第一层软件。<br>
+1.2 操作系统的发展过程（理解）<br>
+简单计算机系统（无操作系统）、单道批处理系统、多道批处理系统、分时系统、实时系统</p>
+<p>1.3 操作系统的主要功能（掌握）<br>
+处理机管理、存储器管理、设备管理、文件管理及用户接口</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[计网-网络层]]></title>
+        <id>https://lyhlyhaa.github.io/post/ji-wang-wang-luo-ceng/</id>
+        <link href="https://lyhlyhaa.github.io/post/ji-wang-wang-luo-ceng/">
+        </link>
+        <updated>2020-07-31T02:59:17.000Z</updated>
+        <content type="html"><![CDATA[<p>1</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[1286 比赛]]></title>
         <id>https://lyhlyhaa.github.io/post/1286-bi-sai/</id>
@@ -87,13 +128,10 @@ g(h)=g(h-1)+g(h-2)<br>
 </ol>
 <hr>
 <p>5.　 假定在图3-30中的所有链路的速率仍然为 100Mbit/s，但所有的以太网交换机都换成为 100Mbit/s的集线器。试计算这9台主机和两个服务器产生的总的吞吐量的最大值。为什么<br>
+<img src="https://lyhlyhaa.github.io/post-images/1596164216859.jpg" alt="" loading="lazy"><br>
 解：<br>
+<em>集线器很像一个多接口的转发器，工作在物理层</em><br>
 一个网络中无论有多少台服务器和主机，如果全部连接在一个集线器上，那么该网络最大吞吐量 = 集线器最大值。如果接口全部与交换机相连，那么最大吞吐量 = Σ 各链路最大值<br>
-3-30：<br>
-吞吐量 = 2服务器 + 9主机 = 2 * 100 Mbit/s + 9 * 100 Mbit/s= 1100 Mbit/s<br>
-3-31：<br>
-吞吐量 = 2服务器 + A组 + B组 + C组 = 2 * 100 Mbit/s + 100 Mbit/s + 100 Mbit/s + 100 Mbit/s= 500 Mbit/s<br>
-3-32：<br>
 吞吐量 = 整个系统 = 100 Mbit</p>
 <hr>
 <p>补充问答题<br>
@@ -226,85 +264,6 @@ ADSL技术就是用数字技术对现有的模拟电话用户线进行改造，�
 <p>current指针所指元素为0时，与begin指针所指的元素交换，而后current++，begin++ ；<br>
 current指针所指元素为1时，不做任何交换（即球不动），而后current++ ；<br>
 current指针所指元素为2时，与end指针所指的元素交换，而后，current指针不动，end-- 。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[计算机网络（考试）]]></title>
-        <id>https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/</id>
-        <link href="https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/">
-        </link>
-        <updated>2020-07-23T08:31:33.000Z</updated>
-        <content type="html"><![CDATA[<p><em>图文无关😂</em></p>
-<hr>
-<h2 id="一-选择题">一、选择题</h2>
-<p>(1)	Socket是由（ 　D    ）组成的。<br>
-A.主机名   <strong>B. MAC地址及端口号</strong><br>
-C.IP地址以及MAC地址       D. IP地址及端口号<br>
-(2)	　在OSI参考模型中，实现系统间二进制信息块的正确传输，为上一层提供可靠、无错误数据信息的协议层是(   A    ) 。<br>
-<strong>A. 数据链路层</strong>     B. 物理层        C. 网络层    D. 传输层<br>
-(3) 在TCP/IP网络中，提供主机A和主机B应用层之间通信的层是（   B ）。<br>
-A、应用层         <strong>B.传输层</strong>        C、IP层       D、网络接口层；<br>
-<strong>在TCP/IP四层模型中，提供两主机应用层之间通信的层是传输层，传输层通过端口值来实现两台主机应用程序的通信。IP层则是负责提供机器之间的通信，IP层通过IP地址来标识不同的主机，实现机器之间的通信</strong><br>
-(4) 路由器主要实现了（  C  ）的功能。<br>
-A. 数据链路层、网络层与应用层  　  　 B. 物理层、数据链路层与网络层<br>
-　     <strong>C. 网络层与传输层</strong>　　　　　　　　    　D. 物理层与传输层<br>
-(5) 当客户端请求域名解析时，如果本地DNS服务器不能完成解析，就把请求发送其他服务器，依次进行查询，直到把域名解析结果返回请求的客户端，这种方式（  B  ）<br>
-A. 迭代解析               　　 <strong>B. 迭代解析与递归解析相结合</strong><br>
-C. 递归解析　　　　　　　　　　D.高速缓存解析<br>
-(6)关于TCP和UDP下列说法中正确的是（A    ）。<br>
-<strong>A．TCP和UDP端口分别拥有自己的端口号，二者互不干扰，可以共存于同一台主机；</strong>　　<br>
-B．TCP和UDP端口分别拥有自己的端口号，但二者不能共存于同一台主机；<br>
-C．TCP和UDP端口没有本质区别，二者互不干扰，可以共存于同一台主机；<br>
-D．TCP和UDP端口没有本质区别，但二者相互干扰，不能共存于同一台主机；<br>
-(7) 一条线路每1/16秒采样一次，传输信号共有16种状态，器传输速率是（  C ）。<br>
-A. 16bps          B. 48bps     ** C. 64bps**          D. 256bps<br>
-<strong>16种状态可以用4bit二进制数表示，每秒采样16次，所以每秒需要传的数据量就是64bit。如果不考虑信道编码需要增加的冗余比特，传输速率就是64bit/s。</strong><br>
-(8) 关于客户/服务器应用模式，以下（  A ）说法是正确的。<br>
-<strong>A. 由服务器和客户机协同完成一件任务；</strong>　　B. 在服务器端，每次只能为一个客户服务；<br>
-C. 将应用程序下载到本地执行；　　　　　　D.许多终端共享主机资源的多用户系统；<br>
-(9)一个16端口的二层以太交换机，冲突域和广播域的个数分别是(      )。<br>
-　　　A. １，１        B . １６，１６      C. １，１６        <strong>D . １６，１</strong><br>
-<img src="https://lyhlyhaa.github.io/post-images/1595924992303.png" alt="" loading="lazy"></p>
-<h2 id="二-填空题每题2分共20分">二、	填空题（每题2分，共20分）</h2>
-<p>1、假设某信道能传输最高码元速率为1200码元/秒，使用幅度-相位调制技术，由幅度和相位组成32种码元，那么它在信道上可以达到数据传输速率是_________波特 。<br>
-2、128二进制位的IPv6地址2819:00AF:00000:0000:0035:0CB2：B217，我们使用IPv6的压缩表示方式可将它记_____________ 。<br>
-3、在路由信息协议RIP中，更新路由表依据是：若相邻X路由器说“我到目的网络Y距离为N，则收到此信息K路由器知道“若将下一站路由器为X，则我的网络Y的距离为________ ”。<br>
-4、在TCP中首部的可选项中最多可指明已收到的信息块___________个字节块。<br>
-5、设有下面４个网络：170.58.129.0/24、176.58.130.0/24、176.58.132.0/24和176.58.133.0/24，如果进行路由汇聚，能覆盖4条路由地址是______________________。<br>
-6、若在发送端HDLC帧的数据部分出现比特串是“010111110101”，为了解决透明问题，采用比特填充后，     则接收端收到的是____________ 。<br>
-7、A向B发送消息Y，并使用公钥体制进行数字签名。 设私有密秘钥SKA和公开秘钥PKA, E表示加密算法，    D表示解密算法，则B要保留的证据是____________。<br>
-8、SNMP规定了5种PDU，当代理者进程向 管理者 进程报告发生的事件是采用___________报文。<br>
-9、现有  IP Address   193.18.14.8,查表知道 IP地址在TLV编码中T字段值是40，那么该地址的TLV编码是___________。<br>
-10、在TCP协议中，采用___________来区分不同的应用进程。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[最短路径算法]]></title>
-        <id>https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/</id>
-        <link href="https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/">
-        </link>
-        <updated>2020-07-22T12:05:34.000Z</updated>
-        <content type="html"><![CDATA[<p>说起来这个算法做过很多次了，学图论的时候写过实验报告，可是现在做题又给忘了，惭愧。</p>
-<hr>
-<h1 id="dijkstra算法">Dijkstra算法</h1>
-<p>1.<strong>初始化</strong>:先找出从源点vo到各终点v的直达路径(Vo,Vk) ,<br>
-即通过一条弧到达的路径。<br>
-2.<strong>选择</strong>:从这些路径中找出一条长度最短的路径(Vo,u) 。<br>
-3.<strong>更新</strong>:然后对其余各条路径进行适当调整:<br>
-若在图中存在弧(u,Vk) ，且(V,U) + (u,Vk) &lt; (Vo,Vk),<br>
-则以路径(Vo,U,Vk) 代替(Vo,Vk) 。<br>
-在调整后的各条路径中，再找长度最短的路径，依此类推。<br>
-设计一个s[]数组，来存已经在最短路径中的点</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[dp]]></title>
-        <id>https://lyhlyhaa.github.io/post/dp/</id>
-        <link href="https://lyhlyhaa.github.io/post/dp/">
-        </link>
-        <updated>2020-07-22T01:53:51.000Z</updated>
-        <content type="html"><![CDATA[<p>先是不说人话的概念：dp（动态规划）是求解决策过程最优化的数学方法。利用各个阶段之间的关系，逐个求解，最终求得全局最优解，需要确认原问题与子问题、动态规划状态、边界状态、边界状态结值、状态转移方程<br>
-看不懂啊！！</p>
 ]]></content>
     </entry>
 </feed>
