@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-01T09:19:37.968Z</updated>
+    <updated>2020-08-02T02:18:40.040Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -19,6 +19,21 @@
 1.两层循环<br>
 一猜就会超时，后来试了一下，果然。<br>
 2.归并排序<br>
+把数组分成两份，分别进行排序，然后合并<br>
+会用到递归，从最开始的数组，到整个区间只有一个元素结束，即l==r<br>
+<img src="https://lyhlyhaa.github.io/post-images/1596333420953.gif" alt="" loading="lazy"><br>
+合并操作：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1596333135649.gif" alt="" loading="lazy"><br>
+在两个分出来的数组比较完之后，把未填入的数组剩下的数依次（因为数组已经排好序）填入</p>
+<pre><code>while(i&lt;=mid) temp[k++] = a[i++];  
+while(j&lt;=right) temp[k++] = a[j++];
+</code></pre>
+<p>用归并求逆序数的关键就在于<br>
+Seq1：3  4  5<br>
+Seq2：2  6  8  9<br>
+合并成一个有序序:</p>
+<p>Seq：2  3  4  5  6  8  9</p>
+<p>对于序列seq1中的某个数a[i],序列seq2中的某个数a[j]，如果a[i]&lt;a[j],没有逆序数，如果a[i]&gt;a[j]，那么逆序数为seq1中a[i]后边元素的个数(包括a[i])，即len1-i+1,<br>
 3.<a href="http://www.cppblog.com/Ylemzy/articles/98322.html">树状数组</a></p>
 ]]></content>
     </entry>

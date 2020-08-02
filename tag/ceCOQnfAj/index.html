@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1596273447051">
+<link rel="shortcut icon" href="/favicon.ico?v=1596334712907">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -532,6 +532,21 @@
 1.两层循环&lt;br&gt;
 一猜就会超时，后来试了一下，果然。&lt;br&gt;
 2.归并排序&lt;br&gt;
+把数组分成两份，分别进行排序，然后合并&lt;br&gt;
+会用到递归，从最开始的数组，到整个区间只有一个元素结束，即l==r&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596333420953.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+合并操作：&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596333135649.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+在两个分出来的数组比较完之后，把未填入的数组剩下的数依次（因为数组已经排好序）填入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;while(i&amp;lt;=mid) temp[k++] = a[i++];  
+while(j&amp;lt;=right) temp[k++] = a[j++];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用归并求逆序数的关键就在于&lt;br&gt;
+Seq1：3  4  5&lt;br&gt;
+Seq2：2  6  8  9&lt;br&gt;
+合并成一个有序序:&lt;/p&gt;
+&lt;p&gt;Seq：2  3  4  5  6  8  9&lt;/p&gt;
+&lt;p&gt;对于序列seq1中的某个数a[i],序列seq2中的某个数a[j]，如果a[i]&amp;lt;a[j],没有逆序数，如果a[i]&amp;gt;a[j]，那么逆序数为seq1中a[i]后边元素的个数(包括a[i])，即len1-i+1,&lt;br&gt;
 3.&lt;a href=&#34;http://www.cppblog.com/Ylemzy/articles/98322.html&#34;&gt;树状数组&lt;/a&gt;&lt;/p&gt;
 ">逆序数</a>
       </div>
@@ -818,8 +833,14 @@ C. 将应用程序下载到本地执行；　　　　　　D.许多终端共享
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/dp/"" data-c="
-          &lt;p&gt;先是不说人话的概念：dp（动态规划）是求解决策过程最优化的数学方法。利用各个阶段之间的关系，逐个求解，最终求得全局最优解，需要确认原问题与子问题、动态规划状态、边界状态、边界状态结值、状态转移方程&lt;br&gt;
-看不懂啊！！&lt;/p&gt;
+          &lt;p&gt;先是不说人话的概念：dp（动态规划）是求解决策过程最优化的数学方法。利用各个阶段之间的关系，逐个求解，最终求得全局最优解，需要确认原问题与子问题、动态规划状态、边界状态、边界状态结值、状态转移方程&lt;/p&gt;
+&lt;h1 id=&#34;求最优解&#34;&gt;求最优解&lt;/h1&gt;
+&lt;p&gt;最大值什么的问题，然后对于选择有限制，比如说打家劫舍问题（一个数字序列，不能选相邻的数，求最大值），关键在于：选与不选；&lt;br&gt;
+opt（）：表示最佳方案，opt（i）表示到下标为i的地方，最佳方案是什么&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596334570644.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+之后可以推出动态方程&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596334673629.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+一直递归就好了。&lt;/p&gt;
 ">dp</a>
       </div>
       
