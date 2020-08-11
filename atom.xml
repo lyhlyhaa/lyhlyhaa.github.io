@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-11T08:59:11.579Z</updated>
+    <updated>2020-08-11T09:01:56.464Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -81,20 +81,20 @@ Seq2：2  6  8  9<br>
 <h2 id="25-向量中断了解">2.5 向量中断（了解）</h2>
 <h1 id="第3章-进程描述和控制">第3章 进程描述和控制</h1>
 <h2 id="31-进程概述">3.1 进程概述</h2>
-<h2 id="程序的顺序执行及其特征理解程序的并发执行及其特征理解进程的概念及其特征掌握动态性进程状态掌握进程控制块理解pcbpcb是进程的唯一标识符32-进程控制理解">程序的顺序执行及其特征（理解）<br>
+<p>程序的顺序执行及其特征（理解）<br>
 程序的并发执行及其特征（理解）<br>
 进程的概念及其特征（掌握）<br>
 <strong>动态性</strong><br>
 进程状态（掌握）<br>
 <img src="https://lyhlyhaa.github.io/post-images/1597134258032.png" alt="" loading="lazy"><br>
 进程控制块（理解）PCB<br>
-PCB是进程的唯一标识符<br>
-3.2 进程控制（理解）</h2>
-<h2 id="进程创建和终止进程阻塞和唤醒进程挂起和激活33-线程">进程创建和终止<br>
+PCB是进程的唯一标识符</p>
+<h2 id="32-进程控制理解">3.2 进程控制（理解）</h2>
+<p>进程创建和终止<br>
 进程阻塞和唤醒<br>
 进程挂起和激活<br>
-<img src="https://lyhlyhaa.github.io/post-images/1597136342534.png" alt="" loading="lazy"><br>
-3.3 线程</h2>
+<img src="https://lyhlyhaa.github.io/post-images/1597136342534.png" alt="" loading="lazy"></p>
+<h2 id="33-线程">3.3 线程</h2>
 <p>线程简介（理解）<br>
 多线程（掌握）<br>
 线程实现与线程模型（理解）</p>
