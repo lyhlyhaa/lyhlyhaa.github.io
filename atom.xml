@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-13T03:45:58.253Z</updated>
+    <updated>2020-08-13T09:09:43.179Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -114,9 +114,11 @@ PCB是进程的唯一标识符</p>
 <p>硬件同步（掌握）<br>
 <img src="https://lyhlyhaa.github.io/post-images/1597289851472.png" alt="" loading="lazy"><br>
 信号量机制（掌握）<br>
-管程机制（理解）<br>
-三个经典的进程同步问题（掌握）<br>
-消息传递（理解）</p>
+<img src="https://lyhlyhaa.github.io/post-images/1597307073833.png" alt="" loading="lazy"><br>
+管程机制（理解）</p>
+<p>三个经典的进程同步问题（掌握）<br>
+生产者-消费者（get） 读者-写者（我裂开了）哲学家就餐问题</p>
+<p>消息传递（理解）</p>
 <h1 id="第4章-调度与死锁">第4章 调度与死锁</h1>
 <figure data-type="image" tabindex="1"><img src="https://lyhlyhaa.github.io/post-images/1597285417811.png" alt="" loading="lazy"></figure>
 ]]></content>
