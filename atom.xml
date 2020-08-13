@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-12T13:37:21.534Z</updated>
+    <updated>2020-08-13T03:45:58.253Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -95,16 +95,30 @@ PCB是进程的唯一标识符</p>
 进程挂起和激活<br>
 <img src="https://lyhlyhaa.github.io/post-images/1597136342534.png" alt="" loading="lazy"></p>
 <h2 id="33-线程">3.3 线程</h2>
-<p>线程简介（理解）<br>
-多线程（掌握）<br>
-线程实现与线程模型（理解）</p>
+<p><em>线程简介（理解）</em><br>
+线程是基本的cpu执行单元，调度和分派的基本单位，程序执行流的最小单位<br>
+进程是资源分配的基本单位<br>
+<em>多线程（掌握）</em><br>
+线程实现与线程模型（理解）<br>
+多对一；一对一；多对多<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597286385098.png" alt="" loading="lazy"><br>
+<strong>注意：一对一优缺点反了</strong></p>
 <h2 id="34-互斥和同步">3.4 互斥和同步</h2>
 <p>并发原理：临界资源、临界区等多种术语（掌握）<br>
-硬件同步（掌握）<br>
+互斥：多个进程因争用临界区内的共享资源而互斥的执行，即当一个进程在临界区访问共享资源时，其它进程不能进入该临界区访问任何共享资源。<br>
+同步：系统中有一些相互合作、协同工作的进程，它们之间的相互联系称为进程的同步。<br>
+临界区：是一段程序代码，进程将在此代码中访问共享的资源，当另一个进程已经在该代码中运行时，则该进程不能在这段代码中执行。<br>
+临界资源：多个进程间采取互斥的方式实现对临界资源的共享访问。<br>
+死锁：两个或两个以上的进程因其中的每个进程都在等待其它进程执行完毕而不能继续执行，这样的情形称为死锁。<br>
+饥饿：是指一个可运行的进程虽然能继续执行，但被调度程序无限期的忽视而不能执行的情况 。</p>
+<p>硬件同步（掌握）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597289851472.png" alt="" loading="lazy"><br>
 信号量机制（掌握）<br>
 管程机制（理解）<br>
 三个经典的进程同步问题（掌握）<br>
 消息传递（理解）</p>
+<h1 id="第4章-调度与死锁">第4章 调度与死锁</h1>
+<figure data-type="image" tabindex="1"><img src="https://lyhlyhaa.github.io/post-images/1597285417811.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
