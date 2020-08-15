@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-13T13:14:35.326Z</updated>
+    <updated>2020-08-15T03:27:15.289Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -115,14 +115,32 @@ PCB是进程的唯一标识符</p>
 <img src="https://lyhlyhaa.github.io/post-images/1597289851472.png" alt="" loading="lazy"><br>
 信号量机制（掌握）<br>
 <img src="https://lyhlyhaa.github.io/post-images/1597307073833.png" alt="" loading="lazy"><br>
-管程机制（理解）</p>
-<p>三个经典的进程同步问题（掌握）<br>
-生产者-消费者（get）<br>
+管程机制（理解）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597457450240.png" alt="" loading="lazy"><br>
+三个经典的进程同步问题（掌握）<br>
+生产者-消费者（get） 注意：当缓冲区已满，即empty为0，full为n，若mutex的p操作在前，则会死锁<br>
 读者-写者（我裂开了）当一个进程允许并发，和别的互斥，设置整型信号量记录同时运行的进程，并且要设置一个记录型信号量来让这个整型信号量互斥访问<br>
-哲学家就餐问题</p>
+哲学家就餐问题 主要解决死锁问题，（信息量数组）</p>
 <p>消息传递（理解）</p>
 <h1 id="第4章-调度与死锁">第4章 调度与死锁</h1>
-<figure data-type="image" tabindex="1"><img src="https://lyhlyhaa.github.io/post-images/1597285417811.png" alt="" loading="lazy"></figure>
+<h2 id="41调度简介理解">4.1调度简介（理解）</h2>
+<h2 id="调度的基本概念-调度原则42-调度算法">调度的基本概念、调度原则<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597285417811.png" alt="" loading="lazy"><br>
+4.2 调度算法</h2>
+<p>先来先服务、短作业优先、优先级、时间片轮转、最高响应比、多级反馈队列、实时调度（掌握）<br>
+多处理器调度（不考）</p>
+<h2 id="43-死锁简介">4.3 死锁简介</h2>
+<p>资源（理解）<br>
+在并发环境下，各进程因竞争资源而造成的一种互相等待对方手里的资源，导致各进程都阻塞，都无法向前推<br>
+进的现象，就是“死锁”发生死锁后若无外力干涉，这些进程都将无法向前推进。</p>
+<p>死锁产生的原因和必要条件（掌握）</p>
+<p>死锁的表示方法和判定（理解）</p>
+<h2 id="44-死锁预防理解">4.4 死锁预防（理解）</h2>
+<h2 id="45-死锁避免掌握">4.5 死锁避免（掌握）</h2>
+<p>安全状态<br>
+银行家算法数据结构、流程<br>
+安全性算法</p>
+<h2 id="46-死锁检测和恢复理解">4.6 死锁检测和恢复（理解）</h2>
 ]]></content>
     </entry>
     <entry>

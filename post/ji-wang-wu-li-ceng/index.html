@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>计网-物理层 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597324468950">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597462032622">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1073,14 +1073,32 @@ PCB是进程的唯一标识符&lt;/p&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597289851472.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 信号量机制（掌握）&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597307073833.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-管程机制（理解）&lt;/p&gt;
-&lt;p&gt;三个经典的进程同步问题（掌握）&lt;br&gt;
-生产者-消费者（get）&lt;br&gt;
+管程机制（理解）&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597457450240.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+三个经典的进程同步问题（掌握）&lt;br&gt;
+生产者-消费者（get） 注意：当缓冲区已满，即empty为0，full为n，若mutex的p操作在前，则会死锁&lt;br&gt;
 读者-写者（我裂开了）当一个进程允许并发，和别的互斥，设置整型信号量记录同时运行的进程，并且要设置一个记录型信号量来让这个整型信号量互斥访问&lt;br&gt;
-哲学家就餐问题&lt;/p&gt;
+哲学家就餐问题 主要解决死锁问题，（信息量数组）&lt;/p&gt;
 &lt;p&gt;消息传递（理解）&lt;/p&gt;
 &lt;h1 id=&#34;第4章-调度与死锁&#34;&gt;第4章 调度与死锁&lt;/h1&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597285417811.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;41调度简介理解&#34;&gt;4.1调度简介（理解）&lt;/h2&gt;
+&lt;h2 id=&#34;调度的基本概念-调度原则42-调度算法&#34;&gt;调度的基本概念、调度原则&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597285417811.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+4.2 调度算法&lt;/h2&gt;
+&lt;p&gt;先来先服务、短作业优先、优先级、时间片轮转、最高响应比、多级反馈队列、实时调度（掌握）&lt;br&gt;
+多处理器调度（不考）&lt;/p&gt;
+&lt;h2 id=&#34;43-死锁简介&#34;&gt;4.3 死锁简介&lt;/h2&gt;
+&lt;p&gt;资源（理解）&lt;br&gt;
+在并发环境下，各进程因竞争资源而造成的一种互相等待对方手里的资源，导致各进程都阻塞，都无法向前推&lt;br&gt;
+进的现象，就是“死锁”发生死锁后若无外力干涉，这些进程都将无法向前推进。&lt;/p&gt;
+&lt;p&gt;死锁产生的原因和必要条件（掌握）&lt;/p&gt;
+&lt;p&gt;死锁的表示方法和判定（理解）&lt;/p&gt;
+&lt;h2 id=&#34;44-死锁预防理解&#34;&gt;4.4 死锁预防（理解）&lt;/h2&gt;
+&lt;h2 id=&#34;45-死锁避免掌握&#34;&gt;4.5 死锁避免（掌握）&lt;/h2&gt;
+&lt;p&gt;安全状态&lt;br&gt;
+银行家算法数据结构、流程&lt;br&gt;
+安全性算法&lt;/p&gt;
+&lt;h2 id=&#34;46-死锁检测和恢复理解&#34;&gt;4.6 死锁检测和恢复（理解）&lt;/h2&gt;
 ">操作系统</a>
       </div>
       
@@ -1314,6 +1332,7 @@ current指针所指元素为2时，与end指针所指的元素交换，而后，
 &lt;p&gt;码元（ code）：&lt;br&gt;
 在使用时间域（或简称为时域）的波形来表示数字信号时，代表不同离散数值的基本波形。（码元离散状态有M种称为M进制码元）&lt;/p&gt;
 &lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597324427854.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597461915732.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 ">计算机网络（考试）</a>
       </div>
       
