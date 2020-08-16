@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>操作系统 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597484865993">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597549432229">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -277,8 +277,9 @@
 <li><a href="#%E7%AC%AC4%E7%AB%A0-%E8%B0%83%E5%BA%A6%E4%B8%8E%E6%AD%BB%E9%94%81">第4章 调度与死锁</a>
 <ul>
 <li><a href="#41%E8%B0%83%E5%BA%A6%E7%AE%80%E4%BB%8B%E7%90%86%E8%A7%A3">4.1调度简介（理解）</a></li>
-<li><a href="#%E8%B0%83%E5%BA%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-%E8%B0%83%E5%BA%A6%E5%8E%9F%E5%88%9942-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95">调度的基本概念、调度原则<br>
+<li><a href="#%E8%B0%83%E5%BA%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-%E8%B0%83%E5%BA%A6%E5%8E%9F%E5%88%99%E8%B0%83%E5%BA%A6%E5%8E%9F%E5%88%9942-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95">调度的基本概念、调度原则<br>
 !<br>
+调度原则：!<br>
 4.2 调度算法</a></li>
 <li><a href="#43-%E6%AD%BB%E9%94%81%E7%AE%80%E4%BB%8B">4.3 死锁简介</a></li>
 <li><a href="#44-%E6%AD%BB%E9%94%81%E9%A2%84%E9%98%B2%E7%90%86%E8%A7%A3">4.4 死锁预防（理解）</a></li>
@@ -566,12 +567,12 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>5<span class="language" data-lan="minute">分钟</span></span>
+      <span>6<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1439<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1510<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
@@ -666,10 +667,16 @@ PCB是进程的唯一标识符</p>
 <p>消息传递（理解）</p>
 <h1 id="第4章-调度与死锁">第4章 调度与死锁</h1>
 <h2 id="41调度简介理解">4.1调度简介（理解）</h2>
-<h2 id="调度的基本概念-调度原则42-调度算法">调度的基本概念、调度原则<br>
+<h2 id="调度的基本概念-调度原则调度原则42-调度算法">调度的基本概念、调度原则<br>
 <img src="https://lyhlyhaa.github.io/post-images/1597285417811.png" alt="" loading="lazy"><br>
+调度原则：<img src="https://lyhlyhaa.github.io/post-images/1597544207270.png" alt="" loading="lazy"><br>
 4.2 调度算法</h2>
-<p>先来先服务、短作业优先、优先级、时间片轮转、最高响应比、多级反馈队列、实时调度（掌握）<br>
+<p>先来先服务：按进入队列的先后顺序（以等待时间来）<br>
+短作业优先：当前已到达的运行时间最短的优先（以服务时间）<br>
+最高响应比优先：<br>
+<code>响应比：（等待时间+服务时间）/服务时间</code><br>
+以上多用于早期的批处理系统中<br>
+多级反馈队列、实时调度（掌握）优先级、时间片轮转、<br>
 多处理器调度（不考）</p>
 <h2 id="43-死锁简介">4.3 死锁简介</h2>
 <p>资源（理解）<br>
@@ -1333,10 +1340,16 @@ PCB是进程的唯一标识符&lt;/p&gt;
 &lt;p&gt;消息传递（理解）&lt;/p&gt;
 &lt;h1 id=&#34;第4章-调度与死锁&#34;&gt;第4章 调度与死锁&lt;/h1&gt;
 &lt;h2 id=&#34;41调度简介理解&#34;&gt;4.1调度简介（理解）&lt;/h2&gt;
-&lt;h2 id=&#34;调度的基本概念-调度原则42-调度算法&#34;&gt;调度的基本概念、调度原则&lt;br&gt;
+&lt;h2 id=&#34;调度的基本概念-调度原则调度原则42-调度算法&#34;&gt;调度的基本概念、调度原则&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597285417811.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+调度原则：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597544207270.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 4.2 调度算法&lt;/h2&gt;
-&lt;p&gt;先来先服务、短作业优先、优先级、时间片轮转、最高响应比、多级反馈队列、实时调度（掌握）&lt;br&gt;
+&lt;p&gt;先来先服务：按进入队列的先后顺序（以等待时间来）&lt;br&gt;
+短作业优先：当前已到达的运行时间最短的优先（以服务时间）&lt;br&gt;
+最高响应比优先：&lt;br&gt;
+&lt;code&gt;响应比：（等待时间+服务时间）/服务时间&lt;/code&gt;&lt;br&gt;
+以上多用于早期的批处理系统中&lt;br&gt;
+多级反馈队列、实时调度（掌握）优先级、时间片轮转、&lt;br&gt;
 多处理器调度（不考）&lt;/p&gt;
 &lt;h2 id=&#34;43-死锁简介&#34;&gt;4.3 死锁简介&lt;/h2&gt;
 &lt;p&gt;资源（理解）&lt;br&gt;

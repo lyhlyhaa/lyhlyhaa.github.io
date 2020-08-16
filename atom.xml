@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-15T09:47:53.905Z</updated>
+    <updated>2020-08-16T03:44:00.468Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -124,10 +124,16 @@ PCB是进程的唯一标识符</p>
 <p>消息传递（理解）</p>
 <h1 id="第4章-调度与死锁">第4章 调度与死锁</h1>
 <h2 id="41调度简介理解">4.1调度简介（理解）</h2>
-<h2 id="调度的基本概念-调度原则42-调度算法">调度的基本概念、调度原则<br>
+<h2 id="调度的基本概念-调度原则调度原则42-调度算法">调度的基本概念、调度原则<br>
 <img src="https://lyhlyhaa.github.io/post-images/1597285417811.png" alt="" loading="lazy"><br>
+调度原则：<img src="https://lyhlyhaa.github.io/post-images/1597544207270.png" alt="" loading="lazy"><br>
 4.2 调度算法</h2>
-<p>先来先服务、短作业优先、优先级、时间片轮转、最高响应比、多级反馈队列、实时调度（掌握）<br>
+<p>先来先服务：按进入队列的先后顺序（以等待时间来）<br>
+短作业优先：当前已到达的运行时间最短的优先（以服务时间）<br>
+最高响应比优先：<br>
+<code>响应比：（等待时间+服务时间）/服务时间</code><br>
+以上多用于早期的批处理系统中<br>
+多级反馈队列、实时调度（掌握）优先级、时间片轮转、<br>
 多处理器调度（不考）</p>
 <h2 id="43-死锁简介">4.3 死锁简介</h2>
 <p>资源（理解）<br>
