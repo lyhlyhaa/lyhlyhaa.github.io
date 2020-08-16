@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-16T03:44:00.468Z</updated>
+    <updated>2020-08-16T09:06:02.493Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -124,22 +124,27 @@ PCB是进程的唯一标识符</p>
 <p>消息传递（理解）</p>
 <h1 id="第4章-调度与死锁">第4章 调度与死锁</h1>
 <h2 id="41调度简介理解">4.1调度简介（理解）</h2>
-<h2 id="调度的基本概念-调度原则调度原则42-调度算法">调度的基本概念、调度原则<br>
+<h2 id="调度的基本概念-调度原则调度原则42-调度算法掌握">调度的基本概念、调度原则<br>
 <img src="https://lyhlyhaa.github.io/post-images/1597285417811.png" alt="" loading="lazy"><br>
 调度原则：<img src="https://lyhlyhaa.github.io/post-images/1597544207270.png" alt="" loading="lazy"><br>
-4.2 调度算法</h2>
+4.2 调度算法（掌握）</h2>
 <p>先来先服务：按进入队列的先后顺序（以等待时间来）<br>
 短作业优先：当前已到达的运行时间最短的优先（以服务时间）<br>
 最高响应比优先：<br>
 <code>响应比：（等待时间+服务时间）/服务时间</code><br>
 以上多用于早期的批处理系统中<br>
-多级反馈队列、实时调度（掌握）优先级、时间片轮转、<br>
-多处理器调度（不考）</p>
+优先级：每个作业（进程）有各自的优先级，调度时选择优先级最高的进程<br>
+<code>有抢占式和非抢占式，会发生饥饿、实时系统</code><br>
+时间片轮转：按照各进程到达就绪队列的顺序，轮流让各个进程执行一个时间片(如100ms)。若进程未在一个时间片内执行完，则剥夺处理机，将进程重新放到就绪队列队尾重新排队。(不会饥饿，分时系统)<br>
+多级反馈队列（有点复杂，就不写了）：<br>
+实时调度：</p>
 <h2 id="43-死锁简介">4.3 死锁简介</h2>
 <p>资源（理解）<br>
 在并发环境下，各进程因竞争资源而造成的一种互相等待对方手里的资源，导致各进程都阻塞，都无法向前推<br>
 进的现象，就是“死锁”发生死锁后若无外力干涉，这些进程都将无法向前推进。</p>
-<p>死锁产生的原因和必要条件（掌握）</p>
+<p>死锁产生的原因和必要条件（掌握）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597567271816.png" alt="" loading="lazy"><br>
+原因：对系统资源的竞争、程序推进顺序不合法、信号量使用不当</p>
 <p>死锁的表示方法和判定（理解）</p>
 <h2 id="44-死锁预防理解">4.4 死锁预防（理解）</h2>
 <h2 id="45-死锁避免掌握">4.5 死锁避免（掌握）</h2>
