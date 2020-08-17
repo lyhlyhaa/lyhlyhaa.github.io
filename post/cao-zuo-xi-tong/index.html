@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>操作系统 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597568758257">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597635693724">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -283,7 +283,11 @@
 4.2 调度算法（掌握）</a></li>
 <li><a href="#43-%E6%AD%BB%E9%94%81%E7%AE%80%E4%BB%8B">4.3 死锁简介</a></li>
 <li><a href="#44-%E6%AD%BB%E9%94%81%E9%A2%84%E9%98%B2%E7%90%86%E8%A7%A3">4.4 死锁预防（理解）</a></li>
-<li><a href="#45-%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D%E6%8E%8C%E6%8F%A1">4.5 死锁避免（掌握）</a></li>
+<li><a href="#%E7%A0%B4%E5%9D%8F%E8%AF%B7%E6%B1%82%E5%92%8C%E4%BF%9D%E6%8C%81%E6%9D%A1%E4%BB%B6%E7%A0%B4%E5%9D%8F%E4%B8%8D%E5%89%A5%E5%A4%BA%E6%9D%A1%E4%BB%B6%E7%A0%B4%E5%9D%8F%E5%BE%AA%E7%8E%AF%E7%AD%89%E5%BE%85%E6%9D%A1%E4%BB%B6%E7%A0%B4%E5%9D%8F%E4%BA%92%E6%96%A5%E8%AE%BF%E9%97%AE%E6%9D%A1%E4%BB%B6%E4%B8%80%E8%88%AC%E4%B8%8D%E7%94%A845-%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D%E6%8E%8C%E6%8F%A1">破坏“请求和保持”条件<br>
+破坏“不剥夺“条件<br>
+破坏”循环等待“条件<br>
+破坏”互斥访问“条件（一般不用）<br>
+4.5 死锁避免（掌握）</a></li>
 <li><a href="#46-%E6%AD%BB%E9%94%81%E6%A3%80%E6%B5%8B%E5%92%8C%E6%81%A2%E5%A4%8D%E7%90%86%E8%A7%A3">4.6 死锁检测和恢复（理解）</a></li>
 </ul>
 </li>
@@ -567,12 +571,12 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>6<span class="language" data-lan="minute">分钟</span></span>
+      <span>7<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1655<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1763<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
@@ -688,13 +692,22 @@ PCB是进程的唯一标识符</p>
 <p>死锁产生的原因和必要条件（掌握）<br>
 <img src="https://lyhlyhaa.github.io/post-images/1597567271816.png" alt="" loading="lazy"><br>
 原因：对系统资源的竞争、程序推进顺序不合法、信号量使用不当</p>
-<p>死锁的表示方法和判定（理解）</p>
+<p>死锁的表示方法和判定（理解）<br>
+系统资源分配图，请求边、分配边，进程节点和资源节点</p>
 <h2 id="44-死锁预防理解">4.4 死锁预防（理解）</h2>
-<h2 id="45-死锁避免掌握">4.5 死锁避免（掌握）</h2>
-<p>安全状态<br>
+<h2 id="破坏请求和保持条件破坏不剥夺条件破坏循环等待条件破坏互斥访问条件一般不用45-死锁避免掌握">破坏“请求和保持”条件<br>
+破坏“不剥夺“条件<br>
+破坏”循环等待“条件<br>
+破坏”互斥访问“条件（一般不用）<br>
+4.5 死锁避免（掌握）</h2>
+<p>安全状态：存在安全序列就ok，死锁一定是不安全状态、不安全状态不一定死锁<br>
 银行家算法数据结构、流程<br>
 安全性算法</p>
 <h2 id="46-死锁检测和恢复理解">4.6 死锁检测和恢复（理解）</h2>
+<p>解除死锁：<br>
+1.资源剥夺法<br>
+2.撤销进程法<br>
+2.进程回退法</p>
 
             </div>
             
@@ -1366,13 +1379,22 @@ PCB是进程的唯一标识符&lt;/p&gt;
 &lt;p&gt;死锁产生的原因和必要条件（掌握）&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597567271816.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 原因：对系统资源的竞争、程序推进顺序不合法、信号量使用不当&lt;/p&gt;
-&lt;p&gt;死锁的表示方法和判定（理解）&lt;/p&gt;
+&lt;p&gt;死锁的表示方法和判定（理解）&lt;br&gt;
+系统资源分配图，请求边、分配边，进程节点和资源节点&lt;/p&gt;
 &lt;h2 id=&#34;44-死锁预防理解&#34;&gt;4.4 死锁预防（理解）&lt;/h2&gt;
-&lt;h2 id=&#34;45-死锁避免掌握&#34;&gt;4.5 死锁避免（掌握）&lt;/h2&gt;
-&lt;p&gt;安全状态&lt;br&gt;
+&lt;h2 id=&#34;破坏请求和保持条件破坏不剥夺条件破坏循环等待条件破坏互斥访问条件一般不用45-死锁避免掌握&#34;&gt;破坏“请求和保持”条件&lt;br&gt;
+破坏“不剥夺“条件&lt;br&gt;
+破坏”循环等待“条件&lt;br&gt;
+破坏”互斥访问“条件（一般不用）&lt;br&gt;
+4.5 死锁避免（掌握）&lt;/h2&gt;
+&lt;p&gt;安全状态：存在安全序列就ok，死锁一定是不安全状态、不安全状态不一定死锁&lt;br&gt;
 银行家算法数据结构、流程&lt;br&gt;
 安全性算法&lt;/p&gt;
 &lt;h2 id=&#34;46-死锁检测和恢复理解&#34;&gt;4.6 死锁检测和恢复（理解）&lt;/h2&gt;
+&lt;p&gt;解除死锁：&lt;br&gt;
+1.资源剥夺法&lt;br&gt;
+2.撤销进程法&lt;br&gt;
+2.进程回退法&lt;/p&gt;
 ">操作系统</a>
       </div>
       
