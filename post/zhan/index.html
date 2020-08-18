@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>栈 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597653568181">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597722412887">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1063,11 +1063,11 @@ PCB是进程的唯一标识符&lt;/p&gt;
 &lt;p&gt;死锁的表示方法和判定（理解）&lt;br&gt;
 系统资源分配图，请求边、分配边，进程节点和资源节点&lt;/p&gt;
 &lt;h2 id=&#34;44-死锁预防理解&#34;&gt;4.4 死锁预防（理解）&lt;/h2&gt;
-&lt;h2 id=&#34;破坏请求和保持条件破坏不剥夺条件破坏循环等待条件破坏互斥访问条件一般不用45-死锁避免掌握&#34;&gt;破坏“请求和保持”条件&lt;br&gt;
+&lt;p&gt;破坏“请求和保持”条件&lt;br&gt;
 破坏“不剥夺“条件&lt;br&gt;
 破坏”循环等待“条件&lt;br&gt;
-破坏”互斥访问“条件（一般不用）&lt;br&gt;
-4.5 死锁避免（掌握）&lt;/h2&gt;
+破坏”互斥访问“条件（一般不用）&lt;/p&gt;
+&lt;h2 id=&#34;45-死锁避免掌握&#34;&gt;4.5 死锁避免（掌握）&lt;/h2&gt;
 &lt;p&gt;安全状态：存在安全序列就ok，死锁一定是不安全状态、不安全状态不一定死锁&lt;br&gt;
 银行家算法数据结构、流程&lt;br&gt;
 安全性算法&lt;/p&gt;
@@ -1076,6 +1076,46 @@ PCB是进程的唯一标识符&lt;/p&gt;
 1.资源剥夺法&lt;br&gt;
 2.撤销进程法&lt;br&gt;
 2.进程回退法&lt;/p&gt;
+&lt;h1 id=&#34;第5章-内存管理&#34;&gt;第5章 内存管理&lt;/h1&gt;
+&lt;h2 id=&#34;51-概述理解&#34;&gt;5.1 概述（理解）&lt;/h2&gt;
+&lt;p&gt;存储层次结构&lt;br&gt;
+存储管理的目的和任务：1.内存分配 2.地址映射 3.内存共享与保护 4.内存扩充&lt;/p&gt;
+&lt;h2 id=&#34;52-地址重定位理解&#34;&gt;5.2 地址重定位（理解）&lt;/h2&gt;
+&lt;p&gt;重定位的基本概念：因为逻辑地址与物理地址不一样&lt;br&gt;
+静态重定位：在程序执行之前&lt;br&gt;
+动态重定位：在程序执行过程中，需要重定位寄存器&lt;br&gt;
+补充：程序的装入、程序的链接&lt;/p&gt;
+&lt;h2 id=&#34;53-分区存储管理连续分配&#34;&gt;5.3 分区存储管理（连续分配）&lt;/h2&gt;
+&lt;p&gt;注意：内部碎片：分配给某进程的内存区域中，某些没有用上的部分&lt;br&gt;
+外部碎片：内存中某些空闲分区太小难以利用&lt;/p&gt;
+&lt;p&gt;单一连续：任何时刻内存中只能能有一道用户程序&lt;br&gt;
+固定分区、可变分区分配（理解）&lt;/p&gt;
+&lt;p&gt;分区分配算法（掌握）&lt;br&gt;
+首次适应算法：从低地址开始查找，找到第一个能满足大小的空闲分区&lt;br&gt;
+最佳适应算法：&lt;br&gt;
+最坏适应算法：&lt;br&gt;
+循环首次适应算法：&lt;br&gt;
+补充：哈希算法、伙伴系统（理解）&lt;/p&gt;
+&lt;h2 id=&#34;54-页式存储管理非连续分配&#34;&gt;5.4 页式存储管理（非连续分配）&lt;/h2&gt;
+&lt;p&gt;页：把用户进程的地址空间分为与物理块大小相等的一个个区域，称为页或页面&lt;br&gt;
+页号=逻辑地址/页面长度(取除法的整数部分)&lt;br&gt;
+页内偏移量=逻辑地址%页面长度(取除法的余数部分)&lt;br&gt;
+块：内存等分称为块&lt;br&gt;
+页表（每一个进程有自己的页表）、地址结构、&lt;br&gt;
+分页地址变换、快表（掌握）&lt;br&gt;
+两级页表、多级页表（理解）&lt;/p&gt;
+&lt;h2 id=&#34;55-段式与段页式存储管理&#34;&gt;5.5 段式与段页式存储管理&lt;/h2&gt;
+&lt;p&gt;段、段表、地址结构、分段地址变换（掌握）&lt;br&gt;
+分页和分段的区别（掌握）&lt;br&gt;
+段页式存储管理（理解）&lt;/p&gt;
+&lt;h2 id=&#34;56-内存扩充技术了解&#34;&gt;5.6 内存扩充技术（了解）&lt;/h2&gt;
+&lt;p&gt;覆盖、交换&lt;/p&gt;
+&lt;h2 id=&#34;57-虚拟存储管理&#34;&gt;5.7 虚拟存储管理&lt;/h2&gt;
+&lt;p&gt;基本原理：局部性原理、虚拟存储器（理解）&lt;br&gt;
+请求分页存储管理（理解）&lt;br&gt;
+页面置换算法：最佳置换、FIFO、LRU、第二次机会、CLOCK置换（掌握）&lt;br&gt;
+请求分页存储管理系统性能分析：缺页率、抖动、页面大小（理解）&lt;br&gt;
+请求分段存储管理（理解）&lt;/p&gt;
 ">操作系统</a>
       </div>
       
