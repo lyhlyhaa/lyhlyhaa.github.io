@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-19T09:29:53.434Z</updated>
+    <updated>2020-08-19T13:07:28.534Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -223,6 +223,35 @@ PCB是进程的唯一标识符</p>
 缺页率：缺页中断次数/总次数；<br>
 抖动：如此频繁地更换页面，以至一个进程在运行中，将把大部分时间花在完成页面置换的工作上，我们称该进程发生了“抖动”。抖动现象分为局部抖动和全局抖动两种类型。</p>
 <p>请求分段存储管理（理解）</p>
+<h1 id="第6章-设备管理">第6章 设备管理</h1>
+<h2 id="61-概述理解">6.1 概述（理解）</h2>
+<p>设备管理的的目标和任务<br>
+I/O系统结构：<br>
+I/O设备分为机械部件和电子部件（I/O控制器，一个可以控制多个设备）<br>
+I/O设备分类</p>
+<h2 id="62-io系统控制方式掌握">6.2 I/O系统控制方式（掌握）</h2>
+<p>程序直接控制方式<br>
+中断控制方式<br>
+DMA控制方式<br>
+通道控制方式</p>
+<h2 id="63-io软件的组成">6.3 I/O软件的组成</h2>
+<p>I/O软件设计目标和原则（理解）<br>
+I/O软件结构（理解）<br>
+设备驱动程序（了解）<br>
+I/O设备的控制方式（掌握）<br>
+设备无关软件（了解）<br>
+用户层软件：SPOOLing技术的引入、组成和特点（理解）</p>
+<h2 id="64-具有通道的设备管理">6.4 具有通道的设备管理</h2>
+<p>通道类型（掌握）</p>
+<h2 id="65-设备管理相关技术">6.5 设备管理相关技术</h2>
+<p>DMA（理解）<br>
+缓冲技术：单缓冲、双缓冲、循环缓冲区和缓冲池（理解）<br>
+总线技术（不考）</p>
+<h2 id="66-磁盘存储管理">6.6 磁盘存储管理</h2>
+<p>磁盘简述：磁盘的定义、组成、磁盘访问时间（理解）<br>
+磁盘调度：FCFS、SSTF、SCAN、C-SCAN、N步扫描、F-SCAN（掌握）<br>
+磁盘管理（不考）<br>
+容错技术：容错技术的概念、廉价磁盘冗余阵列（理解）</p>
 ]]></content>
     </entry>
     <entry>
