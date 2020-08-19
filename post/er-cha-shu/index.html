@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>二叉树 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597757712256">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597829389956">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1336,21 +1336,40 @@ PCB是进程的唯一标识符&lt;/p&gt;
 块：内存等分称为块&lt;br&gt;
 页表（每一个进程有自己的页表）、地址结构、&lt;/p&gt;
 &lt;p&gt;分页地址变换、&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597755784851.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-页表长度表示有多少个页&lt;/p&gt;
-&lt;p&gt;快表（掌握）&lt;br&gt;
-两级页表、多级页表（理解）&lt;/p&gt;
+页表长度表示有多少个页&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;页表项是指页表中的一行？&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+快表（掌握）考察访问时间&lt;/p&gt;
+&lt;p&gt;两级页表、多级页表（理解）&lt;/p&gt;
 &lt;h2 id=&#34;55-段式与段页式存储管理&#34;&gt;5.5 段式与段页式存储管理&lt;/h2&gt;
 &lt;p&gt;段、段表、地址结构、分段地址变换（掌握）&lt;br&gt;
-分页和分段的区别（掌握）&lt;br&gt;
-段页式存储管理（理解）&lt;/p&gt;
+段的逻辑地址由段号和段内地址所组成。&lt;br&gt;
+每个段在表中占有一个表项，其中记录了该段在内存中的起始地址（基址）和段的长度（段长）&lt;/p&gt;
+&lt;p&gt;分页和分段的区别（掌握）&lt;br&gt;
+(1) 页是信息的物理单位，仅仅是出于系统管理的需要；段是信息的逻辑单位，其目的是满足用户的需要。&lt;br&gt;
+(2) 页的大小固定且由系统确定，一个系统只能有一种大小的页面；段的长度不固定，决定于用户所编写的程序；&lt;br&gt;
+(3) 分页的作业地址空间是一维的；分段的作业地址空间是二维的。&lt;br&gt;
+(4) 通常分段的段内空间会比分页的页面空间大，因此段表会比页表短。&lt;/p&gt;
+&lt;p&gt;段页式存储管理（理解）&lt;/p&gt;
 &lt;h2 id=&#34;56-内存扩充技术了解&#34;&gt;5.6 内存扩充技术（了解）&lt;/h2&gt;
 &lt;p&gt;覆盖、交换&lt;/p&gt;
 &lt;h2 id=&#34;57-虚拟存储管理&#34;&gt;5.7 虚拟存储管理&lt;/h2&gt;
 &lt;p&gt;基本原理：局部性原理、虚拟存储器（理解）&lt;br&gt;
-请求分页存储管理（理解）&lt;br&gt;
-页面置换算法：最佳置换、FIFO、LRU、第二次机会、CLOCK置换（掌握）&lt;br&gt;
+(1) 时间局限性。程序中的某条指令被执行，不久后会再次执行；某个数据被访问，不久后将再次被访问。产生时间局限性的典型原因是在程序中存在着大量的循环操作。&lt;br&gt;
+(2) 空间局限性。 程序访问了某个存储单元，不久后，其附近的存储单元也将被访问。&lt;/p&gt;
+&lt;p&gt;请求分页存储管理（理解）&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597822969611.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+页面置换算法：&lt;br&gt;
+最佳置换：每次选择淘汰的页面将是以后永不使用，或者再最长时间内不再被访问的页面，这样可以保证最低的缺页率。（无法实现，用来衡量算法好坏）&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597826381870.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+先进先出置换算法（FIFO）：每次淘汰的页面是最早进入内存的页面，可能有beledy异常&lt;br&gt;
+最近最久未使用置换算法（LRU）：每次淘汰的页面时最近最久未使用的页面（逆向扫描😕，实现开销比较大，性能好）&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597825736996.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+时钟置换算法（CLOCK）：&lt;br&gt;
+第二次机会（NRU），就是第二个：&lt;br&gt;
 请求分页存储管理系统性能分析：缺页率、抖动、页面大小（理解）&lt;br&gt;
-请求分段存储管理（理解）&lt;/p&gt;
+缺页率：缺页中断次数/总次数；&lt;br&gt;
+抖动：如此频繁地更换页面，以至一个进程在运行中，将把大部分时间花在完成页面置换的工作上，我们称该进程发生了“抖动”。抖动现象分为局部抖动和全局抖动两种类型。&lt;/p&gt;
+&lt;p&gt;请求分段存储管理（理解）&lt;/p&gt;
 ">操作系统</a>
       </div>
       
