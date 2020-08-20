@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-19T13:07:28.534Z</updated>
+    <updated>2020-08-20T03:57:17.423Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -231,9 +231,9 @@ I/O设备分为机械部件和电子部件（I/O控制器，一个可以控制�
 I/O设备分类</p>
 <h2 id="62-io系统控制方式掌握">6.2 I/O系统控制方式（掌握）</h2>
 <p>程序直接控制方式<br>
-中断控制方式<br>
-DMA控制方式<br>
-通道控制方式</p>
+中断控制方式<img src="https://lyhlyhaa.github.io/post-images/1597894847490.png" alt="" loading="lazy"><br>
+DMA控制方式<img src="https://lyhlyhaa.github.io/post-images/1597895507112.png" alt="" loading="lazy"><br>
+通道控制方式<img src="https://lyhlyhaa.github.io/post-images/1597895746989.png" alt="" loading="lazy"></p>
 <h2 id="63-io软件的组成">6.3 I/O软件的组成</h2>
 <p>I/O软件设计目标和原则（理解）<br>
 I/O软件结构（理解）<br>
