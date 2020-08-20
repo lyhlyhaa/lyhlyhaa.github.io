@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>最短路径算法 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597914466568">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597930558291">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1377,12 +1377,16 @@ SPOOLing技术（假脱机技术）的引入、组成和特点（理解）&lt;br
 文件、文件系统的定义&lt;br&gt;
 7.2 文件结构&lt;br&gt;
 逻辑结构（理解）&lt;br&gt;
-物理结构：顺序结构、链接结构、索引结构（掌握）；直接文件、哈希文件（理解）&lt;br&gt;
+索引文件，&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597930086320.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+物理结构：顺序结构、链接结构、索引结构（掌握）；&lt;br&gt;
+直接文件、哈希文件（理解）&lt;br&gt;
 7.3 文件目录&lt;br&gt;
-文件控制块（掌握）&lt;br&gt;
-索引节点（掌握）&lt;br&gt;
-目录结构：单级、两级和多级（了解）&lt;br&gt;
+文件控制块FCB（掌握）&lt;br&gt;
+为了实现按名存取，一个文件对应一个FCB，一个FCB就是一个目录项，多个FCB组成文件目录&lt;br&gt;
+索引节点（掌握）：把文件控制块中除了文件名之外的文件描述信息放到一个索引结点指针中，加快了文件检索速度&lt;br&gt;
+目录结构：单级（只有一个目录表）、两级（两个）和多级（多个）（了解）&lt;br&gt;
 目录查询（了解）&lt;br&gt;
+绝对路径：从根目录出发 相对路径：从当前目录出发&lt;br&gt;
 7.4 文件共享和安全（理解）&lt;br&gt;
 文件共享：符号链接实现共享、索引节点实现共享（理解）&lt;br&gt;
 文件安全：存取控制矩阵、存取控制表、用户权限表、口令方法（了解）&lt;/p&gt;
