@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597895834397">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597914466568">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1147,21 +1147,45 @@ DMA控制方式&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/159789550
 &lt;h2 id=&#34;63-io软件的组成&#34;&gt;6.3 I/O软件的组成&lt;/h2&gt;
 &lt;p&gt;I/O软件设计目标和原则（理解）&lt;br&gt;
 I/O软件结构（理解）&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597910317722.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 设备驱动程序（了解）&lt;br&gt;
 I/O设备的控制方式（掌握）&lt;br&gt;
 设备无关软件（了解）&lt;br&gt;
-用户层软件：SPOOLing技术的引入、组成和特点（理解）&lt;/p&gt;
+用户层软件：&lt;br&gt;
+SPOOLing技术（假脱机技术）的引入、组成和特点（理解）&lt;br&gt;
+所谓脱机就是脱离主机控制的输入输出&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597911772456.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;64-具有通道的设备管理&#34;&gt;6.4 具有通道的设备管理&lt;/h2&gt;
 &lt;p&gt;通道类型（掌握）&lt;/p&gt;
 &lt;h2 id=&#34;65-设备管理相关技术&#34;&gt;6.5 设备管理相关技术&lt;/h2&gt;
 &lt;p&gt;DMA（理解）&lt;br&gt;
-缓冲技术：单缓冲、双缓冲、循环缓冲区和缓冲池（理解）&lt;br&gt;
-总线技术（不考）&lt;/p&gt;
+缓冲技术：&lt;br&gt;
+缓存区作用：&lt;br&gt;
+（1）可以改善CPU与I/O设备间速度不匹配的矛盾。&lt;br&gt;
+（2）可以减少对 CPU的中断频率，放宽对中断响应时间的限制。&lt;br&gt;
+（3）可以提高 CPU和 I/O设备之间的并行性。&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597913868957.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+单缓冲（一个缓冲区）、双缓冲（两个缓冲）、循环缓冲区和缓冲池（理解）&lt;/p&gt;
+&lt;p&gt;总线技术（不考）&lt;/p&gt;
 &lt;h2 id=&#34;66-磁盘存储管理&#34;&gt;6.6 磁盘存储管理&lt;/h2&gt;
 &lt;p&gt;磁盘简述：磁盘的定义、组成、磁盘访问时间（理解）&lt;br&gt;
 磁盘调度：FCFS、SSTF、SCAN、C-SCAN、N步扫描、F-SCAN（掌握）&lt;br&gt;
 磁盘管理（不考）&lt;br&gt;
 容错技术：容错技术的概念、廉价磁盘冗余阵列（理解）&lt;/p&gt;
+&lt;h1 id=&#34;第7章-文件管理&#34;&gt;第7章 文件管理&lt;/h1&gt;
+&lt;p&gt;7.1 概述（理解）&lt;br&gt;
+文件、文件系统的定义&lt;br&gt;
+7.2 文件结构&lt;br&gt;
+逻辑结构（理解）&lt;br&gt;
+物理结构：顺序结构、链接结构、索引结构（掌握）；直接文件、哈希文件（理解）&lt;br&gt;
+7.3 文件目录&lt;br&gt;
+文件控制块（掌握）&lt;br&gt;
+索引节点（掌握）&lt;br&gt;
+目录结构：单级、两级和多级（了解）&lt;br&gt;
+目录查询（了解）&lt;br&gt;
+7.4 文件共享和安全（理解）&lt;br&gt;
+文件共享：符号链接实现共享、索引节点实现共享（理解）&lt;br&gt;
+文件安全：存取控制矩阵、存取控制表、用户权限表、口令方法（了解）&lt;/p&gt;
 ">操作系统</a>
       </div>
       
