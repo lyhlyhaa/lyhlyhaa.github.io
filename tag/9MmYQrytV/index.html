@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1597983217046">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598069080564">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1059,9 +1059,23 @@ current指针所指元素为2时，与end指针所指的元素交换，而后，
 &lt;p&gt;封装成帧、&lt;br&gt;
 透明传输：字符填充法：转义字符ESC，开始SOH，结束EOT（&lt;s&gt;ETO，你被捕了，哈哈哈&lt;/s&gt;）&lt;br&gt;
 零比特填充法&lt;/p&gt;
-&lt;p&gt;差错控制：有比特错和帧错两种，这里我们讨论比特错&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;差错控制：有比特错和帧错两种，这里我们讨论比特错&lt;/strong&gt;&lt;br&gt;
+检错编码：&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597982457147.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-奇偶校验码：在传输的信息元前面加一位校验元（0 or 1），使1的个数为奇数或者偶数，检查收到的信息中1的个数是否与发送的相同（加了校验元后的）   特点：只能查出奇数个比特错误、检错能力为50%&lt;/p&gt;
+奇偶校验码：在传输的信息元前面加一位校验元（0 or 1），使1的个数为奇数或者偶数，检查收到的信息中1的个数是否与发送的相同（加了校验元后的）   特点：只能查出奇数个比特错误、检错能力为50%&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598061552412.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;纠错编码：海明码：&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598063025567.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598063088754.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598063184760.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+检验纠错：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598063292458.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;流量控制：&lt;/strong&gt;（在链路层窗口大小是确定的）&lt;br&gt;
+停止等待协议：每发送一个帧之后就停止发送，等待对方的确认，收到确认之后再发送下一个&lt;br&gt;
+信道利用率去：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;滑动窗口协议：&lt;/strong&gt;&lt;br&gt;
+后退N帧协议（GBN）：&lt;/p&gt;
+&lt;p&gt;点对点链路：&lt;br&gt;
+广播式链路：&lt;/p&gt;
 ">计算机网络（考试）</a>
       </div>
       
