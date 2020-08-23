@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>最短路径算法 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598185286986">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598188177462">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1707,7 +1707,18 @@ ppp协议（只支持全双工链路）&lt;br&gt;
 &lt;p&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598155426118.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 虚电路：建立连接（虚电路建立）-&amp;gt; 数据传输  -&amp;gt; 释放连接（虚电路释放）&lt;/p&gt;
 &lt;p&gt;**数据链路层：**MTU（最大传送单元）：以太网规定为1500字节&lt;/p&gt;
-&lt;p&gt;IP数据报格式：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598173098942.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;IP数据报格式：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598185535426.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;标识：同一数据报的分片使用同一标识。
+标志只有2位有意义x _ _
+中间位DF (Don&#39;t Fragment) :
+DF=1，禁止分片
+DF=0，允许分片
+最低位MF (More Fragment) :
+MF=1，后面“还有分片”
+MF=0，代表最后一片/没分片
+片偏移:指出较长分组分片后，某片在原分组中的相对位置。以8B为单位。
+除了最后一个分片，每个分片长度一定是8B的整数倍。
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;IP地址：全世界唯一的32位/4字节标识符，标识路由器主机的接口&lt;br&gt;
 &amp;lt;网络号，主机号&amp;gt;&lt;br&gt;
 特殊IP地址：&lt;br&gt;
@@ -1716,6 +1727,10 @@ ppp协议（只支持全双工链路）&lt;br&gt;
 &lt;p&gt;子网掩码：&lt;br&gt;
 网络号全1，子网号全1，主机号全0&lt;br&gt;
 与IP地址逐位相与（即只有1与1才返回1）就可以得到子网的网络地址&lt;/p&gt;
+&lt;p&gt;无分类编制CIDR&lt;br&gt;
+1.消除了传统A类、B类和C类以及划分子网的概念&lt;br&gt;
+2.把网络前缀都相同的IP地址组成一个CIDR地址块&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598186496327.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;最长前缀匹配：使用CIDR时，查找路由表可能得到几个匹配结果，应选择具有最长网络前缀的路由。前缀越长，地址块越小，路由越具体&lt;/code&gt;&lt;/p&gt;
 ">计算机网络（考试）</a>
       </div>
       
