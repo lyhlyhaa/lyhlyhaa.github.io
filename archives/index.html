@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598155474249">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598176847077">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1298,7 +1298,6 @@ ppp协议（只支持全双工链路）&lt;br&gt;
 直接连接在交换机的设备独占带宽&lt;/p&gt;
 &lt;h1 id=&#34;网络层&#34;&gt;网络层&lt;/h1&gt;
 &lt;p&gt;传输单位为数据报&lt;/p&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598155426118.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;strong&gt;数据交换&lt;/strong&gt;&lt;br&gt;
 电路交换： 建立连接（呼叫/电路建立） -&amp;gt; 通信 -&amp;gt; 释放连接（拆除电路）&lt;br&gt;
 传输时延最小&lt;br&gt;
@@ -1308,7 +1307,22 @@ ppp协议（只支持全双工链路）&lt;br&gt;
 类似分组交换，不过不分组&lt;br&gt;
 分组交换：&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598153522928.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598154327436.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+计算题中要注意的几点:&lt;br&gt;
+1.单位换算:b/B,Mbps,kbps&lt;br&gt;
+2是否考虑传播延迟&lt;br&gt;
+3.时间至少是多少—选择最少跳数&lt;br&gt;
+4.起始时间（从发送开始到接收完为止/从发送开始到发送完毕）&lt;br&gt;
+5.是否有分组头部大小的开销&lt;br&gt;
+6.报文交换时延更长，分组交换时延可能不是整数&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598155426118.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+虚电路：建立连接（虚电路建立）-&amp;gt; 数据传输  -&amp;gt; 释放连接（虚电路释放）&lt;/p&gt;
+&lt;p&gt;**数据链路层：**MTU（最大传送单元）：以太网规定为1500字节&lt;/p&gt;
+&lt;p&gt;IP数据报格式：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598173098942.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;IP地址：全世界唯一的32位/4字节标识符，标识路由器主机的接口&lt;br&gt;
+&amp;lt;网络号，主机号&amp;gt;&lt;br&gt;
+特殊IP地址：&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598175646432.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598175981780.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 ">计算机网络（考试）</a>
       </div>
       
