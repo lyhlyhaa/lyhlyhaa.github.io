@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-23T10:00:50.272Z</updated>
+    <updated>2020-08-23T12:21:33.470Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -288,15 +288,6 @@ SPOOLing技术（假脱机技术）的引入、组成和特点（理解）<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[计网-网络层]]></title>
-        <id>https://lyhlyhaa.github.io/post/ji-wang-wang-luo-ceng/</id>
-        <link href="https://lyhlyhaa.github.io/post/ji-wang-wang-luo-ceng/">
-        </link>
-        <updated>2020-07-31T02:59:17.000Z</updated>
-        <content type="html"><![CDATA[<p>1</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[1286 比赛]]></title>
         <id>https://lyhlyhaa.github.io/post/1286-bi-sai/</id>
         <link href="https://lyhlyhaa.github.io/post/1286-bi-sai/">
@@ -510,6 +501,135 @@ ADSL技术就是用数字技术对现有的模拟电话用户线进行改造，�
 <p>current指针所指元素为0时，与begin指针所指的元素交换，而后current++，begin++ ；<br>
 current指针所指元素为1时，不做任何交换（即球不动），而后current++ ；<br>
 current指针所指元素为2时，与end指针所指的元素交换，而后，current指针不动，end-- 。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[计算机网络（考试）]]></title>
+        <id>https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/</id>
+        <link href="https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/">
+        </link>
+        <updated>2020-07-23T08:31:33.000Z</updated>
+        <content type="html"><![CDATA[<p><em>图文无关😂</em></p>
+<hr>
+<h1 id="概论">概论</h1>
+<p>OSI分层<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597219135928.png" alt="" loading="lazy"><br>
+前四层，端到端；后三层，点到点</p>
+<p>五层模型：应用层、传输层、网络层、链路层、物理层</p>
+<figure data-type="image" tabindex="1"><img src="https://lyhlyhaa.github.io/post-images/1597239423967.png" alt="" loading="lazy"></figure>
+<p>计算机网络的三个组成部分是主机、通信子网和协议</p>
+<p>速率：速率即数据率或称数据传输率或比特率（换算时是以10的三次方换算）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597219935014.png" alt="" loading="lazy"></p>
+<p>带宽：计算机网络中表示网络的通信线路传送数据的能力（其实指的就是在链路的入口主机发送数据的速率，而不是在链路上的速率）</p>
+<p>吞吐量：表示在单位时间内通过某个网络（或信道、接口）的数据量。单位b/s,kb/s,Mb/s</p>
+<p>时延<img src="https://lyhlyhaa.github.io/post-images/1597221924901.png" alt="" loading="lazy"><br>
+所谓高速链路只改变发送时延</p>
+<p>时延带宽积：传播时延 x 带宽</p>
+<p>RTT(往返时延)：从发送方发送数据开始，到发送方收到接收方的确认(接收方收到数据后立即发送确认)，<br>
+总共经历的时延。</p>
+<p>面向连接三个阶段：建立连接   通信（数据传输） 释放连接</p>
+<h1 id="物理层">物理层</h1>
+<p>特性：<br>
+1.机械特性 （比如器件尺寸）2.电气特性（电压范围） 3.功能特性（某种电平意义） 4.规程特性（又名过程特性）（不同功能的各种事件出现顺序）</p>
+<p>通信交互方式：<br>
+单工（单向通信，一条信道）、半双工（双向交替通信，两条信道）、全双工（双向同时通信，两条信道）</p>
+<p>码元（ code）：<br>
+在使用时间域（或简称为时域）的波形来表示数字信号时，代表不同离散数值的基本波形。（码元离散状态有M种称为M进制码元）</p>
+<figure data-type="image" tabindex="2"><img src="https://lyhlyhaa.github.io/post-images/1597324427854.png" alt="" loading="lazy"></figure>
+<p>调制：<br>
+1.基带调制（编码）：不归零制、归零制、曼切斯特编码、差分曼切斯特编码<br>
+2.带通调制（转化为模拟信号）：调幅、调频、调相</p>
+<p><img src="https://lyhlyhaa.github.io/post-images/1597461915732.png" alt="" loading="lazy"><br>
+<strong>注意只有在奈式准则和香农定理中带宽才用Hz</strong></p>
+<p>香农定理：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597484235197.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1597479421625.png" alt="" loading="lazy"></p>
+<p><img src="https://lyhlyhaa.github.io/post-images/1597480711254.png" alt="" loading="lazy"><br>
+导向型：双绞线、同轴电缆、光纤</p>
+<p>物理层设备：中继器、集线器（再生、放大信号，星型拓扑、不具备定向传输功能，不能分割冲突域）</p>
+<p>信道复用：<br>
+频分复用：用户再分配到一定的频带后，在通信过程中至始至终都占据这个频带；（并行）<br>
+时分复用（TDM）：将时间划分为一段段等长的时分复用帧（TDM帧）。每一个时分复用的用户在每一个TDM帧中占用固定序号的时隙，所有用户轮流占用信道。（并发，类似于时间片）<br>
+统计时分复用STDM：（谁来给谁分配时间片，不是无脑每个人都给）<br>
+波分复用：就是光的频分复用<br>
+码分复用：<br>
+每个站被指派一个唯一的 m bit 码片序列。<br>
+如发送比特 1，则发送自己的 m bit 码片序列，如发送比特 0，则发送该码片序列的二进制反码<br>
+为表示方便，将0写为-1，1写为+1<br>
+<strong>注意：两个不同站的码片序列正交</strong><br>
+不同站的码片向量规格化内积为0**（规格化内积，对应位相乘之后相加，除以位数m）**<br>
+任何一个码片向量和该码片向量自己的规格化内积都是1 。一个码片向量和该码片反码的向量的规格化内积值是 –1<br>
+合并：各路数据在信道中线性相加；分离：合并的数据和源站规格化内积</p>
+<h1 id="数据链路层">数据链路层</h1>
+<p>结点:主机、路由器<br>
+链路:网络中两个结点之间的物理通道，链路的传输介质主要有双绞线、光纤和微波。分为有线链路、无线链路。<br>
+数据链路:网络中两个结点之间的逻辑通道，把实现控制数据传输协议的硬件和软件加到链路上就构成数据链路。<br>
+帧:链路层的协议数据单元，封装网络层数据报。</p>
+<p>封装成帧、<br>
+透明传输：字符填充法：转义字符ESC，开始SOH，结束EOT（<s>ETO，你被捕了，哈哈哈</s>）<br>
+零比特填充法</p>
+<p><strong>差错控制：有比特错和帧错两种，这里我们讨论比特错</strong><br>
+检错编码：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597982457147.png" alt="" loading="lazy"><br>
+奇偶校验码：在传输的信息元前面加一位校验元（0 or 1），使1的个数为奇数或者偶数，检查收到的信息中1的个数是否与发送的相同（加了校验元后的）   特点：只能查出奇数个比特错误、检错能力为50%<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598061552412.png" alt="" loading="lazy"></p>
+<p>纠错编码：海明码：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598063025567.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598063088754.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598063184760.png" alt="" loading="lazy"><br>
+检验纠错：<img src="https://lyhlyhaa.github.io/post-images/1598063292458.png" alt="" loading="lazy"></p>
+<p><strong>流量控制：</strong>（在链路层窗口大小是确定的）<br>
+链路层实现方法：接收方收不下就不回复确认<br>
+停止等待协议：每发送一个帧之后发送，等待对方的确认，就停止收到确认之后再发送下一个<br>
+信道利用率：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。<br>
+<em>滑动窗口协议：</em><br>
+后退N帧协议（GBN）：</p>
+<p>两种链路：<br>
+点对点链路：两个相邻节点通过一条链路相连，应用：PPP协议，常用于广域网<br>
+广播式链路：常用于局域网，典型拓扑结构：总线型、星型（逻辑总线型）</p>
+<p><strong>以太网：无连接、不可靠</strong><br>
+MAC地址：48位二进制地址，前24位代表厂家<br>
+CSMA/CD：争用期<img src="https://lyhlyhaa.github.io/post-images/1598089775570.png" alt="" loading="lazy"><br>
+最小帧长：2τ *数据传输速率</p>
+<p><strong>广域网</strong><br>
+ppp协议（只支持全双工链路）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598148331247.png" alt="" loading="lazy"><br>
+除了字节填充，还可以采用零比特填充（当采用同步传输，即一连串的比特连续发送）<br>
+出现五个连续1，则立即填入一个0</p>
+<p>链路层设备：网桥&amp;交换机（分割冲突域，不能分割广播域）<br>
+网桥根据MAC帧的目的地址对帧进行转发和过滤<br>
+自学习：每个设备都发一次信息，就可以形成一个完整的转发表<br>
+直接连接在交换机的设备独占带宽</p>
+<h1 id="网络层">网络层</h1>
+<p>传输单位为数据报</p>
+<p><strong>数据交换</strong><br>
+电路交换： 建立连接（呼叫/电路建立） -&gt; 通信 -&gt; 释放连接（拆除电路）<br>
+传输时延最小<br>
+数据量大，传送时间远大于呼叫时间则采用电路交换<br>
+特点：独占资源（但是又有多路复用？什么东西！！！）</p>
+<p>报文交换：<br>
+类似分组交换，不过不分组<br>
+分组交换：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598153522928.png" alt="" loading="lazy"><br>
+计算题中要注意的几点:<br>
+1.单位换算:b/B,Mbps,kbps<br>
+2是否考虑传播延迟<br>
+3.时间至少是多少—选择最少跳数<br>
+4.起始时间（从发送开始到接收完为止/从发送开始到发送完毕）<br>
+5.是否有分组头部大小的开销<br>
+6.报文交换时延更长，分组交换时延可能不是整数</p>
+<p><img src="https://lyhlyhaa.github.io/post-images/1598155426118.png" alt="" loading="lazy"><br>
+虚电路：建立连接（虚电路建立）-&gt; 数据传输  -&gt; 释放连接（虚电路释放）</p>
+<p>**数据链路层：**MTU（最大传送单元）：以太网规定为1500字节</p>
+<p>IP数据报格式：<img src="https://lyhlyhaa.github.io/post-images/1598173098942.png" alt="" loading="lazy"></p>
+<p>IP地址：全世界唯一的32位/4字节标识符，标识路由器主机的接口<br>
+&lt;网络号，主机号&gt;<br>
+特殊IP地址：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598175646432.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598175981780.png" alt="" loading="lazy"></p>
+<p>子网掩码：<br>
+网络号全1，子网号全1，主机号全0<br>
+与IP地址逐位相与（即只有1与1才返回1）就可以得到子网的网络地址</p>
 ]]></content>
     </entry>
 </feed>
