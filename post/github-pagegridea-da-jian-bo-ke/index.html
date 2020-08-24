@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>GitHub Page+Gridea搭建博客 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598188177462">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598242049645">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1547,6 +1547,23 @@ MF=0，代表最后一片/没分片
 1.消除了传统A类、B类和C类以及划分子网的概念&lt;br&gt;
 2.把网络前缀都相同的IP地址组成一个CIDR地址块&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598186496327.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;最长前缀匹配：使用CIDR时，查找路由表可能得到几个匹配结果，应选择具有最长网络前缀的路由。前缀越长，地址块越小，路由越具体&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;ARP协议（完成主机或路由器IP地址到MAC地址的映射，解决下一跳走那的）：&lt;br&gt;
+先检查ARP高速缓存；&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598236165572.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+同一网段内（网络号相同）：直接广播找MAC地址&lt;br&gt;
+不是同一网段内：先找默认网关MAC地址，发到路由器&lt;/p&gt;
+&lt;p&gt;ICMP协议&lt;br&gt;
+&lt;code&gt;注意：ICMP差错报告报文在**IP数据报的数据部分**&lt;/code&gt;&lt;br&gt;
+不发送ICMP差错报文的情况&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598238808462.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;code&gt;组播一点对多点，而不是广播向所有&lt;/code&gt;&lt;br&gt;
+ICMP询问报文&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598238725933.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;路由算法&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598240383909.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;RIP&lt;br&gt;
+距离向量算法&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598242047926.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 ">计算机网络（考试）</a>
       </div>
       
