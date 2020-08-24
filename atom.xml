@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-24T04:15:29.994Z</updated>
+    <updated>2020-08-24T10:00:56.740Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -581,7 +581,7 @@ current指针所指元素为2时，与end指针所指的元素交换，而后，
 <p><strong>流量控制：</strong>（在链路层窗口大小是确定的）<br>
 链路层实现方法：接收方收不下就不回复确认<br>
 停止等待协议：每发送一个帧之后发送，等待对方的确认，就停止收到确认之后再发送下一个<br>
-信道利用率：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。<br>
+<strong>信道利用率：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。发送时间/（发送时间+往返时间RTT+接收时间）</strong><br>
 <em>滑动窗口协议：</em><br>
 后退N帧协议（GBN）：</p>
 <p>两种链路：<br>
@@ -595,11 +595,19 @@ CSMA/CD：争用期<img src="https://lyhlyhaa.github.io/post-images/159808977557
 ppp协议（只支持全双工链路）<br>
 <img src="https://lyhlyhaa.github.io/post-images/1598148331247.png" alt="" loading="lazy"><br>
 除了字节填充，还可以采用零比特填充（当采用同步传输，即一连串的比特连续发送）<br>
-出现五个连续1，则立即填入一个0</p>
+出现五个连续1，则立即填入一个0<br>
+地址字段A和控制字段C实践上不带信息，可通过协商取消</p>
+<p>HDLC协议：0比特插入法</p>
 <p>链路层设备：网桥&amp;交换机（分割冲突域，不能分割广播域）<br>
 网桥根据MAC帧的目的地址对帧进行转发和过滤<br>
 自学习：每个设备都发一次信息，就可以形成一个完整的转发表<br>
 直接连接在交换机的设备独占带宽</p>
+<p>交换机可提供的最大带宽：端口数*相应端口速率*2（全双工模式）<br>
+物理层扩充以太网：使用集线器，集线器之间最远距离为100米（使用双绞线），主机与集线器的最远距离为100米</p>
+<pre><code>不可能发生冲突的MAC协议有 CDMA   TDMA     FDMA
+IEEE802.11g标准使用了IEEE802.11a的OFDM调制技术，和IEEE802.11b一样运行在2.4GHz的ISM频段内，理论速度可达54Mbps。
+Go-back-N策略的基本原理：当接收方检测出失序的信息后，要求发送方重发最后一个正确接受的信息帧之后的所有未被确认的帧
+</code></pre>
 <h1 id="网络层">网络层</h1>
 <p>传输单位为数据报</p>
 <p><strong>数据交换</strong><br>
@@ -668,9 +676,24 @@ DHCP提供即插即用联网的机制，主机可以从服务器动态获取IP�
 </code></pre>
 <p>路由算法<br>
 <img src="https://lyhlyhaa.github.io/post-images/1598240383909.png" alt="" loading="lazy"></p>
-<p>RIP<br>
+<p>RIP（应用层协议，采用UDP协议）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598254304064.png" alt="" loading="lazy"><br>
 距离向量算法<br>
 <img src="https://lyhlyhaa.github.io/post-images/1598242047926.png" alt="" loading="lazy"></p>
+<p>OSPF（开放最短路径优先），内部网关协议<br>
+使用链路状态路由算法<br>
+交换内容：与本路由器相邻的所有路由器的链路状态</p>
+<p>BGP（应用层协议，借助TCP传送），外部网关协议<br>
+使用路径-向量算法</p>
+<pre><code>交换内容：
+首次：整个路由表
+非首次：有变化的部分
+</code></pre>
+<p>IPv6<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598256461195.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598256909154.png" alt="" loading="lazy"></p>
+<p>IP多播<br>
+硬件组播</p>
 ]]></content>
     </entry>
 </feed>

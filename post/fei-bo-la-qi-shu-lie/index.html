@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>斐波拉契数列 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598242526495">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598263252861">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1449,7 +1449,7 @@ current指针所指元素为2时，与end指针所指的元素交换，而后，
 &lt;p&gt;&lt;strong&gt;流量控制：&lt;/strong&gt;（在链路层窗口大小是确定的）&lt;br&gt;
 链路层实现方法：接收方收不下就不回复确认&lt;br&gt;
 停止等待协议：每发送一个帧之后发送，等待对方的确认，就停止收到确认之后再发送下一个&lt;br&gt;
-信道利用率：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。&lt;br&gt;
+&lt;strong&gt;信道利用率：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。发送时间/（发送时间+往返时间RTT+接收时间）&lt;/strong&gt;&lt;br&gt;
 &lt;em&gt;滑动窗口协议：&lt;/em&gt;&lt;br&gt;
 后退N帧协议（GBN）：&lt;/p&gt;
 &lt;p&gt;两种链路：&lt;br&gt;
@@ -1463,11 +1463,19 @@ CSMA/CD：争用期&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/15980
 ppp协议（只支持全双工链路）&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598148331247.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 除了字节填充，还可以采用零比特填充（当采用同步传输，即一连串的比特连续发送）&lt;br&gt;
-出现五个连续1，则立即填入一个0&lt;/p&gt;
+出现五个连续1，则立即填入一个0&lt;br&gt;
+地址字段A和控制字段C实践上不带信息，可通过协商取消&lt;/p&gt;
+&lt;p&gt;HDLC协议：0比特插入法&lt;/p&gt;
 &lt;p&gt;链路层设备：网桥&amp;amp;交换机（分割冲突域，不能分割广播域）&lt;br&gt;
 网桥根据MAC帧的目的地址对帧进行转发和过滤&lt;br&gt;
 自学习：每个设备都发一次信息，就可以形成一个完整的转发表&lt;br&gt;
 直接连接在交换机的设备独占带宽&lt;/p&gt;
+&lt;p&gt;交换机可提供的最大带宽：端口数*相应端口速率*2（全双工模式）&lt;br&gt;
+物理层扩充以太网：使用集线器，集线器之间最远距离为100米（使用双绞线），主机与集线器的最远距离为100米&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;不可能发生冲突的MAC协议有 CDMA   TDMA     FDMA
+IEEE802.11g标准使用了IEEE802.11a的OFDM调制技术，和IEEE802.11b一样运行在2.4GHz的ISM频段内，理论速度可达54Mbps。
+Go-back-N策略的基本原理：当接收方检测出失序的信息后，要求发送方重发最后一个正确接受的信息帧之后的所有未被确认的帧
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;网络层&#34;&gt;网络层&lt;/h1&gt;
 &lt;p&gt;传输单位为数据报&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;数据交换&lt;/strong&gt;&lt;br&gt;
@@ -1536,9 +1544,24 @@ DHCP提供即插即用联网的机制，主机可以从服务器动态获取IP�
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;路由算法&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598240383909.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;p&gt;RIP&lt;br&gt;
+&lt;p&gt;RIP（应用层协议，采用UDP协议）&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598254304064.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 距离向量算法&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598242047926.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;OSPF（开放最短路径优先），内部网关协议&lt;br&gt;
+使用链路状态路由算法&lt;br&gt;
+交换内容：与本路由器相邻的所有路由器的链路状态&lt;/p&gt;
+&lt;p&gt;BGP（应用层协议，借助TCP传送），外部网关协议&lt;br&gt;
+使用路径-向量算法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;交换内容：
+首次：整个路由表
+非首次：有变化的部分
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;IPv6&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598256461195.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598256909154.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;IP多播&lt;br&gt;
+硬件组播&lt;/p&gt;
 ">计算机网络（考试）</a>
       </div>
       
