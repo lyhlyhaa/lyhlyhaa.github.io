@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>GitHub Page+Gridea搭建博客 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598329222647">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598349288205">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1493,6 +1493,14 @@ current指针所指元素为2时，与end指针所指的元素交换，而后，
 2.接收方只按顺序接收帧，不按序无情丢弃
 3.确认序列号最大的、按序到达的帧
 4.发送窗口最大为2n-1，接收窗口大小为1
+Go-back-N策略的基本原理：当接收方检测出失序的信息后，要求发送方重发最后一个正确接受的信息帧之后的所有未被确认的帧
+
+选择重传协议SR
+1.对数据帧逐一确认，收一个确认一个
+2.只重传出错帧
+3.接收方有缓存
+4.发送窗口=接收窗口，小于或等于序号空间大小的一半
+
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;两种链路：&lt;br&gt;
 点对点链路：两个相邻节点通过一条链路相连，应用：PPP协议，常用于广域网&lt;br&gt;
@@ -1508,7 +1516,7 @@ ppp协议（只支持全双工链路）&lt;br&gt;
 出现五个连续1，则立即填入一个0&lt;br&gt;
 地址字段A和控制字段C实践上不带信息，可通过协商取消&lt;/p&gt;
 &lt;p&gt;HDLC协议：0比特插入法&lt;/p&gt;
-&lt;p&gt;链路层设备：网桥&amp;amp;交换机（分割冲突域，不能分割广播域）&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;链路层设备&lt;/strong&gt;：网桥&amp;amp;交换机（分割冲突域，不能分割广播域）&lt;br&gt;
 网桥根据MAC帧的目的地址对帧进行转发和过滤&lt;br&gt;
 自学习：每个设备都发一次信息，就可以形成一个完整的转发表&lt;br&gt;
 直接连接在交换机的设备独占带宽&lt;/p&gt;
@@ -1516,11 +1524,12 @@ ppp协议（只支持全双工链路）&lt;br&gt;
 物理层扩充以太网：使用集线器，集线器之间最远距离为100米（使用双绞线），主机与集线器的最远距离为100米&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;不可能发生冲突的MAC协议有 CDMA   TDMA     FDMA
 IEEE802.11g标准使用了IEEE802.11a的OFDM调制技术，和IEEE802.11b一样运行在2.4GHz的ISM频段内，理论速度可达54Mbps。
-Go-back-N策略的基本原理：当接收方检测出失序的信息后，要求发送方重发最后一个正确接受的信息帧之后的所有未被确认的帧
+
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;网络层&#34;&gt;网络层&lt;/h1&gt;
 &lt;pre&gt;&lt;code&gt;传输单位为数据报
 IP协议可将源主机的IP数据报分片后进行传输，在到达目的主机之前，在传输过程中可能再次分片，但是不会重组。
+提供无连接、尽最大努力交付（不可靠）的数据报服务
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;数据交换&lt;/strong&gt;&lt;br&gt;
 电路交换： 建立连接（呼叫/电路建立） -&amp;gt; 通信 -&amp;gt; 释放连接（拆除电路）&lt;br&gt;
@@ -1586,19 +1595,23 @@ DHCP提供即插即用联网的机制，主机可以从服务器动态获取IP�
 3.主机广播DHCP请求报文(DHCPREQUEST)
 4.DHCP服务器广播DHCP确认报文(DHCPACK)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;路由算法&lt;br&gt;
-&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598240383909.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;p&gt;RIP（应用层协议，采用UDP协议）&lt;br&gt;
-&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598254304064.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-距离向量算法&lt;br&gt;
-&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598242047926.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-慢收敛导致路由器接受了无效路由信息&lt;/p&gt;
-&lt;p&gt;OSPF（开放最短路径优先），内部网关协议&lt;br&gt;
-使用链路状态路由算法&lt;br&gt;
-交换内容：与本路由器相邻的所有路由器的链路状态&lt;/p&gt;
-&lt;p&gt;BGP（应用层协议，借助TCP传送），外部网关协议&lt;br&gt;
-使用路径-向量算法&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;交换内容：
+&lt;pre&gt;&lt;code&gt;路由算法
+![](https://lyhlyhaa.github.io/post-images/1598240383909.png)
+
+
+RIP（应用层协议，采用UDP协议）
+![](https://lyhlyhaa.github.io/post-images/1598254304064.png)
+距离向量算法
+![](https://lyhlyhaa.github.io/post-images/1598242047926.png)
+慢收敛导致路由器接受了无效路由信息
+
+OSPF（开放最短路径优先），内部网关协议
+使用链路状态路由算法
+交换内容：与本路由器相邻的所有路由器的链路状态
+
+BGP（应用层协议，借助TCP传送），外部网关协议
+使用路径-向量算法
+交换内容：
 首次：整个路由表
 非首次：有变化的部分
 &lt;/code&gt;&lt;/pre&gt;
@@ -1607,6 +1620,22 @@ DHCP提供即插即用联网的机制，主机可以从服务器动态获取IP�
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598256909154.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;IP多播&lt;br&gt;
 硬件组播&lt;/p&gt;
+&lt;p&gt;网络层设备：路由器（包含数据链路层、物理层）&lt;/p&gt;
+&lt;h1 id=&#34;传输层&#34;&gt;传输层&lt;/h1&gt;
+&lt;p&gt;传输单位：报文段&lt;br&gt;
+功能：&lt;br&gt;
+1.提供进程与进程之间的逻辑通信&lt;br&gt;
+2.复用与分用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;UDP只在IP数据报服务之上增加了很少功能，即复用分用和差错检测功能。
+UDP的主要特点:
+1.UDP是无连接的，减少开销和发送数据之前的时延。
+2.UDP使用最大努力交付，即不保证可靠交付。
+3.UDP是面向报文的，适合一次性传输少量数据的网络应用。
+4.UDP无拥塞控制，适合很多实时应用。
+5.首部开销小，8B，TCP20B
+
+![](https://lyhlyhaa.github.io/post-images/1598348556647.png)
+&lt;/code&gt;&lt;/pre&gt;
 ">计算机网络（考试）</a>
       </div>
       
