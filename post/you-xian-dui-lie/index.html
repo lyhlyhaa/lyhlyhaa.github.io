@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>优先队列&amp;&amp;贪心算法 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598263252861">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598329222647">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1724,11 +1724,19 @@ current指针所指元素为2时，与end指针所指的元素交换，而后，
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598063184760.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 检验纠错：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598063292458.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;流量控制：&lt;/strong&gt;（在链路层窗口大小是确定的）&lt;br&gt;
-链路层实现方法：接收方收不下就不回复确认&lt;br&gt;
-停止等待协议：每发送一个帧之后发送，等待对方的确认，就停止收到确认之后再发送下一个&lt;br&gt;
-&lt;strong&gt;信道利用率：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。发送时间/（发送时间+往返时间RTT+接收时间）&lt;/strong&gt;&lt;br&gt;
-&lt;em&gt;滑动窗口协议：&lt;/em&gt;&lt;br&gt;
-后退N帧协议（GBN）：&lt;/p&gt;
+链路层实现方法：接收方收不下就不回复确认&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;停止等待协议：每发送一个帧之后发送，等待对方的确认，就停止收到确认之后再发送下一个
+信道利用率：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。发送时间/（发送时间+往返时间RTT+接收时间）
+信道吞吐率=信道利用率*发送方的发送速率
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;滑动窗口协议：&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;后退N帧协议（GBN）：
+1.累积确认（偶尔捎带确认）
+2.接收方只按顺序接收帧，不按序无情丢弃
+3.确认序列号最大的、按序到达的帧
+4.发送窗口最大为2n-1，接收窗口大小为1
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;两种链路：&lt;br&gt;
 点对点链路：两个相邻节点通过一条链路相连，应用：PPP协议，常用于广域网&lt;br&gt;
 广播式链路：常用于局域网，典型拓扑结构：总线型、星型（逻辑总线型）&lt;/p&gt;
@@ -1754,7 +1762,9 @@ IEEE802.11g标准使用了IEEE802.11a的OFDM调制技术，和IEEE802.11b一样�
 Go-back-N策略的基本原理：当接收方检测出失序的信息后，要求发送方重发最后一个正确接受的信息帧之后的所有未被确认的帧
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;网络层&#34;&gt;网络层&lt;/h1&gt;
-&lt;p&gt;传输单位为数据报&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;传输单位为数据报
+IP协议可将源主机的IP数据报分片后进行传输，在到达目的主机之前，在传输过程中可能再次分片，但是不会重组。
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;数据交换&lt;/strong&gt;&lt;br&gt;
 电路交换： 建立连接（呼叫/电路建立） -&amp;gt; 通信 -&amp;gt; 释放连接（拆除电路）&lt;br&gt;
 传输时延最小&lt;br&gt;
@@ -1773,7 +1783,7 @@ Go-back-N策略的基本原理：当接收方检测出失序的信息后，要�
 6.报文交换时延更长，分组交换时延可能不是整数&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598155426118.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 虚电路：建立连接（虚电路建立）-&amp;gt; 数据传输  -&amp;gt; 释放连接（虚电路释放）&lt;/p&gt;
-&lt;p&gt;**数据链路层：**MTU（最大传送单元）：以太网规定为1500字节&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;数据链路层：MTU（最大传送单元）：以太网规定为1500字节，包含数据链路层以上所有数据&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;IP数据报格式：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598185535426.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;标识：同一数据报的分片使用同一标识。
 标志只有2位有意义x _ _
@@ -1824,7 +1834,8 @@ DHCP提供即插即用联网的机制，主机可以从服务器动态获取IP�
 &lt;p&gt;RIP（应用层协议，采用UDP协议）&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598254304064.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 距离向量算法&lt;br&gt;
-&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598242047926.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598242047926.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+慢收敛导致路由器接受了无效路由信息&lt;/p&gt;
 &lt;p&gt;OSPF（开放最短路径优先），内部网关协议&lt;br&gt;
 使用链路状态路由算法&lt;br&gt;
 交换内容：与本路由器相邻的所有路由器的链路状态&lt;/p&gt;
