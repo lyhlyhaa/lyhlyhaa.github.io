@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-27T09:38:56.072Z</updated>
+    <updated>2020-08-27T13:07:13.848Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -757,18 +757,41 @@ UDP的主要特点:
 选项:最大报文段长度MSS、窗口扩大、时间截、选择确认...
 
 </code></pre>
-<p>三次握手（TCP连接建立）：<br>
+<p>可靠传输：<br>
+1.校验 2.序号 3.确认 4.重传<br>
+累计确认：</p>
+<pre><code>冗余ACK（冗余确认）
+每当比期望序号大的失序报文段到达时，发送一个冗余ACK，指明下一个期待字节的序号。
+发送方已发送1，2，3，4，5报文段
+接收方收到1，返回给1的确认（确认号为2的第一个字节）
+接收方收到3，仍返回给1的确认（确认号为2的第一个字节）
+接收方收到4，仍返回给1的确认（确认号为2的第一个字节)
+接收方收到5，仍返回给1的确认（确认号为2的第一个字节)
+发送方收到3个对于报文段1的冗余ACK一认为2报文段丢失，重传2号报文段快速重传
+</code></pre>
+<p>超时重传：重传时间的确定，采用自适应算法，动态改变重传时间RTTs<br>
+三次握手（TCP连接建立）：<br>
 <img src="https://lyhlyhaa.github.io/post-images/1598500308347.png" alt="" loading="lazy"><br>
 四次握手（TCP连接释放）<br>
 <img src="https://lyhlyhaa.github.io/post-images/1598500673688.png" alt="" loading="lazy"></p>
 <hr>
 <p>流量控制：让发送方慢点，让接收方可以<br>
-在通信过程中，接收方根据自己接收缓存的大小，动态地调整发送方的发送窗口大小，即接收窗口rwnd(接收方设置确认报文段的窗口字段来将rwnd通知给发送方），发送方的发送窗口取接收窗口rwnd和拥塞窗口cwnd的最小值。</p>
-<figure data-type="image" tabindex="4"><img src="https://lyhlyhaa.github.io/post-images/1598516547012.png" alt="" loading="lazy"></figure>
+在通信过程中，接收方根据自己接收缓存的大小，动态地调整发送方的发送窗口大小，即接收窗口rwnd(接收方设置确认报文段的窗口字段来将rwnd通知给发送方），发送方的发送窗口取接收窗口rwnd和拥塞窗口cwnd的最小值。<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598516547012.png" alt="" loading="lazy"></p>
 <p><code>拥塞控制和流量控制区别，拥塞控制是整个网络中数据太多导致发送的数据迟迟到不了目的地，是全局性问题，而流量控制是点对点的问题</code></p>
-<p>TCP拥塞控制<br>
-慢开始和拥塞避免：<br>
-快重传和快恢复：</p>
+<p>TCP拥塞控制(防止过多的数据注入到网络中)<br>
+慢开始和拥塞避免：<img src="https://lyhlyhaa.github.io/post-images/1598530881385.png" alt="" loading="lazy"><br>
+快重传和快恢复：<img src="https://lyhlyhaa.github.io/post-images/1598531031133.png" alt="" loading="lazy"></p>
+<h1 id="应用层">应用层</h1>
+<p>两种网络模型：c/n 客户/服务器模型；ppp模型</p>
+<p>域名：越右边越高，顶级域名  二级域名  三级域名等<br>
+域名服务器：<br>
+根域名服务器<br>
+顶级域名服务器<br>
+权限域名服务器（权威域名服务器）<br>
+本地域名服务器</p>
+<p>递归查询（一路查到底）、迭代查询（查一个回来一次）</p>
+<p>FTP TFTP</p>
 ]]></content>
     </entry>
 </feed>
