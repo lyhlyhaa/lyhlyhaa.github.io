@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-25T09:54:51.452Z</updated>
+    <updated>2020-08-27T03:57:59.554Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -734,6 +734,17 @@ UDP的主要特点:
 
 ![](https://lyhlyhaa.github.io/post-images/1598348556647.png)
 </code></pre>
+<pre><code>TCP报文段首部格式
+![](https://lyhlyhaa.github.io/post-images/1598496734676.png)
+序号:在一个TCP连接中传送的字节流中的每一个字节都按顺序编号，本字段表示本报文段所发送数据的第一个字节的序号。
+确认号:期望收到对方下一个报文段的第一个数据字节的序号。若确认号为N，则证明到序号N-1为止的所有数据都已正确收到。
+数据偏移（首部长度）:TCP报文段的数据起始处距离TCP报文段的起始处有多远，以4B位单位，即1个数值是4B。
+
+</code></pre>
+<p>三次握手（TCP连接建立）：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598500308347.png" alt="" loading="lazy"><br>
+四次握手（TCP连接释放）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598500673688.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>

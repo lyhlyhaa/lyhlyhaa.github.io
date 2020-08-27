@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598349288205">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598500675264">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1220,6 +1220,17 @@ UDP的主要特点:
 
 ![](https://lyhlyhaa.github.io/post-images/1598348556647.png)
 &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;TCP报文段首部格式
+![](https://lyhlyhaa.github.io/post-images/1598496734676.png)
+序号:在一个TCP连接中传送的字节流中的每一个字节都按顺序编号，本字段表示本报文段所发送数据的第一个字节的序号。
+确认号:期望收到对方下一个报文段的第一个数据字节的序号。若确认号为N，则证明到序号N-1为止的所有数据都已正确收到。
+数据偏移（首部长度）:TCP报文段的数据起始处距离TCP报文段的起始处有多远，以4B位单位，即1个数值是4B。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;三次握手（TCP连接建立）：&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598500308347.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+四次握手（TCP连接释放）&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598500673688.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 ">计算机网络（考试）</a>
       </div>
       
