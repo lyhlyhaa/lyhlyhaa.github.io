@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-27T13:07:13.848Z</updated>
+    <updated>2020-08-28T03:26:55.550Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -783,7 +783,7 @@ UDP的主要特点:
 慢开始和拥塞避免：<img src="https://lyhlyhaa.github.io/post-images/1598530881385.png" alt="" loading="lazy"><br>
 快重传和快恢复：<img src="https://lyhlyhaa.github.io/post-images/1598531031133.png" alt="" loading="lazy"></p>
 <h1 id="应用层">应用层</h1>
-<p>两种网络模型：c/n 客户/服务器模型；ppp模型</p>
+<p>两种网络模型：c/s 客户/服务器模型；p2p模型</p>
 <p>域名：越右边越高，顶级域名  二级域名  三级域名等<br>
 域名服务器：<br>
 根域名服务器<br>
@@ -791,7 +791,43 @@ UDP的主要特点:
 权限域名服务器（权威域名服务器）<br>
 本地域名服务器</p>
 <p>递归查询（一路查到底）、迭代查询（查一个回来一次）</p>
-<p>FTP TFTP</p>
+<p>FTP TFTP<br>
+FTP使用TCP实现可靠传输<br>
+控制连接（端口21，始终保持）和数据连接（，保持一会）</p>
+<p>SMTP<br>
+组成结构：用户代理、邮件服务器、协议<br>
+用户代理---SMTP---邮件服务器--SMTP--邮件服务器---POP3---接收方<br>
+使用TCP连接  端口号25   C/S方式<br>
+MIME通用因特网邮件扩充：使支持多种类型数据传输</p>
+<pre><code>读取邮件协议：
+POP3邮局协议 ：TCP连接 端口号110  C/S；
+网际报文存取协议IMAP：想下就下
+</code></pre>
+<p>基于万维网的电子邮件<br>
+用户代理---HTTP---邮件服务器--SMTP--邮件服务器---HTTP---接收方</p>
+<p>HTTP(HTTP协议是无状态的)<br>
+统一资源定位符URL：唯一标识一个资源（文字、视频。<br>
+URL一般形式:<br>
+&lt;协议&gt;://&lt;主机&gt;:&lt;端口&gt;/&lt;路径&gt;http://www.pku.edu.cn<br>
+http          域名<br>
+ftp            IP地址</p>
+<pre><code>输入URL后的过程：
+1.浏览器分析URL
+2.浏览器向DNS请求解析IP地址
+3.DNS解析出IP地址
+4.浏览器与服务器建立TCP连接
+5.浏览器发出取文件命令
+6.服务器响应
+7.释放TCP连接
+8.浏览器显示
+</code></pre>
+<p>HTTP格式<img src="https://lyhlyhaa.github.io/post-images/1598583730914.png" alt="" loading="lazy"><br>
+状态码:<br>
+1xx表示通知信息的，如请求收到了或正在处理。<br>
+2xx表示成功，如接受或知道了。<br>
+3xx表示重定向，如要完成请求还必须采取进一步的行动。<br>
+4xx表示客户的差错，如请求中有错误的语法或不能完成。<br>
+5xx表示服务器的差错，如服务器失效无法完成请求。</p>
 ]]></content>
     </entry>
 </feed>

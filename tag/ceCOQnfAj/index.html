@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598533629047">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598585212736">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1290,7 +1290,7 @@ UDP的主要特点:
 慢开始和拥塞避免：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598530881385.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 快重传和快恢复：&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598531031133.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;应用层&#34;&gt;应用层&lt;/h1&gt;
-&lt;p&gt;两种网络模型：c/n 客户/服务器模型；ppp模型&lt;/p&gt;
+&lt;p&gt;两种网络模型：c/s 客户/服务器模型；p2p模型&lt;/p&gt;
 &lt;p&gt;域名：越右边越高，顶级域名  二级域名  三级域名等&lt;br&gt;
 域名服务器：&lt;br&gt;
 根域名服务器&lt;br&gt;
@@ -1298,7 +1298,43 @@ UDP的主要特点:
 权限域名服务器（权威域名服务器）&lt;br&gt;
 本地域名服务器&lt;/p&gt;
 &lt;p&gt;递归查询（一路查到底）、迭代查询（查一个回来一次）&lt;/p&gt;
-&lt;p&gt;FTP TFTP&lt;/p&gt;
+&lt;p&gt;FTP TFTP&lt;br&gt;
+FTP使用TCP实现可靠传输&lt;br&gt;
+控制连接（端口21，始终保持）和数据连接（，保持一会）&lt;/p&gt;
+&lt;p&gt;SMTP&lt;br&gt;
+组成结构：用户代理、邮件服务器、协议&lt;br&gt;
+用户代理---SMTP---邮件服务器--SMTP--邮件服务器---POP3---接收方&lt;br&gt;
+使用TCP连接  端口号25   C/S方式&lt;br&gt;
+MIME通用因特网邮件扩充：使支持多种类型数据传输&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;读取邮件协议：
+POP3邮局协议 ：TCP连接 端口号110  C/S；
+网际报文存取协议IMAP：想下就下
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;基于万维网的电子邮件&lt;br&gt;
+用户代理---HTTP---邮件服务器--SMTP--邮件服务器---HTTP---接收方&lt;/p&gt;
+&lt;p&gt;HTTP(HTTP协议是无状态的)&lt;br&gt;
+统一资源定位符URL：唯一标识一个资源（文字、视频。&lt;br&gt;
+URL一般形式:&lt;br&gt;
+&amp;lt;协议&amp;gt;://&amp;lt;主机&amp;gt;:&amp;lt;端口&amp;gt;/&amp;lt;路径&amp;gt;http://www.pku.edu.cn&lt;br&gt;
+http          域名&lt;br&gt;
+ftp            IP地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;输入URL后的过程：
+1.浏览器分析URL
+2.浏览器向DNS请求解析IP地址
+3.DNS解析出IP地址
+4.浏览器与服务器建立TCP连接
+5.浏览器发出取文件命令
+6.服务器响应
+7.释放TCP连接
+8.浏览器显示
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;HTTP格式&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1598583730914.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+状态码:&lt;br&gt;
+1xx表示通知信息的，如请求收到了或正在处理。&lt;br&gt;
+2xx表示成功，如接受或知道了。&lt;br&gt;
+3xx表示重定向，如要完成请求还必须采取进一步的行动。&lt;br&gt;
+4xx表示客户的差错，如请求中有错误的语法或不能完成。&lt;br&gt;
+5xx表示服务器的差错，如服务器失效无法完成请求。&lt;/p&gt;
 ">计算机网络（考试）</a>
       </div>
       
