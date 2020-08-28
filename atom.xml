@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-28T03:26:55.550Z</updated>
+    <updated>2020-08-28T08:03:30.380Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -828,6 +828,11 @@ ftp            IP地址</p>
 3xx表示重定向，如要完成请求还必须采取进一步的行动。<br>
 4xx表示客户的差错，如请求中有错误的语法或不能完成。<br>
 5xx表示服务器的差错，如服务器失效无法完成请求。</p>
+<h1 id="网络安全">网络安全</h1>
+<p>一般的数据加密模型 （即加密密钥与解密密钥是相同的密码体制。<br>
+这种加密系统又称为对称密钥系统。）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598600983595.png" alt="" loading="lazy"></p>
+<p>数字签名<img src="https://lyhlyhaa.github.io/post-images/1598601806438.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>
