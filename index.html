@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598604455224">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598673667011">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -346,12 +346,12 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>13<span class="language" data-lan="minute">分钟</span></span>
+      <span>14<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>3691<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>3951<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
@@ -1301,6 +1301,7 @@ Seq2：2  6  8  9&lt;br&gt;
 &lt;p&gt;简单计算机系统（无操作系统）：用户独占操作系统、&lt;br&gt;
 单道批处理系统：自动性、顺序性和单道性（内存中只允许一道程序）、&lt;br&gt;
 多道批处理系统：交替执行&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596942394126.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;code&gt;允许多个用户将若干作业提交给计算机脱机处理的操作系统是多道批处理系统&lt;/code&gt;&lt;br&gt;
 宏观并行，微观串行，多道性&lt;br&gt;
 分时系统：交互性、及时性、独立性、多路性&lt;br&gt;
 &lt;strong&gt;批处理系统、分时系统的出现标志着操作系统的形成&lt;/strong&gt;&lt;br&gt;
@@ -1311,7 +1312,8 @@ Seq2：2  6  8  9&lt;br&gt;
 存储器管理：内存分配、内存保护、地址映射、内存扩充&lt;br&gt;
 设备管理：缓冲区管理、设备分配、设备处理、虚拟设备管理&lt;br&gt;
 文件管理：&lt;br&gt;
-及用户接口：命令接口、程序接口、图形接口&lt;/p&gt;
+及用户接口：命令接口、程序接口、图形接口&lt;br&gt;
+&lt;code&gt;基本特征:并发性、共享性、虚拟性 、异步性&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;第2章-中断&#34;&gt;第2章 中断&lt;/h1&gt;
 &lt;h2 id=&#34;21-中断的基本概念理解&#34;&gt;2.1 中断的基本概念（理解）&lt;/h2&gt;
 &lt;p&gt;目态（用户态，权限低） 管态（核心态）&lt;br&gt;
@@ -1344,10 +1346,12 @@ PCB是进程的唯一标识符&lt;/p&gt;
 进程阻塞和唤醒&lt;br&gt;
 进程挂起和激活&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597136342534.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;服务器进程为多个客户进程提供服务或资源时，采用不阻塞发送，阻塞接收的消息传递方式较为常见。&lt;/p&gt;
 &lt;h2 id=&#34;33-线程&#34;&gt;3.3 线程&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;线程简介（理解）&lt;/em&gt;&lt;br&gt;
 线程是基本的cpu执行单元，调度和分派的基本单位，程序执行流的最小单位&lt;br&gt;
 进程是资源分配的基本单位&lt;br&gt;
+一个进程的线程共享该进程的全局变量、打开的文件、I/O资源&lt;br&gt;
 &lt;em&gt;多线程（掌握）&lt;/em&gt;&lt;br&gt;
 线程实现与线程模型（理解）&lt;br&gt;
 多对一；一对一；多对多&lt;br&gt;
@@ -1398,7 +1402,7 @@ PCB是进程的唯一标识符&lt;/p&gt;
 &lt;p&gt;死锁的表示方法和判定（理解）&lt;br&gt;
 系统资源分配图，请求边、分配边，进程节点和资源节点&lt;/p&gt;
 &lt;h2 id=&#34;44-死锁预防理解&#34;&gt;4.4 死锁预防（理解）&lt;/h2&gt;
-&lt;p&gt;破坏“请求和保持”条件&lt;br&gt;
+&lt;p&gt;破坏“请求和保持”条件：要求进程一次性申请所有资源，操作系统阻塞进程直到其所有资源申请得到满足&lt;br&gt;
 破坏“不剥夺“条件&lt;br&gt;
 破坏”循环等待“条件&lt;br&gt;
 破坏”互斥访问“条件（一般不用）&lt;/p&gt;
@@ -1441,7 +1445,9 @@ PCB是进程的唯一标识符&lt;/p&gt;
 &lt;p&gt;分页地址变换、&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1597755784851.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 页表长度表示有多少个页&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;页表项是指页表中的一行？&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
-快表（掌握）考察访问时间&lt;/p&gt;
+快表（掌握）考察访问时间&lt;br&gt;
+通常系统中，先访问快表，未命中时再访问内存；在有些系统中，快表与内存的访问同时进行，当快表命中时就停止对内存的访问。这里题目未具体指明，我们按照前者进行计算。但如果题中有具体的说明，计算时则应注意区别。&lt;br&gt;
+计算过程：[(0.2+1)×85%+(0.2+1+1)×(1-85%)]μs=1.35μs。&lt;/p&gt;
 &lt;p&gt;两级页表、多级页表（理解）&lt;/p&gt;
 &lt;h2 id=&#34;55-段式与段页式存储管理&#34;&gt;5.5 段式与段页式存储管理&lt;/h2&gt;
 &lt;p&gt;段、段表、地址结构、分段地址变换（掌握）&lt;br&gt;
