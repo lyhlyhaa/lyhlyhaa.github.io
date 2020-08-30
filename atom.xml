@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-08-30T03:50:13.970Z</updated>
+    <updated>2020-08-30T09:18:44.628Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -17,6 +17,11 @@
         <updated>2020-08-30T02:48:58.000Z</updated>
         <content type="html"><![CDATA[<pre><code>数据库管理系统（Database Management System，简称DBMS）管理数据库的系统软件，是数据库系统的核心组件。
 </code></pre>
+<p>数据库系统的特点<br>
+数据结构化<br>
+数据的共享性高，冗余度低且易扩充<br>
+数据独立性高<br>
+数据由数据库管理系统统一管理和控制</p>
 <h3 id="数据模型的组成要素">数据模型的组成要素</h3>
 <pre><code>数据结构 
 数据操作 
