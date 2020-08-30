@@ -8,7 +8,7 @@
 <meta name="keywords" content="&lt;meta name=&#34;keywords&#34; content=&#34;湘潭大学程设&#34;/&gt;">
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
-<title>骨牌问题（铺地砖） | 混子协会会长</title>
+<title>数据库 | 混子协会会长</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1598759410880">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
@@ -48,7 +48,7 @@
 </script>
 
 
-  <meta name="description" content="骨牌问题（铺地砖）" />
+  <meta name="description" content="数据库" />
   <meta name="keywords" content="" />
 </head>
 
@@ -200,7 +200,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/images/avatar.png"/>
@@ -243,6 +244,220 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%84%E6%88%90%E8%A6%81%E7%B4%A0">数据模型的组成要素</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B">最常用的数据模型</a>
+<ul>
+<li><a href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B">非关系模型</a>
+<ul>
+<li><a href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8Bhierarchical-model">层次模型(Hierarchical Model)</a></li>
+<li><a href="#%E7%BD%91%E7%8A%B6%E6%A8%A1%E5%9E%8Bnetwork-model">网状模型(Network Model)</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8Brelational-model">关系模型(Relational Model)</a>
+<ul>
+<li><a href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%84%E6%88%90">关系模型的组成</a>
+<ul>
+<li><a href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">关系数据结构</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E9%9B%86%E5%90%88">关系操作集合</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F">关系完整性约束</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -330,8 +545,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://lyhlyhaa.github.io/post/gu-pai-wen-ti-pu-di-zhuan/">
-      骨牌问题（铺地砖）
+    <a class="post-title-link" href="https://lyhlyhaa.github.io/post/shu-ju-ku/">
+      数据库
     </a>
   </h1>
   <div class="post-meta">
@@ -339,23 +554,23 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-07-24 15:14:41">2020-07-24</span>
+      <span class="publish-time" data-t="2020-08-30 10:48:58">2020-08-30</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>37<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>377<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/gu-pai-wen-ti-pu-di-zhuan/" data-flag-title="骨牌问题（铺地砖）" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/shu-ju-ku/" data-flag-title="数据库" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -364,7 +579,37 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>暂时看一下别的博客（https://blog.csdn.net/xiangAccepted/article/details/80229187?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param）</p>
+              <pre><code>数据库管理系统（Database Management System，简称DBMS）管理数据库的系统软件，是数据库系统的核心组件。
+</code></pre>
+<h3 id="数据模型的组成要素">数据模型的组成要素</h3>
+<pre><code>数据结构 
+数据操作 
+数据完整性约束
+</code></pre>
+<h2 id="最常用的数据模型">最常用的数据模型</h2>
+<h3 id="非关系模型">非关系模型</h3>
+<h4 id="层次模型hierarchical-model">层次模型(Hierarchical Model)</h4>
+<pre><code>层次模型用树形结构来表示各类实体以及实体间的联系，有且仅有一个根结点；
+每个非根结点有且仅有一个父(直接上层)结点。它最适合表示实体的一对多联系。
+</code></pre>
+<h4 id="网状模型network-model">网状模型(Network Model)</h4>
+<pre><code>通过网状结构表示实体及联系。“网”中每个结点表示一个实体(型)，结点之间箭头表示实体(型)间的联系。
+网状数据模型主要特点：网状数据模型可能有多个根结点，某些非根结点可能有多个父结点，适合表示实体的多对多联系。
+</code></pre>
+<h3 id="关系模型relational-model">关系模型(Relational Model)</h3>
+<h4 id="关系模型的组成">关系模型的组成</h4>
+<h5 id="关系数据结构">关系数据结构</h5>
+<pre><code>单一的数据结构----关系
+现实世界的实体以及实体间的各种联系均用关系来表示
+数据的逻辑结构----二维表
+从用户角度，关系模型中数据的逻辑结构是一张二维表。
+</code></pre>
+<h5 id="关系操作集合">关系操作集合</h5>
+<pre><code>插入、删除、修改、查询（选择、投影、连接、除、并、交、差）
+</code></pre>
+<h5 id="关系完整性约束">关系完整性约束</h5>
+<pre><code>实体完整性、参照完整性、域完整性、用户定义完整性
+</code></pre>
 
             </div>
             
@@ -377,7 +622,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://lyhlyhaa.github.io/post/gu-pai-wen-ti-pu-di-zhuan/" title="骨牌问题（铺地砖）">https://lyhlyhaa.github.io/post/gu-pai-wen-ti-pu-di-zhuan/</a>
+      <a href="https://lyhlyhaa.github.io/post/shu-ju-ku/" title="数据库">https://lyhlyhaa.github.io/post/shu-ju-ku/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -390,15 +635,11 @@
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="斐波拉契数列" href="https://lyhlyhaa.github.io/post/fei-bo-la-qi-shu-lie/">斐波拉契数列</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="斐波拉契数列" href="https://lyhlyhaa.github.io/post/fei-bo-la-qi-shu-lie/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="三色旗问题" href="https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/">三色旗问题</a>
-        <a class="nav-mobile-next" title="三色旗问题" href="https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/">下一篇</a>
+        <a class="nav-pc-next" title="逆序数" href="https://lyhlyhaa.github.io/post/ni-xu-shu/">逆序数</a>
+        <a class="nav-mobile-next" title="逆序数" href="https://lyhlyhaa.github.io/post/ni-xu-shu/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
