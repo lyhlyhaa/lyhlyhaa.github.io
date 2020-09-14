@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1599035127321">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600096357749">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -194,7 +194,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">19</span>
+        <span class="site-item-stat-count">20</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -244,6 +244,76 @@
         <div class="section-box gemini">
           <section class="section  posts-expand slide-down-in">
             
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/">
+      三色旗问题
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-07-24 10:54:57">2020-07-24</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>111<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+      <div class="post-body">
+        
+        
+          
+            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
+            
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+            
+              <p><p>要用到三个指针：一个前指针begin，一个中指针current，一个后指针end，current指针遍历整个数组序列，当</p>
+<p>current指针所指元素为0时，与begin指针所指的元素交换，而后current++，begin++ ；<br>
+current指针所指元素为1时，不做任何交换（即球不动），而后current++ ；<br>
+
+                
+              <p>
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn language" data-lan="read-more" href="https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
   <article class="post-list-box  post box-shadow-wrapper">
     <div class="article-wrapper bg-color">
       <section class="post-header">
@@ -1253,6 +1323,41 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/hui-bian/"" data-c="
+          &lt;h2 id=&#34;数据定义&#34;&gt;数据定义&lt;/h2&gt;
+&lt;p&gt;比如DB定义的变量长度属性为字节，DW定义的变量长度属性为字；SBYTE定义的变量为有符号数，BYTE定义的变量为无符号数。&lt;/p&gt;
+&lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;6个状态标志位的功能分别叙述如下：
+CF(Carry Flag)——进位标志位。当执行一个加法(或减法)运算，使最高位产生进位(或借位)时，CF为1；否则为0。
+PF(Parity Flag)——奇偶标志位。该标志位反映运算结果中1的个数是偶数还是奇数。当指令执行结果的低8位中含有偶数个1时，PF=1；否则PF=0。
+AF(Auxiliary carry Flag)——辅助进位标志位。当执行一个加法(或减法)运算，使结果的低4位向高4位有进位(或借位)时，AF=1；否则AF=0。
+ZF(Zero Flag)——零标志位。若当前的运算结果为零，ZF=1；否则ZF=0。
+SF(Sign Flag)——符号标志位。它和运算结果的最高位相同。
+OF(Overflow Flag)——溢出标志位。当补码运算有溢出时，OF=1；否则OF=0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;赋值：
+MOV destination,source
+dest = source;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;交换数据
+XCHG 交换两个操作数内容
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;加和减
+INC reg/mem 加1
+DEC reg/mem 减1
+
+ADD dest,source  加 dest=dest+source
+SUB dest, source  减 dest=dest-source
+
+NEG reg/mem  将操作数转化为二进制补码
+将目标操作数按位取反再加 1，就可以得到这个数的二进制补码。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+">汇编</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/shu-ju-ku/"" data-c="

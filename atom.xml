@@ -2,13 +2,51 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-09-02T08:25:30.891Z</updated>
+    <updated>2020-09-14T15:12:40.954Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[汇编]]></title>
+        <id>https://lyhlyhaa.github.io/post/hui-bian/</id>
+        <link href="https://lyhlyhaa.github.io/post/hui-bian/">
+        </link>
+        <updated>2020-09-14T13:40:58.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="数据定义">数据定义</h2>
+<p>比如DB定义的变量长度属性为字节，DW定义的变量长度属性为字；SBYTE定义的变量为有符号数，BYTE定义的变量为无符号数。</p>
+<h2 id="指令">指令</h2>
+<pre><code>6个状态标志位的功能分别叙述如下：
+CF(Carry Flag)——进位标志位。当执行一个加法(或减法)运算，使最高位产生进位(或借位)时，CF为1；否则为0。
+PF(Parity Flag)——奇偶标志位。该标志位反映运算结果中1的个数是偶数还是奇数。当指令执行结果的低8位中含有偶数个1时，PF=1；否则PF=0。
+AF(Auxiliary carry Flag)——辅助进位标志位。当执行一个加法(或减法)运算，使结果的低4位向高4位有进位(或借位)时，AF=1；否则AF=0。
+ZF(Zero Flag)——零标志位。若当前的运算结果为零，ZF=1；否则ZF=0。
+SF(Sign Flag)——符号标志位。它和运算结果的最高位相同。
+OF(Overflow Flag)——溢出标志位。当补码运算有溢出时，OF=1；否则OF=0
+</code></pre>
+<pre><code>赋值：
+MOV destination,source
+dest = source;
+</code></pre>
+<pre><code>交换数据
+XCHG 交换两个操作数内容
+</code></pre>
+<pre><code>加和减
+INC reg/mem 加1
+DEC reg/mem 减1
+
+ADD dest,source  加 dest=dest+source
+SUB dest, source  减 dest=dest-source
+
+NEG reg/mem  将操作数转化为二进制补码
+将目标操作数按位取反再加 1，就可以得到这个数的二进制补码。
+
+</code></pre>
+<pre><code></code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数据库]]></title>
         <id>https://lyhlyhaa.github.io/post/shu-ju-ku/</id>
@@ -545,18 +583,6 @@ ADSL技术就是用数字技术对现有的模拟电话用户线进行改造，�
         </link>
         <updated>2020-07-24T07:14:41.000Z</updated>
         <content type="html"><![CDATA[<p>暂时看一下别的博客（https://blog.csdn.net/xiangAccepted/article/details/80229187?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param）</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[三色旗问题]]></title>
-        <id>https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/</id>
-        <link href="https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/">
-        </link>
-        <updated>2020-07-24T02:54:57.000Z</updated>
-        <content type="html"><![CDATA[<p>要用到三个指针：一个前指针begin，一个中指针current，一个后指针end，current指针遍历整个数组序列，当</p>
-<p>current指针所指元素为0时，与begin指针所指的元素交换，而后current++，begin++ ；<br>
-current指针所指元素为1时，不做任何交换（即球不动），而后current++ ；<br>
-current指针所指元素为2时，与end指针所指的元素交换，而后，current指针不动，end-- 。</p>
 ]]></content>
     </entry>
 </feed>
