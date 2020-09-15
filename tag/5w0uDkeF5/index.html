@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600096357749">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600146701207">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -577,6 +577,24 @@
         <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/hui-bian/"" data-c="
           &lt;h2 id=&#34;数据定义&#34;&gt;数据定义&lt;/h2&gt;
 &lt;p&gt;比如DB定义的变量长度属性为字节，DW定义的变量长度属性为字；SBYTE定义的变量为有符号数，BYTE定义的变量为无符号数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;LE little-endian（小端）
+地址低位存储值的低位；
+地址高位存储值的高位；
+怎么讲是最符合人的思维的字节序，是因为从人的第一观感来说； 
+低位值小，就应该放在内存地址小的地方，也即内存地址低位；
+反之，高位值就应该放在内存地址大的地方，也即内存地址高位；
+如：0x01020304(DWORD)
+LE 04 03 02 01 
+BE 01 02 03 04
+BE big-endian（大端）
+最直观的字节序；
+地址低位存储值的高位； 
+地址高位存储值的低位；
+为什么说直观，不要考虑对应关系； 
+只需要把内存地址从左到右按照由低到高的顺序写出；
+把值按照通常的高位到低位的顺序写出；
+两者对照，一个字节一个字节的填充进去
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;6个状态标志位的功能分别叙述如下：
 CF(Carry Flag)——进位标志位。当执行一个加法(或减法)运算，使最高位产生进位(或借位)时，CF为1；否则为0。
@@ -585,6 +603,12 @@ AF(Auxiliary carry Flag)——辅助进位标志位。当执行一个加法(或�
 ZF(Zero Flag)——零标志位。若当前的运算结果为零，ZF=1；否则ZF=0。
 SF(Sign Flag)——符号标志位。它和运算结果的最高位相同。
 OF(Overflow Flag)——溢出标志位。当补码运算有溢出时，OF=1；否则OF=0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;4个数据寄存器(EAX、EBX、ECX和EDX)
+用DX、AX寄存器保存双精度数，AX保存地位，DX保存高位
+2个变址和指针寄存器(ESI和EDI) 2个指针寄存器(ESP和EBP)
+6个段寄存器(ES、CS、SS、DS、FS和GS)
+1个指令指针寄存器(EIP) 1个标志寄存器(EFlags)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;赋值：
 MOV destination,source
@@ -602,9 +626,60 @@ SUB dest, source  减 dest=dest-source
 
 NEG reg/mem  将操作数转化为二进制补码
 将目标操作数按位取反再加 1，就可以得到这个数的二进制补码。
-
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;TYPE 运算符返回变量单个元素的大小，这个大小是以字节为单位计算的。比如，TYPE 为字节，返回值是 1；TYPE 为字，返回值是 2；TYPE 为双字，返回值是 4；TYPE 为四字，返回值是 8。示例如下：
+var1 BYTE ?        TYPE var1 = 1	
+var2 WORD ?     TYPE var2 = 2	
+var3 DWORD ?  TYPE var3 = 4
+var4 QWORD ?  TYPE var4 = 8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;LENGTHOF 运算符计算数组中元素的个数，元素个数是由数组标号同一行出现的数值来定义的。
+OFFSET 运算符返回数据标号的偏移量。这个偏移量按字节计算，表示的是该数据标号距离数据段起始地址的距离。
+.data
+bVal BYTE ?         
+假设bVal 在偏移量为 0040 4000（十六进制）的位置
+mov esi,OFFSET bVal             ; ESI = 00404000h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;过程可以非正式地定义为：由返回语句结束的已命名的语句块。过程用 PROC 和 ENDP 伪指令来定义，并且必须为其分配一个名字（有效标识符）。到目前为止，所有编写的程序都包含了一个名为 main 的过程
+
+call调用新的过程
+当在程序启动过程之外创建一个过程时，就用 RET 指令来结束它。RET 强制 CPU 返回到该过程被调用的位置：
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;CMP比较指令是执行两个数的相减操作,包括有符号数&lt;br&gt;
+CMPS比较指令是执行两个字符串的相减操作,所有数据认为是无符号数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; 1) 相等性的比较
+下表列出了基于相等性评估的跳转指令。有些情况下，进行比较的是两个操作数；其他情况下，则是基于 CX、ECX 或 RCX 的值进行跳转。表中符号 leftOp 和 rightOp 分别指的是 CMP 指令中的左（目的）操作数和右（源）操 作数：
+
+助记符	说明
+JE	相等跳转 (leftOp=rightOp)
+JNE	不相等跳转 (leftOp M rightOp)
+JCXZ	CX=0 跳转
+JECXZ	ECX=0 跳转
+JRCXZ	RCX=0 跳转（64 位模式）
+
+2) 无符号数比较
+基于无符号数比较的跳转如下表所示。操作数的名称反映了表达式中操作数的顺序（比如 leftOp &amp;lt; rightOp）。下表中的跳转仅在比较无符号数值时才有意义。有符号操作数使用不同的跳转指令。
+
+助记符	说明	助记符	说明
+JA	大于跳转（若 leftOp &amp;gt; rightOp）	JB	小于跳转（若 leftOp &amp;lt; rightOp）
+JNBE	不小于或等于跳转（与 JA 相同）	JNAE	不大于或等于跳转（与 JB 相同）
+JAE	大于或等于跳转（若 leftOp ≥ rightOp）	JBE	小于或等于跳转（若 leftOp ≤ rightOp）
+JNB	不小于跳转（与 JAE 相同）	JNA	不大于跳转（与 JBE 相同）
+
+3) 有符号数比较
+下表列岀了基于有符号数比较的跳转。下面的指令序列展示了两个有符号数值的比较：
+
+助记符	说明	助记符	说明
+JG	大于跳转（若 leftOp &amp;gt; rightOp）	JL	小于跳转（若 leftOp &amp;lt; rightOp）
+JNLE	不小于或等于跳转（与 JG 相同）	JNGE	不大于或等于跳转（与 JL 相同）
+JGE	大于或等于跳转（若 leftOp ≥ rightOp）	JLE	小于或等于跳转（若 leftOp ≤ rightOp）
+JNL	不小于跳转（与 JGE 相同）	JNG	不大于跳转（与 JLE 相同
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;SHL（左移）指令使目的操作数逻辑左移一位，最低位用 0 填充。最高位移入进位标志位，而进位标志位中原来的数值被丢弃：&lt;br&gt;
+SHR（右移）指令使目的操作数逻辑右移一位，最高位用 0 填充。最低位复制到进位标志位，而进位标志位中原来的数值被丢弃：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;宏指令简化程序的书写，不节省程序存储空间，但执行时间比子程序短。 
+子程序简化程序的书写，也节省程序的存储空间，但执行时间比宏指令长。 
+&lt;/code&gt;&lt;/pre&gt;
 ">汇编</a>
       </div>
       
