@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>dp | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600163442152">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600172320527">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1216,6 +1216,16 @@ JG	大于跳转（若 leftOp &amp;gt; rightOp）	JL	小于跳转（若 leftOp &a
 JNLE	不小于或等于跳转（与 JG 相同）	JNGE	不大于或等于跳转（与 JL 相同）
 JGE	大于或等于跳转（若 leftOp ≥ rightOp）	JLE	小于或等于跳转（若 leftOp ≤ rightOp）
 JNL	不小于跳转（与 JGE 相同）	JNG	不大于跳转（与 JLE 相同
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;LOOP 指令，正式称为按照 ECX 计数器循环，将程序块重复特定次数。ECX 自动成为计数器，每循环一次计数值减 1。语法如下所示：
+LOOP destination
+循环目标必须距离当前地址计数器 -128 到 +127 字节范围内。LOOP 指令的执行有两个步骤：
+第一步，ECX 减 1。
+第二步，将 ECX 与 0 比较。
+
+如果 ECX 不等于 0，则跳转到由目标给岀的标号。否则，如果 ECX 等于 0，则不发生跳转，并将控制传递到循环后面的指令。
+
+LOOPZ（为零跳转）指令的工作和 LOOP 指令相同，只是有一个附加条件：为零控制转向目的标号，零标志位必须置 1。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;SHL（左移）指令使目的操作数逻辑左移一位，最低位用 0 填充。最高位移入进位标志位，而进位标志位中原来的数值被丢弃：&lt;br&gt;
 SHR（右移）指令使目的操作数逻辑右移一位，最高位用 0 填充。最低位复制到进位标志位，而进位标志位中原来的数值被丢弃：&lt;br&gt;
