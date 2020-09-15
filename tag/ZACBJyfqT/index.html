@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600146701207">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600156572402">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -562,9 +562,17 @@ BE big-endian（大端）
 把值按照通常的高位到低位的顺序写出；
 两者对照，一个字节一个字节的填充进去
 &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;能在控制台上显示汇编时消息的伪指令是ECHO
+能停止所有后续的宏展开的伪指令是EXITM
+将全部的32位通用寄存器压入堆栈的指令是PUSHAD
+调用IDIV指令前，对其16位被除数进行符号扩展的指令是CBW
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;6个状态标志位的功能分别叙述如下：
 CF(Carry Flag)——进位标志位。当执行一个加法(或减法)运算，使最高位产生进位(或借位)时，CF为1；否则为0。
+STC是进位标志CF置1
+CLC指令可以使进位标志CF清零，CMC指令可用来对进位标志CF取反。
+
 PF(Parity Flag)——奇偶标志位。该标志位反映运算结果中1的个数是偶数还是奇数。当指令执行结果的低8位中含有偶数个1时，PF=1；否则PF=0。
 AF(Auxiliary carry Flag)——辅助进位标志位。当执行一个加法(或减法)运算，使结果的低4位向高4位有进位(或借位)时，AF=1；否则AF=0。
 ZF(Zero Flag)——零标志位。若当前的运算结果为零，ZF=1；否则ZF=0。
@@ -599,8 +607,8 @@ var1 BYTE ?        TYPE var1 = 1
 var2 WORD ?     TYPE var2 = 2	
 var3 DWORD ?  TYPE var3 = 4
 var4 QWORD ?  TYPE var4 = 8
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;LENGTHOF 运算符计算数组中元素的个数，元素个数是由数组标号同一行出现的数值来定义的。
+
+LENGTHOF 运算符计算数组中元素的个数，元素个数是由数组标号同一行出现的数值来定义的。
 OFFSET 运算符返回数据标号的偏移量。这个偏移量按字节计算，表示的是该数据标号距离数据段起始地址的距离。
 .data
 bVal BYTE ?         
@@ -643,9 +651,32 @@ JGE	大于或等于跳转（若 leftOp ≥ rightOp）	JLE	小于或等于跳转�
 JNL	不小于跳转（与 JGE 相同）	JNG	不大于跳转（与 JLE 相同
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;SHL（左移）指令使目的操作数逻辑左移一位，最低位用 0 填充。最高位移入进位标志位，而进位标志位中原来的数值被丢弃：&lt;br&gt;
-SHR（右移）指令使目的操作数逻辑右移一位，最高位用 0 填充。最低位复制到进位标志位，而进位标志位中原来的数值被丢弃：&lt;/p&gt;
+SHR（右移）指令使目的操作数逻辑右移一位，最高位用 0 填充。最低位复制到进位标志位，而进位标志位中原来的数值被丢弃：&lt;br&gt;
+SAR（算术右移）、SAL（算术左移）&lt;br&gt;
+ROL（循环左移）指令把所有位都向左移。最高位复制到进位标志位和最低位&lt;br&gt;
+ROR（循环右移）指令把所有位都向右移，最低位复制到进位标志位和最高位&lt;br&gt;
+RCL（带权循环左移）和RCR（带权循环右移），先移到进位标志位，进位标志位的值移入最后或者最前&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;宏指令简化程序的书写，不节省程序存储空间，但执行时间比子程序短。 
 子程序简化程序的书写，也节省程序的存储空间，但执行时间比宏指令长。 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;结构体申明时，结构体名要放前面&lt;br&gt;
+aligned_student STRUC  4&lt;br&gt;
+m_Age          DWORD    ?               ;不初始化&lt;br&gt;
+m_Name         BYTE     30    DUP(0)    ;大小为30字节的字符串数组，初始化为0&lt;br&gt;
+m_Score        DWORD    0               ;INT型分数，初始化为0&lt;br&gt;
+m_Interests    BYTE     &amp;quot;No&amp;quot;,0          ;初始化为 &amp;quot;No\0&amp;quot;&lt;br&gt;
+aligned_student ENDS&lt;/p&gt;
+&lt;p&gt;student1    aligned_student    &amp;lt;&amp;gt;&lt;br&gt;
+student2    aligned_student    &amp;lt;20,&amp;quot;Bob&amp;quot;,80,&amp;quot;NO&amp;quot;&amp;gt;&lt;br&gt;
+student3    aligned_student    &amp;lt;20&amp;gt;&lt;br&gt;
+student4    aligned_student    {20}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AND 指令在两个操作数的对应位之间进行（按位）逻辑与（AND）操作，并将结果存放在目标操作数中：
+AND destination,source   同1才为1   清除进位和溢出标志位
+OR 指令在两个操作数的对应位之间进行（按位）逻辑或（OR）操作，并将结果存放在目标操作数中：
+OR destination, source   有1则为1    清除进位和溢出标志位
+
+test执行的就bai是and的指令，只不过不会保存and执行的结du果，而zhi是根据and的结果设置flags寄存器的各种标志
 &lt;/code&gt;&lt;/pre&gt;
 ">汇编</a>
       </div>
