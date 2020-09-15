@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>计算机网络（考试） | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600156572402">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600163442152">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1472,6 +1472,11 @@ BE big-endian（大端）
 能停止所有后续的宏展开的伪指令是EXITM
 将全部的32位通用寄存器压入堆栈的指令是PUSHAD
 调用IDIV指令前，对其16位被除数进行符号扩展的指令是CBW
+USES运算符能让程序员列出所有在过程中会被修改的寄存器
+PROC伪指令可以包含USES运算符，但PROTO伪指令不可以。
+多模块程序中，带标号的END语句只在启动模块中出现一次。
+
+递归采用的是栈堆积的方式进行运算，每一次调用递归，内存都不断堆积，直到最后才求解，因此占用内存大，计算量成倍增加。所以递归过程较慢。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;6个状态标志位的功能分别叙述如下：
@@ -1507,6 +1512,9 @@ SUB dest, source  减 dest=dest-source
 
 NEG reg/mem  将操作数转化为二进制补码
 将目标操作数按位取反再加 1，就可以得到这个数的二进制补码。
+
+EQU 等值指令（=）
+$ 当前地址，可以求数组长度
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;TYPE 运算符返回变量单个元素的大小，这个大小是以字节为单位计算的。比如，TYPE 为字节，返回值是 1；TYPE 为字，返回值是 2；TYPE 为双字，返回值是 4；TYPE 为四字，返回值是 8。示例如下：
 var1 BYTE ?        TYPE var1 = 1	
@@ -1525,9 +1533,8 @@ mov esi,OFFSET bVal             ; ESI = 00404000h
 
 call调用新的过程
 当在程序启动过程之外创建一个过程时，就用 RET 指令来结束它。RET 强制 CPU 返回到该过程被调用的位置：
+RET指令将栈顶内容弹出到指令指针寄存器。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;CMP比较指令是执行两个数的相减操作,包括有符号数&lt;br&gt;
-CMPS比较指令是执行两个字符串的相减操作,所有数据认为是无符号数。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt; 1) 相等性的比较
 下表列出了基于相等性评估的跳转指令。有些情况下，进行比较的是两个操作数；其他情况下，则是基于 CX、ECX 或 RCX 的值进行跳转。表中符号 leftOp 和 rightOp 分别指的是 CMP 指令中的左（目的）操作数和右（源）操 作数：
 
@@ -1581,8 +1588,11 @@ student4    aligned_student    {20}&lt;/p&gt;
 AND destination,source   同1才为1   清除进位和溢出标志位
 OR 指令在两个操作数的对应位之间进行（按位）逻辑或（OR）操作，并将结果存放在目标操作数中：
 OR destination, source   有1则为1    清除进位和溢出标志位
-
-test执行的就bai是and的指令，只不过不会保存and执行的结du果，而zhi是根据and的结果设置flags寄存器的各种标志
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;比较：
+test执行的就是and的指令，只不过不会保存and执行的结果，而是根据and的结果设置flags寄存器的各种标志
+CMP比较指令是执行两个数的相减操作,包括有符号数
+CMPS比较指令是执行两个字符串的相减操作,所有数据认为是无符号数。
 &lt;/code&gt;&lt;/pre&gt;
 ">汇编</a>
       </div>
