@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-09-15T14:42:46.973Z</updated>
+    <updated>2020-09-16T01:37:17.238Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -37,11 +37,12 @@ BE big-endian（大端）
 </code></pre>
 <pre><code>能在控制台上显示汇编时消息的伪指令是ECHO
 能停止所有后续的宏展开的伪指令是EXITM
-将全部的32位通用寄存器压入堆栈的指令是PUSHAD
+将全部的32位通用寄存器压入堆栈的指令是PUSHAD，16位则用PUSHA
 调用IDIV指令前，对其16位被除数进行符号扩展的指令是CBW
-USES运算符能让程序员列出所有在过程中会被修改的寄存器
+USES运算符能让程序员列出所有在过程中会被修改的寄存器，用USES伪指令列出寄存器时，必须用逗号分隔寄存器名。
 PROC伪指令可以包含USES运算符，但PROTO伪指令不可以。
 多模块程序中，带标号的END语句只在启动模块中出现一次。
+在保护模式下，每个过程调用最少使用4个字节的堆栈空间。
 
 递归采用的是栈堆积的方式进行运算，每一次调用递归，内存都不断堆积，直到最后才求解，因此占用内存大，计算量成倍增加。所以递归过程较慢。
 </code></pre>
@@ -80,12 +81,17 @@ DEC reg/mem 减1
 
 ADD dest,source  加 dest=dest+source
 SUB dest, source  减 dest=dest-source
+ADC（带进位加法）指令将源操作数和进位标志位的值都与目的操作数相加。该指令格式与 ADD 指令一样，且操作数大小必须相同：就是ADD还要加上进位标志位的值
+SBB（带借位减法）指令从目的操作数中减去源操作数和进位标志位的值。允许使用的操作数与《ADC指令》一节中介绍的 ADC 指令相同。
 
 NEG reg/mem  将操作数转化为二进制补码
 将目标操作数按位取反再加 1，就可以得到这个数的二进制补码。
 
 EQU 等值指令（=）
 $ 当前地址，可以求数组长度
+</code></pre>
+<pre><code>乘除：
+32 位模式下，DIV（无符号除法）指令执行 8 位、16 位和 32 位无符号数除法。其中，单寄存器或内存操作数是除数。格式如下：
 </code></pre>
 <pre><code>TYPE 运算符返回变量单个元素的大小，这个大小是以字节为单位计算的。比如，TYPE 为字节，返回值是 1；TYPE 为字，返回值是 2；TYPE 为双字，返回值是 4；TYPE 为四字，返回值是 8。示例如下：
 var1 BYTE ?        TYPE var1 = 1	
@@ -169,6 +175,8 @@ student4    aligned_student    {20}</p>
 AND destination,source   同1才为1   清除进位和溢出标志位
 OR 指令在两个操作数的对应位之间进行（按位）逻辑或（OR）操作，并将结果存放在目标操作数中：
 OR destination, source   有1则为1    清除进位和溢出标志位
+XOR 指令在两个操作数的对应位之间进行（按位）逻辑异或（XOR）操作，并将结果存放在目标操作数中：
+XOR destination, source   相同为0，不同为1    清除溢岀和进位标志位
 </code></pre>
 <pre><code>比较：
 test执行的就是and的指令，只不过不会保存and执行的结果，而是根据and的结果设置flags寄存器的各种标志
