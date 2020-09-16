@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>计网-物理层 | 混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600220307944">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600238319763">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -1002,10 +1002,13 @@ BE big-endian（大端）
 调用IDIV指令前，对其16位被除数进行符号扩展的指令是CBW
 USES运算符能让程序员列出所有在过程中会被修改的寄存器，用USES伪指令列出寄存器时，必须用逗号分隔寄存器名。
 PROC伪指令可以包含USES运算符，但PROTO伪指令不可以。
+执行字符串原语时，设置方向标志位DF使变址寄存器反向遍历内存区的指令是STD
+将数据从ESI指向的内存地址复制到AX的指令是LODSW
 多模块程序中，带标号的END语句只在启动模块中出现一次。
 在保护模式下，每个过程调用最少使用4个字节的堆栈空间。
 
 递归采用的是栈堆积的方式进行运算，每一次调用递归，内存都不断堆积，直到最后才求解，因此占用内存大，计算量成倍增加。所以递归过程较慢。
+对一个长过程而言，若用包含这个过程代码的宏来代替它，则多次调用该宏通常就会增加程序的编译代码量。宏定义中的&amp;amp;运算符有什么作用？替换运算符&amp;amp;解析对宏参数名的有歧义的引用。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;6个状态标志位的功能分别叙述如下：
