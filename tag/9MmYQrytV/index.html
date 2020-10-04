@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#000">
 <title>混子协会会长</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1600565951461">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/favicon.ico?v=1601813321287">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lyhlyhaa/lyhlyhaa.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -194,7 +194,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">20</span>
+        <span class="site-item-stat-count">17</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -299,16 +299,6 @@
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       <a href="https://lyhlyhaa.github.io/post/github-pagegridea-da-jian-bo-ke/">
         <div class="motion-warpper">
           <div class="tag-post-node">
@@ -346,7 +336,7 @@
         href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
     </div>
     <div class="poweredby">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+      
     </div>
   </footer>
   
@@ -541,228 +531,18 @@
     <div class="result" id="result">
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/hui-bian/"" data-c="
-          &lt;h2 id=&#34;数据定义&#34;&gt;数据定义&lt;/h2&gt;
-&lt;p&gt;比如DB定义的变量长度属性为字节，DW定义的变量长度属性为字；SBYTE定义的变量为有符号数，BYTE定义的变量为无符号数。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;LE little-endian（小端）
-地址低位存储值的低位；
-地址高位存储值的高位；
-怎么讲是最符合人的思维的字节序，是因为从人的第一观感来说； 
-低位值小，就应该放在内存地址小的地方，也即内存地址低位；
-反之，高位值就应该放在内存地址大的地方，也即内存地址高位；
-如：0x01020304(DWORD)
-LE 04 03 02 01 
-BE 01 02 03 04
-BE big-endian（大端）
-最直观的字节序；
-地址低位存储值的高位； 
-地址高位存储值的低位；
-为什么说直观，不要考虑对应关系； 
-只需要把内存地址从左到右按照由低到高的顺序写出；
-把值按照通常的高位到低位的顺序写出；
-两者对照，一个字节一个字节的填充进去
+        <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/yi-ge-wei-xin-xiao-cheng-xu/"" data-c="
+          &lt;p&gt;某些基础知识：&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1601604660940.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1601604730267.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wxml文件类似于我们熟悉的HTML文件，用来编写页面的标签和骨架，不同的是wxml文件里的标签元素不可以使用HTML标签，只能使用小程序自己封装的一些组件，这些组件也是我们后面要重点学习的知识。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;能在控制台上显示汇编时消息的伪指令是ECHO
-能停止所有后续的宏展开的伪指令是EXITM
-将全部的32位通用寄存器压入堆栈的指令是PUSHAD，16位则用PUSHA
-调用IDIV指令前，对其16位被除数进行符号扩展的指令是CBW
-USES运算符能让程序员列出所有在过程中会被修改的寄存器，用USES伪指令列出寄存器时，必须用逗号分隔寄存器名。
-PROC伪指令可以包含USES运算符，但PROTO伪指令不可以。
-执行字符串原语时，设置方向标志位DF使变址寄存器反向遍历内存区的指令是STD
-将数据从ESI指向的内存地址复制到AX的指令是LODSW
-多模块程序中，带标号的END语句只在启动模块中出现一次。
-在保护模式下，每个过程调用最少使用4个字节的堆栈空间。
-
-递归采用的是栈堆积的方式进行运算，每一次调用递归，内存都不断堆积，直到最后才求解，因此占用内存大，计算量成倍增加。所以递归过程较慢。
-对一个长过程而言，若用包含这个过程代码的宏来代替它，则多次调用该宏通常就会增加程序的编译代码量。宏定义中的&amp;amp;运算符有什么作用？替换运算符&amp;amp;解析对宏参数名的有歧义的引用。
+&lt;pre&gt;&lt;code&gt;wxss文件的作用类似于我们熟悉的CSS文件，用于编写小程序的样式，实际上小程序的样式编写语言就是CSS，只是把.css文件换成了.wxss文件
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;6个状态标志位的功能分别叙述如下：
-CF(Carry Flag)——进位标志位。当执行一个加法(或减法)运算，使最高位产生进位(或借位)时，CF为1；否则为0。
-STC是进位标志CF置1
-CLC指令可以使进位标志CF清零，CMC指令可用来对进位标志CF取反。
-
-PF(Parity Flag)——奇偶标志位。该标志位反映运算结果中1的个数是偶数还是奇数。当指令执行结果的低8位中含有偶数个1时，PF=1；否则PF=0。
-AF(Auxiliary carry Flag)——辅助进位标志位。当执行一个加法(或减法)运算，使结果的低4位向高4位有进位(或借位)时，AF=1；否则AF=0。
-ZF(Zero Flag)——零标志位。若当前的运算结果为零，ZF=1；否则ZF=0。
-SF(Sign Flag)——符号标志位。它和运算结果的最高位相同。
-OF(Overflow Flag)——溢出标志位。当补码运算有溢出时，OF=1；否则OF=0
+&lt;pre&gt;&lt;code&gt;json文件用来配置页面的样式与行为。
+js文件类似于我们前端编程中的JavaScript文件，用来编写小程序的页面逻辑。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;4个数据寄存器(EAX、EBX、ECX和EDX)
-用DX、AX寄存器保存双精度数，AX保存地位，DX保存高位
-2个变址和指针寄存器(ESI和EDI) 2个指针寄存器(ESP和EBP)
-6个段寄存器(ES、CS、SS、DS、FS和GS)
-1个指令指针寄存器(EIP) 1个标志寄存器(EFlags)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;赋值：
-MOV destination,source
-dest = source;
-
-lea
-格式: LEA  操作数A, 操作数B 
-功能: 将操作数B的有效地址传送到指定的的某个寄存器，操作数A必须是寄存器。(32位系统上就是32位寄存器)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;交换数据
-XCHG 交换两个操作数内容
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;加和减
-INC reg/mem 加1
-DEC reg/mem 减1
-
-ADD dest,source  加 dest=dest+source
-SUB dest, source  减 dest=dest-source
-ADC（带进位加法）指令将源操作数和进位标志位的值都与目的操作数相加。该指令格式与 ADD 指令一样，且操作数大小必须相同：就是ADD还要加上进位标志位的值
-SBB（带借位减法）指令从目的操作数中减去源操作数和进位标志位的值。允许使用的操作数与《ADC指令》一节中介绍的 ADC 指令相同。
-
-NEG reg/mem  将操作数转化为二进制补码
-将目标操作数按位取反再加 1，就可以得到这个数的二进制补码。
-
-EQU 等值指令（=）
-$ 当前地址，可以求数组长度
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;乘除：
-32 位模式下，DIV（无符号除法）指令执行 8 位、16 位和 32 位无符号数除法。其中，单寄存器或内存操作数是除数。格式如下：
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;TYPE 运算符返回变量单个元素的大小，这个大小是以字节为单位计算的。比如，TYPE 为字节，返回值是 1；TYPE 为字，返回值是 2；TYPE 为双字，返回值是 4；TYPE 为四字，返回值是 8。示例如下：
-var1 BYTE ?        TYPE var1 = 1	
-var2 WORD ?     TYPE var2 = 2	
-var3 DWORD ?  TYPE var3 = 4
-var4 QWORD ?  TYPE var4 = 8
-
-LENGTHOF 运算符计算数组中元素的个数，元素个数是由数组标号同一行出现的数值来定义的。
-OFFSET 运算符返回数据标号的偏移量。这个偏移量按字节计算，表示的是该数据标号距离数据段起始地址的距离。
-.data
-bVal BYTE ?         
-假设bVal 在偏移量为 0040 4000（十六进制）的位置
-mov esi,OFFSET bVal             ; ESI = 00404000h
-rep指令常和串传送指令搭配使用
-功能：根据cx的值，重复执行后面的指令
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;过程可以非正式地定义为：由返回语句结束的已命名的语句块。过程用 PROC 和 ENDP 伪指令来定义，并且必须为其分配一个名字（有效标识符）。到目前为止，所有编写的程序都包含了一个名为 main 的过程
-
-call调用新的过程
-当在程序启动过程之外创建一个过程时，就用 RET 指令来结束它。RET 强制 CPU 返回到该过程被调用的位置：
-RET指令将栈顶内容弹出到指令指针寄存器。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt; 1) 相等性的比较
-下表列出了基于相等性评估的跳转指令。有些情况下，进行比较的是两个操作数；其他情况下，则是基于 CX、ECX 或 RCX 的值进行跳转。表中符号 leftOp 和 rightOp 分别指的是 CMP 指令中的左（目的）操作数和右（源）操 作数：
-
-助记符	说明
-JE	相等跳转 (leftOp=rightOp)
-JNE	不相等跳转 (leftOp M rightOp)
-JCXZ	CX=0 跳转
-JECXZ	ECX=0 跳转
-JRCXZ	RCX=0 跳转（64 位模式）
-
-2) 无符号数比较
-基于无符号数比较的跳转如下表所示。操作数的名称反映了表达式中操作数的顺序（比如 leftOp &amp;lt; rightOp）。下表中的跳转仅在比较无符号数值时才有意义。有符号操作数使用不同的跳转指令。
-
-助记符	说明	助记符	说明
-JA	大于跳转（若 leftOp &amp;gt; rightOp）	JB	小于跳转（若 leftOp &amp;lt; rightOp）
-JNBE	不小于或等于跳转（与 JA 相同）	JNAE	不大于或等于跳转（与 JB 相同）
-JAE	大于或等于跳转（若 leftOp ≥ rightOp）	JBE	小于或等于跳转（若 leftOp ≤ rightOp）
-JNB	不小于跳转（与 JAE 相同）	JNA	不大于跳转（与 JBE 相同）
-
-3) 有符号数比较
-下表列岀了基于有符号数比较的跳转。下面的指令序列展示了两个有符号数值的比较：
-
-助记符	说明	助记符	说明
-JG	大于跳转（若 leftOp &amp;gt; rightOp）	JL	小于跳转（若 leftOp &amp;lt; rightOp）
-JNLE	不小于或等于跳转（与 JG 相同）	JNGE	不大于或等于跳转（与 JL 相同）
-JGE	大于或等于跳转（若 leftOp ≥ rightOp）	JLE	小于或等于跳转（若 leftOp ≤ rightOp）
-JNL	不小于跳转（与 JGE 相同）	JNG	不大于跳转（与 JLE 相同
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;LOOP 指令，正式称为按照 ECX 计数器循环，将程序块重复特定次数。ECX 自动成为计数器，每循环一次计数值减 1。语法如下所示：
-LOOP destination
-循环目标必须距离当前地址计数器 -128 到 +127 字节范围内。LOOP 指令的执行有两个步骤：
-第一步，ECX 减 1。
-第二步，将 ECX 与 0 比较。
-
-如果 ECX 不等于 0，则跳转到由目标给岀的标号。否则，如果 ECX 等于 0，则不发生跳转，并将控制传递到循环后面的指令。
-
-LOOPZ（为零跳转）指令的工作和 LOOP 指令相同，只是有一个附加条件：为零控制转向目的标号，零标志位必须置 1。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;SHL（左移）指令使目的操作数逻辑左移一位，最低位用 0 填充。最高位移入进位标志位，而进位标志位中原来的数值被丢弃：&lt;br&gt;
-SHR（右移）指令使目的操作数逻辑右移一位，最高位用 0 填充。最低位复制到进位标志位，而进位标志位中原来的数值被丢弃：&lt;br&gt;
-SAR（算术右移）、SAL（算术左移）&lt;br&gt;
-ROL（循环左移）指令把所有位都向左移。最高位复制到进位标志位和最低位&lt;br&gt;
-ROR（循环右移）指令把所有位都向右移，最低位复制到进位标志位和最高位&lt;br&gt;
-RCL（带权循环左移）和RCR（带权循环右移），先移到进位标志位，进位标志位的值移入最后或者最前&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;宏指令简化程序的书写，不节省程序存储空间，但执行时间比子程序短。 
-子程序简化程序的书写，也节省程序的存储空间，但执行时间比宏指令长。 
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;结构体申明时，结构体名要放前面&lt;br&gt;
-aligned_student STRUC  4&lt;br&gt;
-m_Age          DWORD    ?               ;不初始化&lt;br&gt;
-m_Name         BYTE     30    DUP(0)    ;大小为30字节的字符串数组，初始化为0&lt;br&gt;
-m_Score        DWORD    0               ;INT型分数，初始化为0&lt;br&gt;
-m_Interests    BYTE     &amp;quot;No&amp;quot;,0          ;初始化为 &amp;quot;No\0&amp;quot;&lt;br&gt;
-aligned_student ENDS&lt;/p&gt;
-&lt;p&gt;student1    aligned_student    &amp;lt;&amp;gt;&lt;br&gt;
-student2    aligned_student    &amp;lt;20,&amp;quot;Bob&amp;quot;,80,&amp;quot;NO&amp;quot;&amp;gt;&lt;br&gt;
-student3    aligned_student    &amp;lt;20&amp;gt;&lt;br&gt;
-student4    aligned_student    {20}&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;AND 指令在两个操作数的对应位之间进行（按位）逻辑与（AND）操作，并将结果存放在目标操作数中：
-AND destination,source   同1才为1   清除进位和溢出标志位
-OR 指令在两个操作数的对应位之间进行（按位）逻辑或（OR）操作，并将结果存放在目标操作数中：
-OR destination, source   有1则为1    清除进位和溢出标志位
-XOR 指令在两个操作数的对应位之间进行（按位）逻辑异或（XOR）操作，并将结果存放在目标操作数中：
-XOR destination, source   相同为0，不同为1    清除溢岀和进位标志位
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;比较：
-test执行的就是and的指令，只不过不会保存and执行的结果，而是根据and的结果设置flags寄存器的各种标志
-CMP比较指令是执行两个数的相减操作,包括有符号数
-CMPS比较指令是执行两个字符串的相减操作,所有数据认为是无符号数。
-&lt;/code&gt;&lt;/pre&gt;
-">汇编</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/shu-ju-ku/"" data-c="
-          &lt;h2 id=&#34;基本概念&#34;&gt;基本概念&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;数据库管理系统（Database Management System，简称DBMS）管理数据库的系统软件，是数据库系统的核心组件。
-数据库系统（DatabaseSystem，DBS）是有管理数据库功能的计算机系统，数据库系统是可运行、可维护的软件系统
-&lt;/code&gt;&lt;/pre&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1599034127820.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;数据库系统阶段&#34;&gt;数据库系统阶段&lt;/h2&gt;
-&lt;h3 id=&#34;数据独立性&#34;&gt;数据独立性：&lt;/h3&gt;
-&lt;h4 id=&#34;物理独立性&#34;&gt;物理独立性&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;用户的应用程序与数据库中数据相互独立。当数据的存储格式和组织方法改变时，不影响数据库的逻辑结构，从而不影响应用程序。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;逻辑独立性&#34;&gt;逻辑独立性&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;指用户的应用程序与数据库的逻辑结构是相互独立的。数据的逻辑结构改变了，用户程序不用改变。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;数据模型的组成要素&#34;&gt;数据模型的组成要素&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;数据结构 
-数据操作 
-数据完整性约束
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;最常用的数据模型&#34;&gt;最常用的数据模型&lt;/h2&gt;
-&lt;h3 id=&#34;非关系模型&#34;&gt;非关系模型&lt;/h3&gt;
-&lt;h4 id=&#34;层次模型hierarchical-model&#34;&gt;层次模型(Hierarchical Model)&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;层次模型用树形结构来表示各类实体以及实体间的联系，有且仅有一个根结点；
-每个非根结点有且仅有一个父(直接上层)结点。它最适合表示实体的一对多联系。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;网状模型network-model&#34;&gt;网状模型(Network Model)&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;通过网状结构表示实体及联系。“网”中每个结点表示一个实体(型)，结点之间箭头表示实体(型)间的联系。
-网状数据模型主要特点：网状数据模型可能有多个根结点，某些非根结点可能有多个父结点，适合表示实体的多对多联系。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;关系模型relational-model&#34;&gt;关系模型(Relational Model)&lt;/h3&gt;
-&lt;h4 id=&#34;关系模型的组成&#34;&gt;关系模型的组成&lt;/h4&gt;
-&lt;h5 id=&#34;关系数据结构&#34;&gt;关系数据结构&lt;/h5&gt;
-&lt;pre&gt;&lt;code&gt;单一的数据结构----关系
-现实世界的实体以及实体间的各种联系均用关系来表示
-数据的逻辑结构----二维表
-从用户角度，关系模型中数据的逻辑结构是一张二维表。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 id=&#34;关系操作集合&#34;&gt;关系操作集合&lt;/h5&gt;
-&lt;pre&gt;&lt;code&gt;插入、删除、修改、查询（选择、投影、连接、除、并、交、差）
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 id=&#34;关系完整性约束&#34;&gt;关系完整性约束&lt;/h5&gt;
-&lt;pre&gt;&lt;code&gt;实体完整性、参照完整性、域完整性、用户定义完整性
-&lt;/code&gt;&lt;/pre&gt;
-">数据库</a>
+">一个微信小程序</a>
       </div>
       
       <div class="item">
@@ -1071,117 +851,6 @@ g(1)=1   g(2)=2&lt;br&gt;
 g(h)=g(h-1)+g(h-2)&lt;br&gt;
 &lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596098127037.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 ">1286 比赛</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/ji-wang-lian-lu-ceng/"" data-c="
-          &lt;p&gt;作业三&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;要发送的数据为101110。采用CRC的生成 多项式是P（X）＝X3＋1。试求应添加在数据后面的余数&lt;br&gt;
-解：&lt;br&gt;
-被除数为101110000，除数为1001，得到余数为011。&lt;br&gt;
-&lt;strong&gt;CRC校验码&lt;/strong&gt;&lt;br&gt;
-在发送端，先把数据划分为组。假定每组 k 个比特。&lt;br&gt;
-假设待传送的一组数据 M = 101001（现在 k = 6）。我们在数据M 的后面再添加供差错检测用的 n 位冗余码一起发送。&lt;br&gt;
-用二进制的模 2 运算进行 2n 乘 M 的运算，这相当于在 M 后面添加 n 个 0。&lt;br&gt;
-得到的 (k + n) 位的新数Mx除以事先选定好的长度为 (n + 1) 位的除数 P，得出商是 Q 而余数是 R，余数 R 比除数 P 少1 位，即 R 是 n 位,为冗余码。&lt;br&gt;
-*注意：在数据后面添加上的冗余码称为帧检验序列 FCS (Frame Check Sequence) *&lt;br&gt;
-&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596007436517.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596007443448.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li&gt;PPP协议使用同步传输技术传送比特串 0110111111111100。试问经过零比特填充后变成 怎样的比特串？若接收端收到的PPP帧的数据部 分是0001110111110111110110，问删除发送端加 入的零比特后变成怎样的比特串？&lt;br&gt;
-解：&lt;br&gt;
-原比特串：011011111  11111 00    填充后：011011111011111000&lt;br&gt;
-原比特串：0001110111110111110110    删除后：000111011111 11111 110&lt;br&gt;
-&lt;strong&gt;零比特填充&lt;/strong&gt;：在发送端，只要发现有 5 个连续 1，则立即填入一个 0。接收端对帧中的比特流进行扫描。每当发现 5 个连续1时，就把这 5 个连续 1 后的一个 0 删除，还原信息 。&lt;br&gt;
-&lt;strong&gt;PPP协议&lt;/strong&gt;：全世界使用得最多的数据链路层协议是点对点协议 ，用户使用拨号电话线接入因特网时，一般都是使用 PPP 协议。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;3.　 假定1km长的CSMA/CD网络的数据率为 1Gbit/s。设信号在网络上的传播速率为 200000km/s。求能够使用此协议的最短帧长。&lt;br&gt;
-解：对于1km电缆，单程传播时间为1/200000=5微秒，来回路程传播时间为10微秒，为了能够按照CSMA/CD工作，最小帧的发射时间不能小于10微秒，以Gb/s速率工作，10微秒可以发送的比特数等于10&lt;em&gt;10&lt;sup&gt;-6/1*10&lt;/sup&gt;-9=10000,因此，最短帧是10000位或1250字节长&lt;br&gt;
- &lt;strong&gt;CSMA/CD协议&lt;/strong&gt;：载波监听多点接入/碰撞检测  CSMA/CD，“多点接入”表示许多计算机以多点接入的方式连接在一根总线上。“载波监听”是指每一个站在发送数据之前先要检测一下总线上是否有其他计算机在发送数据，如果有，则暂时不要发送数据，以免发生碰撞。&lt;br&gt;
-以太网的端到端往返时延 2τ 称为争用期，或碰撞窗口。&lt;br&gt;
-单程端到端传播时延记为τ&lt;br&gt;
-最短有效帧长 ：数据率&lt;/em&gt;2τ&lt;/p&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li&gt;以太网上只有两个站，它们同时发送数据，产生了碰撞。于是按截断二进制指数退避算法进行重传。重传次数记为i，i＝1，2，3，…。 试计算第1次重传失败的概率、第2次重传失败的概率、第3次重传失败的概率，以及一个站成功发送数据之前的平均重传次数I。&lt;br&gt;
-解：&lt;br&gt;
-将第i次重传成功的概率记为pi。显然第一次重传失败的概率为0.5，第二次重传失败的概率为0.25，第三次重传失败的概率为0.125.平均重传次数I=1.637 &lt;br&gt;
-&lt;a href=&#34;https://blog.csdn.net/xingchenhy/article/details/72848029&#34;&gt;二进制指数类型退避算法 (truncated binary exponential type):&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;5.　 假定在图3-30中的所有链路的速率仍然为 100Mbit/s，但所有的以太网交换机都换成为 100Mbit/s的集线器。试计算这9台主机和两个服务器产生的总的吞吐量的最大值。为什么&lt;br&gt;
-&lt;img src=&#34;https://lyhlyhaa.github.io/post-images/1596164216859.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-解：&lt;br&gt;
-&lt;em&gt;集线器很像一个多接口的转发器，工作在物理层&lt;/em&gt;&lt;br&gt;
-一个网络中无论有多少台服务器和主机，如果全部连接在一个集线器上，那么该网络最大吞吐量 = 集线器最大值。如果接口全部与交换机相连，那么最大吞吐量 = Σ 各链路最大值&lt;br&gt;
-吞吐量 = 整个系统 = 100 Mbit&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;补充问答题&lt;br&gt;
-家中电脑TCP/IP属性中默认网关是指哪一个端口（在家的拓扑图标出）？怎样查看这个接口的IP地址(查看的步骤）？解：&lt;br&gt;
-Windows10中可以打开设置，打开网络与Internet，打开状态，点击查看网络属性，就可以看到该接口的ip地址。&lt;/p&gt;
-">计网-链路层</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/"" data-c="
-          &lt;p&gt;1.假定某信道受奈氏准则限制的最高码元速率为20000码元/秒。如果采用振幅调制，把码元的振幅划分为16个不同等级来传送，那么可以获得多高的数据率（bit/s）？&lt;br&gt;
-解：&lt;/p&gt;
-&lt;p class=&#39;katex-block&#39;&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;（&lt;/mi&gt;&lt;mn&gt;16&lt;/mn&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;）&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;20000&lt;/mn&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;80000&lt;/mn&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;C=R*Log2（16）=20000b/s*4=80000b/s
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8777699999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;（&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;）&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;最基本的二元制调制方法有以下几种：&lt;br&gt;
-调幅(AM)：载波的振幅随基带数字信号而变化。&lt;br&gt;
-调频(FM)：载波的频率随基带数字信号而变化。&lt;br&gt;
-调相(PM) ：载波的初始相位随基带数字信号而变化。&lt;br&gt;
-调制方法就是改变码元携带的比特的信息，码元传输速率一般固定，调制之后，传输比特的速率就上升了&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;2.用香农公式计算一下，假定信道带宽为3100Hz，最大信息传输速率为35kbit/s，那么若想使最大信息传输速率增加60％，问信噪比S/N应增大到多少倍？如果在刚才计算出的基础上将信噪比S/N再增大到10倍，问最大信息速率能否再增加20％？&lt;br&gt;
-解：&lt;br&gt;
-C=Wlog2(1+S/N)b/s-àSN1=2*（C1/W）-1=2*（35000/3100）-1&lt;br&gt;
-SN2=2*（C2/W）-1=2*（1.6&lt;em&gt;C1/w）-1=2&lt;/em&gt;（1.6&lt;em&gt;35000/3100）-1&lt;br&gt;
-SN2/SN1=100信噪比应增大到约100倍。C3=Wlong2（1+SN3）=Wlog2（1+10&lt;/em&gt;SN2）C3/C2=18.5%如果在此基础上将信噪比S/N再增大到10倍，最大信息通率只能再增加18.5%左右&lt;/p&gt;
-&lt;p class=&#39;katex-block&#39;&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;香&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;农&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;公&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;式&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;：&lt;/mi&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;香农公式：C = W log2(1+S/N) (bit/s)   
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;香&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;农&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;公&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;式&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;W 为信道的带宽（以 Hz 为单位）&lt;br&gt;
-信噪比（dB）：10 log10(S/N) (dB)&lt;br&gt;
-S 为信道内所传信号的平均功率；N 为信道内部的高斯噪声功率&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;3.　假定有一种双绞线的衰减是0.7dB/km（在1kHz时），若容许有20dB的衰减，试问使用这种双绞线的链路的工作距离有多长？如果要使这种双绞线的工作距离增大到100公里，问应当使衰减降低到多少？&lt;br&gt;
-解：使用这种双绞线的链路的工作距离为=20/0.7=28.6km   衰减应降低到20/100=0.2db&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;4.共有四个站进行码分多址CDMA通信。四个站的码片序列为：&lt;br&gt;
-A：（–1–1–1＋1＋1–1＋1＋1）&lt;br&gt;
-B：（–1–1＋1–1＋1＋1＋1–1）&lt;br&gt;
-C：（–1＋1–1＋1＋1＋1–1–1）&lt;br&gt;
-D：（–1＋1–1–1–1–1＋1–1）&lt;br&gt;
-现收到这样的码片序列:（–1＋1–3＋1–1–3＋1＋1）。问哪个站发送数据了？发送数据的站发送的是1还是0？&lt;br&gt;
-解：&lt;br&gt;
-S•A=（＋1－1＋3＋1－1＋3＋1＋1）／8=1，A发送1&lt;br&gt;
-S•B=（＋1－1－3－1－1－3＋1－1）／8=－1，B发送0&lt;br&gt;
-S•C=（＋1＋1＋3＋1－1－3－1－1）／8=0，C无发送&lt;br&gt;
-S•D=（＋1＋1＋3－1＋1＋3＋1－1）／8=1，D发送1&lt;/p&gt;
-&lt;p&gt;码片序列：&lt;br&gt;
-每个站被指派一个唯一的 m bit 码片序列。&lt;br&gt;
-如发送比特 1，则发送自己的 m bit 码片序列。&lt;br&gt;
-如发送比特 0，则发送该码片序列的二进制反码&lt;br&gt;
-为表示方便，将0写为-1，1写为+1&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意：两个不同站的码片序列正交&lt;/strong&gt;&lt;br&gt;
-不同站的码片向量规格化内积为0&lt;br&gt;
-任何一个码片向量和该码片向量自己的规格化内积都是1 。&lt;br&gt;
-一个码片向量和该码片反码的向量的规格化内积值是 –1。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;5.　试比较ADSL、HFC以及FTTx接入技术的优缺点。解：&lt;br&gt;
-ADSL技术就是用数字技术对现有的模拟电话用户线进行改造，使它能够承载宽带业务。成本低，易实现，但带宽和质量差异性大。HFC网的最大的优点具有很宽的频带，并且能够利用已经有相当大的覆盖面的有线电视网。要将现有的450MHz单向传输的有线电视网络改造为750MHz双向传输的HFC网需要相当的资金和时间。FTTx（光纤到……）这里字母x可代表不同意思。可提供最好的带宽和质量、但现阶段线路和工程成本太大。&lt;/p&gt;
-&lt;p&gt;补充问答题1、怎样更改自己电脑的MAC地址（用文字描述操作步骤）解：&lt;/p&gt;
-&lt;p&gt;打开设备管理器&lt;br&gt;
-右键点击适配器。从菜单中点击属性来打开网络适配器的属性窗口。&lt;br&gt;
-点击高级选项卡。找到“网络地址”或“本地管理地址”条目。点击该条目，将在右侧看到“值”（Value）的字样和输入框。点击单选按钮来启用“值”（Value）的输入框。&lt;br&gt;
-输入新的MAC地址。MAC地址的格式是，不包含破折号和冒号的12位数值。&lt;br&gt;
-重启计算机来启用变更。&lt;/p&gt;
-">计网-物理层</a>
       </div>
       
       <div class="item">

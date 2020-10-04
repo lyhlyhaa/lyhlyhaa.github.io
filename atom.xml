@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-09-20T02:36:35.389Z</updated>
+    <updated>2020-10-04T12:09:38.309Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -10,233 +10,20 @@
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
     <entry>
-        <title type="html"><![CDATA[汇编]]></title>
-        <id>https://lyhlyhaa.github.io/post/hui-bian/</id>
-        <link href="https://lyhlyhaa.github.io/post/hui-bian/">
+        <title type="html"><![CDATA[一个微信小程序]]></title>
+        <id>https://lyhlyhaa.github.io/post/yi-ge-wei-xin-xiao-cheng-xu/</id>
+        <link href="https://lyhlyhaa.github.io/post/yi-ge-wei-xin-xiao-cheng-xu/">
         </link>
-        <updated>2020-09-14T13:40:58.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="数据定义">数据定义</h2>
-<p>比如DB定义的变量长度属性为字节，DW定义的变量长度属性为字；SBYTE定义的变量为有符号数，BYTE定义的变量为无符号数。</p>
-<pre><code>LE little-endian（小端）
-地址低位存储值的低位；
-地址高位存储值的高位；
-怎么讲是最符合人的思维的字节序，是因为从人的第一观感来说； 
-低位值小，就应该放在内存地址小的地方，也即内存地址低位；
-反之，高位值就应该放在内存地址大的地方，也即内存地址高位；
-如：0x01020304(DWORD)
-LE 04 03 02 01 
-BE 01 02 03 04
-BE big-endian（大端）
-最直观的字节序；
-地址低位存储值的高位； 
-地址高位存储值的低位；
-为什么说直观，不要考虑对应关系； 
-只需要把内存地址从左到右按照由低到高的顺序写出；
-把值按照通常的高位到低位的顺序写出；
-两者对照，一个字节一个字节的填充进去
+        <updated>2020-10-02T02:10:24.000Z</updated>
+        <content type="html"><![CDATA[<p>某些基础知识：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1601604660940.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1601604730267.png" alt="" loading="lazy"></p>
+<pre><code>wxml文件类似于我们熟悉的HTML文件，用来编写页面的标签和骨架，不同的是wxml文件里的标签元素不可以使用HTML标签，只能使用小程序自己封装的一些组件，这些组件也是我们后面要重点学习的知识。
 </code></pre>
-<pre><code>能在控制台上显示汇编时消息的伪指令是ECHO
-能停止所有后续的宏展开的伪指令是EXITM
-将全部的32位通用寄存器压入堆栈的指令是PUSHAD，16位则用PUSHA
-调用IDIV指令前，对其16位被除数进行符号扩展的指令是CBW
-USES运算符能让程序员列出所有在过程中会被修改的寄存器，用USES伪指令列出寄存器时，必须用逗号分隔寄存器名。
-PROC伪指令可以包含USES运算符，但PROTO伪指令不可以。
-执行字符串原语时，设置方向标志位DF使变址寄存器反向遍历内存区的指令是STD
-将数据从ESI指向的内存地址复制到AX的指令是LODSW
-多模块程序中，带标号的END语句只在启动模块中出现一次。
-在保护模式下，每个过程调用最少使用4个字节的堆栈空间。
-
-递归采用的是栈堆积的方式进行运算，每一次调用递归，内存都不断堆积，直到最后才求解，因此占用内存大，计算量成倍增加。所以递归过程较慢。
-对一个长过程而言，若用包含这个过程代码的宏来代替它，则多次调用该宏通常就会增加程序的编译代码量。宏定义中的&amp;运算符有什么作用？替换运算符&amp;解析对宏参数名的有歧义的引用。
+<pre><code>wxss文件的作用类似于我们熟悉的CSS文件，用于编写小程序的样式，实际上小程序的样式编写语言就是CSS，只是把.css文件换成了.wxss文件
 </code></pre>
-<h2 id="指令">指令</h2>
-<pre><code>6个状态标志位的功能分别叙述如下：
-CF(Carry Flag)——进位标志位。当执行一个加法(或减法)运算，使最高位产生进位(或借位)时，CF为1；否则为0。
-STC是进位标志CF置1
-CLC指令可以使进位标志CF清零，CMC指令可用来对进位标志CF取反。
-
-PF(Parity Flag)——奇偶标志位。该标志位反映运算结果中1的个数是偶数还是奇数。当指令执行结果的低8位中含有偶数个1时，PF=1；否则PF=0。
-AF(Auxiliary carry Flag)——辅助进位标志位。当执行一个加法(或减法)运算，使结果的低4位向高4位有进位(或借位)时，AF=1；否则AF=0。
-ZF(Zero Flag)——零标志位。若当前的运算结果为零，ZF=1；否则ZF=0。
-SF(Sign Flag)——符号标志位。它和运算结果的最高位相同。
-OF(Overflow Flag)——溢出标志位。当补码运算有溢出时，OF=1；否则OF=0
-</code></pre>
-<pre><code>4个数据寄存器(EAX、EBX、ECX和EDX)
-用DX、AX寄存器保存双精度数，AX保存地位，DX保存高位
-2个变址和指针寄存器(ESI和EDI) 2个指针寄存器(ESP和EBP)
-6个段寄存器(ES、CS、SS、DS、FS和GS)
-1个指令指针寄存器(EIP) 1个标志寄存器(EFlags)
-</code></pre>
-<pre><code>赋值：
-MOV destination,source
-dest = source;
-
-lea
-格式: LEA  操作数A, 操作数B 
-功能: 将操作数B的有效地址传送到指定的的某个寄存器，操作数A必须是寄存器。(32位系统上就是32位寄存器)
-</code></pre>
-<pre><code>交换数据
-XCHG 交换两个操作数内容
-</code></pre>
-<pre><code>加和减
-INC reg/mem 加1
-DEC reg/mem 减1
-
-ADD dest,source  加 dest=dest+source
-SUB dest, source  减 dest=dest-source
-ADC（带进位加法）指令将源操作数和进位标志位的值都与目的操作数相加。该指令格式与 ADD 指令一样，且操作数大小必须相同：就是ADD还要加上进位标志位的值
-SBB（带借位减法）指令从目的操作数中减去源操作数和进位标志位的值。允许使用的操作数与《ADC指令》一节中介绍的 ADC 指令相同。
-
-NEG reg/mem  将操作数转化为二进制补码
-将目标操作数按位取反再加 1，就可以得到这个数的二进制补码。
-
-EQU 等值指令（=）
-$ 当前地址，可以求数组长度
-</code></pre>
-<pre><code>乘除：
-32 位模式下，DIV（无符号除法）指令执行 8 位、16 位和 32 位无符号数除法。其中，单寄存器或内存操作数是除数。格式如下：
-</code></pre>
-<pre><code>TYPE 运算符返回变量单个元素的大小，这个大小是以字节为单位计算的。比如，TYPE 为字节，返回值是 1；TYPE 为字，返回值是 2；TYPE 为双字，返回值是 4；TYPE 为四字，返回值是 8。示例如下：
-var1 BYTE ?        TYPE var1 = 1	
-var2 WORD ?     TYPE var2 = 2	
-var3 DWORD ?  TYPE var3 = 4
-var4 QWORD ?  TYPE var4 = 8
-
-LENGTHOF 运算符计算数组中元素的个数，元素个数是由数组标号同一行出现的数值来定义的。
-OFFSET 运算符返回数据标号的偏移量。这个偏移量按字节计算，表示的是该数据标号距离数据段起始地址的距离。
-.data
-bVal BYTE ?         
-假设bVal 在偏移量为 0040 4000（十六进制）的位置
-mov esi,OFFSET bVal             ; ESI = 00404000h
-rep指令常和串传送指令搭配使用
-功能：根据cx的值，重复执行后面的指令
-</code></pre>
-<pre><code>过程可以非正式地定义为：由返回语句结束的已命名的语句块。过程用 PROC 和 ENDP 伪指令来定义，并且必须为其分配一个名字（有效标识符）。到目前为止，所有编写的程序都包含了一个名为 main 的过程
-
-call调用新的过程
-当在程序启动过程之外创建一个过程时，就用 RET 指令来结束它。RET 强制 CPU 返回到该过程被调用的位置：
-RET指令将栈顶内容弹出到指令指针寄存器。
-</code></pre>
-<pre><code> 1) 相等性的比较
-下表列出了基于相等性评估的跳转指令。有些情况下，进行比较的是两个操作数；其他情况下，则是基于 CX、ECX 或 RCX 的值进行跳转。表中符号 leftOp 和 rightOp 分别指的是 CMP 指令中的左（目的）操作数和右（源）操 作数：
-
-助记符	说明
-JE	相等跳转 (leftOp=rightOp)
-JNE	不相等跳转 (leftOp M rightOp)
-JCXZ	CX=0 跳转
-JECXZ	ECX=0 跳转
-JRCXZ	RCX=0 跳转（64 位模式）
-
-2) 无符号数比较
-基于无符号数比较的跳转如下表所示。操作数的名称反映了表达式中操作数的顺序（比如 leftOp &lt; rightOp）。下表中的跳转仅在比较无符号数值时才有意义。有符号操作数使用不同的跳转指令。
-
-助记符	说明	助记符	说明
-JA	大于跳转（若 leftOp &gt; rightOp）	JB	小于跳转（若 leftOp &lt; rightOp）
-JNBE	不小于或等于跳转（与 JA 相同）	JNAE	不大于或等于跳转（与 JB 相同）
-JAE	大于或等于跳转（若 leftOp ≥ rightOp）	JBE	小于或等于跳转（若 leftOp ≤ rightOp）
-JNB	不小于跳转（与 JAE 相同）	JNA	不大于跳转（与 JBE 相同）
-
-3) 有符号数比较
-下表列岀了基于有符号数比较的跳转。下面的指令序列展示了两个有符号数值的比较：
-
-助记符	说明	助记符	说明
-JG	大于跳转（若 leftOp &gt; rightOp）	JL	小于跳转（若 leftOp &lt; rightOp）
-JNLE	不小于或等于跳转（与 JG 相同）	JNGE	不大于或等于跳转（与 JL 相同）
-JGE	大于或等于跳转（若 leftOp ≥ rightOp）	JLE	小于或等于跳转（若 leftOp ≤ rightOp）
-JNL	不小于跳转（与 JGE 相同）	JNG	不大于跳转（与 JLE 相同
-</code></pre>
-<pre><code>LOOP 指令，正式称为按照 ECX 计数器循环，将程序块重复特定次数。ECX 自动成为计数器，每循环一次计数值减 1。语法如下所示：
-LOOP destination
-循环目标必须距离当前地址计数器 -128 到 +127 字节范围内。LOOP 指令的执行有两个步骤：
-第一步，ECX 减 1。
-第二步，将 ECX 与 0 比较。
-
-如果 ECX 不等于 0，则跳转到由目标给岀的标号。否则，如果 ECX 等于 0，则不发生跳转，并将控制传递到循环后面的指令。
-
-LOOPZ（为零跳转）指令的工作和 LOOP 指令相同，只是有一个附加条件：为零控制转向目的标号，零标志位必须置 1。
-</code></pre>
-<p>SHL（左移）指令使目的操作数逻辑左移一位，最低位用 0 填充。最高位移入进位标志位，而进位标志位中原来的数值被丢弃：<br>
-SHR（右移）指令使目的操作数逻辑右移一位，最高位用 0 填充。最低位复制到进位标志位，而进位标志位中原来的数值被丢弃：<br>
-SAR（算术右移）、SAL（算术左移）<br>
-ROL（循环左移）指令把所有位都向左移。最高位复制到进位标志位和最低位<br>
-ROR（循环右移）指令把所有位都向右移，最低位复制到进位标志位和最高位<br>
-RCL（带权循环左移）和RCR（带权循环右移），先移到进位标志位，进位标志位的值移入最后或者最前</p>
-<pre><code>宏指令简化程序的书写，不节省程序存储空间，但执行时间比子程序短。 
-子程序简化程序的书写，也节省程序的存储空间，但执行时间比宏指令长。 
-
-</code></pre>
-<p>结构体申明时，结构体名要放前面<br>
-aligned_student STRUC  4<br>
-m_Age          DWORD    ?               ;不初始化<br>
-m_Name         BYTE     30    DUP(0)    ;大小为30字节的字符串数组，初始化为0<br>
-m_Score        DWORD    0               ;INT型分数，初始化为0<br>
-m_Interests    BYTE     &quot;No&quot;,0          ;初始化为 &quot;No\0&quot;<br>
-aligned_student ENDS</p>
-<p>student1    aligned_student    &lt;&gt;<br>
-student2    aligned_student    &lt;20,&quot;Bob&quot;,80,&quot;NO&quot;&gt;<br>
-student3    aligned_student    &lt;20&gt;<br>
-student4    aligned_student    {20}</p>
-<pre><code>AND 指令在两个操作数的对应位之间进行（按位）逻辑与（AND）操作，并将结果存放在目标操作数中：
-AND destination,source   同1才为1   清除进位和溢出标志位
-OR 指令在两个操作数的对应位之间进行（按位）逻辑或（OR）操作，并将结果存放在目标操作数中：
-OR destination, source   有1则为1    清除进位和溢出标志位
-XOR 指令在两个操作数的对应位之间进行（按位）逻辑异或（XOR）操作，并将结果存放在目标操作数中：
-XOR destination, source   相同为0，不同为1    清除溢岀和进位标志位
-</code></pre>
-<pre><code>比较：
-test执行的就是and的指令，只不过不会保存and执行的结果，而是根据and的结果设置flags寄存器的各种标志
-CMP比较指令是执行两个数的相减操作,包括有符号数
-CMPS比较指令是执行两个字符串的相减操作,所有数据认为是无符号数。
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[数据库]]></title>
-        <id>https://lyhlyhaa.github.io/post/shu-ju-ku/</id>
-        <link href="https://lyhlyhaa.github.io/post/shu-ju-ku/">
-        </link>
-        <updated>2020-08-30T02:48:58.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="基本概念">基本概念</h2>
-<pre><code>数据库管理系统（Database Management System，简称DBMS）管理数据库的系统软件，是数据库系统的核心组件。
-数据库系统（DatabaseSystem，DBS）是有管理数据库功能的计算机系统，数据库系统是可运行、可维护的软件系统
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://lyhlyhaa.github.io/post-images/1599034127820.png" alt="" loading="lazy"></figure>
-<h2 id="数据库系统阶段">数据库系统阶段</h2>
-<h3 id="数据独立性">数据独立性：</h3>
-<h4 id="物理独立性">物理独立性</h4>
-<pre><code>用户的应用程序与数据库中数据相互独立。当数据的存储格式和组织方法改变时，不影响数据库的逻辑结构，从而不影响应用程序。
-</code></pre>
-<h4 id="逻辑独立性">逻辑独立性</h4>
-<pre><code>指用户的应用程序与数据库的逻辑结构是相互独立的。数据的逻辑结构改变了，用户程序不用改变。
-</code></pre>
-<h3 id="数据模型的组成要素">数据模型的组成要素</h3>
-<pre><code>数据结构 
-数据操作 
-数据完整性约束
-</code></pre>
-<h2 id="最常用的数据模型">最常用的数据模型</h2>
-<h3 id="非关系模型">非关系模型</h3>
-<h4 id="层次模型hierarchical-model">层次模型(Hierarchical Model)</h4>
-<pre><code>层次模型用树形结构来表示各类实体以及实体间的联系，有且仅有一个根结点；
-每个非根结点有且仅有一个父(直接上层)结点。它最适合表示实体的一对多联系。
-</code></pre>
-<h4 id="网状模型network-model">网状模型(Network Model)</h4>
-<pre><code>通过网状结构表示实体及联系。“网”中每个结点表示一个实体(型)，结点之间箭头表示实体(型)间的联系。
-网状数据模型主要特点：网状数据模型可能有多个根结点，某些非根结点可能有多个父结点，适合表示实体的多对多联系。
-</code></pre>
-<h3 id="关系模型relational-model">关系模型(Relational Model)</h3>
-<h4 id="关系模型的组成">关系模型的组成</h4>
-<h5 id="关系数据结构">关系数据结构</h5>
-<pre><code>单一的数据结构----关系
-现实世界的实体以及实体间的各种联系均用关系来表示
-数据的逻辑结构----二维表
-从用户角度，关系模型中数据的逻辑结构是一张二维表。
-</code></pre>
-<h5 id="关系操作集合">关系操作集合</h5>
-<pre><code>插入、删除、修改、查询（选择、投影、连接、除、并、交、差）
-</code></pre>
-<h5 id="关系完整性约束">关系完整性约束</h5>
-<pre><code>实体完整性、参照完整性、域完整性、用户定义完整性
+<pre><code>json文件用来配置页面的样式与行为。
+js文件类似于我们前端编程中的JavaScript文件，用来编写小程序的页面逻辑。
 </code></pre>
 ]]></content>
     </entry>
@@ -558,123 +345,6 @@ g(h)=g(h-1)+g(h-2)<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[计网-链路层]]></title>
-        <id>https://lyhlyhaa.github.io/post/ji-wang-lian-lu-ceng/</id>
-        <link href="https://lyhlyhaa.github.io/post/ji-wang-lian-lu-ceng/">
-        </link>
-        <updated>2020-07-29T02:41:35.000Z</updated>
-        <content type="html"><![CDATA[<p>作业三</p>
-<ol>
-<li>要发送的数据为101110。采用CRC的生成 多项式是P（X）＝X3＋1。试求应添加在数据后面的余数<br>
-解：<br>
-被除数为101110000，除数为1001，得到余数为011。<br>
-<strong>CRC校验码</strong><br>
-在发送端，先把数据划分为组。假定每组 k 个比特。<br>
-假设待传送的一组数据 M = 101001（现在 k = 6）。我们在数据M 的后面再添加供差错检测用的 n 位冗余码一起发送。<br>
-用二进制的模 2 运算进行 2n 乘 M 的运算，这相当于在 M 后面添加 n 个 0。<br>
-得到的 (k + n) 位的新数Mx除以事先选定好的长度为 (n + 1) 位的除数 P，得出商是 Q 而余数是 R，余数 R 比除数 P 少1 位，即 R 是 n 位,为冗余码。<br>
-*注意：在数据后面添加上的冗余码称为帧检验序列 FCS (Frame Check Sequence) *<br>
-<img src="https://lyhlyhaa.github.io/post-images/1596007436517.png" alt="" loading="lazy"><br>
-<img src="https://lyhlyhaa.github.io/post-images/1596007443448.png" alt="" loading="lazy"></li>
-</ol>
-<hr>
-<ol>
-<li>PPP协议使用同步传输技术传送比特串 0110111111111100。试问经过零比特填充后变成 怎样的比特串？若接收端收到的PPP帧的数据部 分是0001110111110111110110，问删除发送端加 入的零比特后变成怎样的比特串？<br>
-解：<br>
-原比特串：011011111  11111 00    填充后：011011111011111000<br>
-原比特串：0001110111110111110110    删除后：000111011111 11111 110<br>
-<strong>零比特填充</strong>：在发送端，只要发现有 5 个连续 1，则立即填入一个 0。接收端对帧中的比特流进行扫描。每当发现 5 个连续1时，就把这 5 个连续 1 后的一个 0 删除，还原信息 。<br>
-<strong>PPP协议</strong>：全世界使用得最多的数据链路层协议是点对点协议 ，用户使用拨号电话线接入因特网时，一般都是使用 PPP 协议。</li>
-</ol>
-<hr>
-<p>3.　 假定1km长的CSMA/CD网络的数据率为 1Gbit/s。设信号在网络上的传播速率为 200000km/s。求能够使用此协议的最短帧长。<br>
-解：对于1km电缆，单程传播时间为1/200000=5微秒，来回路程传播时间为10微秒，为了能够按照CSMA/CD工作，最小帧的发射时间不能小于10微秒，以Gb/s速率工作，10微秒可以发送的比特数等于10<em>10<sup>-6/1*10</sup>-9=10000,因此，最短帧是10000位或1250字节长<br>
- <strong>CSMA/CD协议</strong>：载波监听多点接入/碰撞检测  CSMA/CD，“多点接入”表示许多计算机以多点接入的方式连接在一根总线上。“载波监听”是指每一个站在发送数据之前先要检测一下总线上是否有其他计算机在发送数据，如果有，则暂时不要发送数据，以免发生碰撞。<br>
-以太网的端到端往返时延 2τ 称为争用期，或碰撞窗口。<br>
-单程端到端传播时延记为τ<br>
-最短有效帧长 ：数据率</em>2τ</p>
-<hr>
-<ol>
-<li>以太网上只有两个站，它们同时发送数据，产生了碰撞。于是按截断二进制指数退避算法进行重传。重传次数记为i，i＝1，2，3，…。 试计算第1次重传失败的概率、第2次重传失败的概率、第3次重传失败的概率，以及一个站成功发送数据之前的平均重传次数I。<br>
-解：<br>
-将第i次重传成功的概率记为pi。显然第一次重传失败的概率为0.5，第二次重传失败的概率为0.25，第三次重传失败的概率为0.125.平均重传次数I=1.637 <br>
-<a href="https://blog.csdn.net/xingchenhy/article/details/72848029">二进制指数类型退避算法 (truncated binary exponential type):</a></li>
-</ol>
-<hr>
-<p>5.　 假定在图3-30中的所有链路的速率仍然为 100Mbit/s，但所有的以太网交换机都换成为 100Mbit/s的集线器。试计算这9台主机和两个服务器产生的总的吞吐量的最大值。为什么<br>
-<img src="https://lyhlyhaa.github.io/post-images/1596164216859.jpg" alt="" loading="lazy"><br>
-解：<br>
-<em>集线器很像一个多接口的转发器，工作在物理层</em><br>
-一个网络中无论有多少台服务器和主机，如果全部连接在一个集线器上，那么该网络最大吞吐量 = 集线器最大值。如果接口全部与交换机相连，那么最大吞吐量 = Σ 各链路最大值<br>
-吞吐量 = 整个系统 = 100 Mbit</p>
-<hr>
-<p>补充问答题<br>
-家中电脑TCP/IP属性中默认网关是指哪一个端口（在家的拓扑图标出）？怎样查看这个接口的IP地址(查看的步骤）？解：<br>
-Windows10中可以打开设置，打开网络与Internet，打开状态，点击查看网络属性，就可以看到该接口的ip地址。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[计网-物理层]]></title>
-        <id>https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/</id>
-        <link href="https://lyhlyhaa.github.io/post/ji-wang-wu-li-ceng/">
-        </link>
-        <updated>2020-07-28T11:44:36.000Z</updated>
-        <content type="html"><![CDATA[<p>1.假定某信道受奈氏准则限制的最高码元速率为20000码元/秒。如果采用振幅调制，把码元的振幅划分为16个不同等级来传送，那么可以获得多高的数据率（bit/s）？<br>
-解：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><mi>R</mi><mo>∗</mo><mi>L</mi><mi>o</mi><mi>g</mi><mn>2</mn><mi mathvariant="normal">（</mi><mn>16</mn><mi mathvariant="normal">）</mi><mo>=</mo><mn>20000</mn><mi>b</mi><mi mathvariant="normal">/</mi><mi>s</mi><mo>∗</mo><mn>4</mn><mo>=</mo><mn>80000</mn><mi>b</mi><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">C=R*Log2（16）=20000b/s*4=80000b/s
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span><span class="mord cjk_fallback">（</span><span class="mord">1</span><span class="mord">6</span><span class="mord cjk_fallback">）</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathdefault">b</span><span class="mord">/</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">8</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathdefault">b</span><span class="mord">/</span><span class="mord mathdefault">s</span></span></span></span></span></p>
-<p>最基本的二元制调制方法有以下几种：<br>
-调幅(AM)：载波的振幅随基带数字信号而变化。<br>
-调频(FM)：载波的频率随基带数字信号而变化。<br>
-调相(PM) ：载波的初始相位随基带数字信号而变化。<br>
-调制方法就是改变码元携带的比特的信息，码元传输速率一般固定，调制之后，传输比特的速率就上升了</p>
-<hr>
-<p>2.用香农公式计算一下，假定信道带宽为3100Hz，最大信息传输速率为35kbit/s，那么若想使最大信息传输速率增加60％，问信噪比S/N应增大到多少倍？如果在刚才计算出的基础上将信噪比S/N再增大到10倍，问最大信息速率能否再增加20％？<br>
-解：<br>
-C=Wlog2(1+S/N)b/s-àSN1=2*（C1/W）-1=2*（35000/3100）-1<br>
-SN2=2*（C2/W）-1=2*（1.6<em>C1/w）-1=2</em>（1.6<em>35000/3100）-1<br>
-SN2/SN1=100信噪比应增大到约100倍。C3=Wlong2（1+SN3）=Wlog2（1+10</em>SN2）C3/C2=18.5%如果在此基础上将信噪比S/N再增大到10倍，最大信息通率只能再增加18.5%左右</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">香</mi><mi mathvariant="normal">农</mi><mi mathvariant="normal">公</mi><mi mathvariant="normal">式</mi><mi mathvariant="normal">：</mi><mi>C</mi><mo>=</mo><mi>W</mi><mi>l</mi><mi>o</mi><mi>g</mi><mn>2</mn><mo>(</mo><mn>1</mn><mo>+</mo><mi>S</mi><mi mathvariant="normal">/</mi><mi>N</mi><mo>)</mo><mo>(</mo><mi>b</mi><mi>i</mi><mi>t</mi><mi mathvariant="normal">/</mi><mi>s</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">香农公式：C = W log2(1+S/N) (bit/s)   
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">香</span><span class="mord cjk_fallback">农</span><span class="mord cjk_fallback">公</span><span class="mord cjk_fallback">式</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord">/</span><span class="mord mathdefault">s</span><span class="mclose">)</span></span></span></span></span></p>
-<p>W 为信道的带宽（以 Hz 为单位）<br>
-信噪比（dB）：10 log10(S/N) (dB)<br>
-S 为信道内所传信号的平均功率；N 为信道内部的高斯噪声功率</p>
-<hr>
-<p>3.　假定有一种双绞线的衰减是0.7dB/km（在1kHz时），若容许有20dB的衰减，试问使用这种双绞线的链路的工作距离有多长？如果要使这种双绞线的工作距离增大到100公里，问应当使衰减降低到多少？<br>
-解：使用这种双绞线的链路的工作距离为=20/0.7=28.6km   衰减应降低到20/100=0.2db</p>
-<hr>
-<p>4.共有四个站进行码分多址CDMA通信。四个站的码片序列为：<br>
-A：（–1–1–1＋1＋1–1＋1＋1）<br>
-B：（–1–1＋1–1＋1＋1＋1–1）<br>
-C：（–1＋1–1＋1＋1＋1–1–1）<br>
-D：（–1＋1–1–1–1–1＋1–1）<br>
-现收到这样的码片序列:（–1＋1–3＋1–1–3＋1＋1）。问哪个站发送数据了？发送数据的站发送的是1还是0？<br>
-解：<br>
-S•A=（＋1－1＋3＋1－1＋3＋1＋1）／8=1，A发送1<br>
-S•B=（＋1－1－3－1－1－3＋1－1）／8=－1，B发送0<br>
-S•C=（＋1＋1＋3＋1－1－3－1－1）／8=0，C无发送<br>
-S•D=（＋1＋1＋3－1＋1＋3＋1－1）／8=1，D发送1</p>
-<p>码片序列：<br>
-每个站被指派一个唯一的 m bit 码片序列。<br>
-如发送比特 1，则发送自己的 m bit 码片序列。<br>
-如发送比特 0，则发送该码片序列的二进制反码<br>
-为表示方便，将0写为-1，1写为+1</p>
-<p><strong>注意：两个不同站的码片序列正交</strong><br>
-不同站的码片向量规格化内积为0<br>
-任何一个码片向量和该码片向量自己的规格化内积都是1 。<br>
-一个码片向量和该码片反码的向量的规格化内积值是 –1。</p>
-<hr>
-<p>5.　试比较ADSL、HFC以及FTTx接入技术的优缺点。解：<br>
-ADSL技术就是用数字技术对现有的模拟电话用户线进行改造，使它能够承载宽带业务。成本低，易实现，但带宽和质量差异性大。HFC网的最大的优点具有很宽的频带，并且能够利用已经有相当大的覆盖面的有线电视网。要将现有的450MHz单向传输的有线电视网络改造为750MHz双向传输的HFC网需要相当的资金和时间。FTTx（光纤到……）这里字母x可代表不同意思。可提供最好的带宽和质量、但现阶段线路和工程成本太大。</p>
-<p>补充问答题1、怎样更改自己电脑的MAC地址（用文字描述操作步骤）解：</p>
-<p>打开设备管理器<br>
-右键点击适配器。从菜单中点击属性来打开网络适配器的属性窗口。<br>
-点击高级选项卡。找到“网络地址”或“本地管理地址”条目。点击该条目，将在右侧看到“值”（Value）的字样和输入框。点击单选按钮来启用“值”（Value）的输入框。<br>
-输入新的MAC地址。MAC地址的格式是，不包含破折号和冒号的12位数值。<br>
-重启计算机来启用变更。</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[最小生成树]]></title>
         <id>https://lyhlyhaa.github.io/post/zui-xiao-sheng-cheng-shu/</id>
         <link href="https://lyhlyhaa.github.io/post/zui-xiao-sheng-cheng-shu/">
@@ -726,6 +396,381 @@ ADSL技术就是用数字技术对现有的模拟电话用户线进行改造，�
         </link>
         <updated>2020-07-24T07:14:41.000Z</updated>
         <content type="html"><![CDATA[<p>暂时看一下别的博客（https://blog.csdn.net/xiangAccepted/article/details/80229187?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param）</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[三色旗问题]]></title>
+        <id>https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/</id>
+        <link href="https://lyhlyhaa.github.io/post/san-se-qi-wen-ti/">
+        </link>
+        <updated>2020-07-24T02:54:57.000Z</updated>
+        <content type="html"><![CDATA[<p>要用到三个指针：一个前指针begin，一个中指针current，一个后指针end，current指针遍历整个数组序列，当</p>
+<p>current指针所指元素为0时，与begin指针所指的元素交换，而后current++，begin++ ；<br>
+current指针所指元素为1时，不做任何交换（即球不动），而后current++ ；<br>
+current指针所指元素为2时，与end指针所指的元素交换，而后，current指针不动，end-- 。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[计算机网络（考试）]]></title>
+        <id>https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/</id>
+        <link href="https://lyhlyhaa.github.io/post/ji-suan-ji-wang-luo/">
+        </link>
+        <updated>2020-07-23T08:31:33.000Z</updated>
+        <content type="html"><![CDATA[<p><em>图文无关😂</em></p>
+<hr>
+<h1 id="概论">概论</h1>
+<p>OSI分层<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597219135928.png" alt="" loading="lazy"><br>
+前四层，端到端；后三层，点到点</p>
+<p>五层模型：应用层、传输层、网络层、链路层、物理层</p>
+<figure data-type="image" tabindex="1"><img src="https://lyhlyhaa.github.io/post-images/1597239423967.png" alt="" loading="lazy"></figure>
+<p>计算机网络的三个组成部分是主机、通信子网和协议</p>
+<p>速率：速率即数据率或称数据传输率或比特率（换算时是以10的三次方换算）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597219935014.png" alt="" loading="lazy"></p>
+<p>带宽：计算机网络中表示网络的通信线路传送数据的能力（其实指的就是在链路的入口主机发送数据的速率，而不是在链路上的速率）</p>
+<p>吞吐量：表示在单位时间内通过某个网络（或信道、接口）的数据量。单位b/s,kb/s,Mb/s</p>
+<p>时延<img src="https://lyhlyhaa.github.io/post-images/1597221924901.png" alt="" loading="lazy"><br>
+所谓高速链路只改变发送时延</p>
+<p>时延带宽积：传播时延 x 带宽</p>
+<p>RTT(往返时延)：从发送方发送数据开始，到发送方收到接收方的确认(接收方收到数据后立即发送确认)，<br>
+总共经历的时延。</p>
+<p>面向连接三个阶段：建立连接   通信（数据传输） 释放连接</p>
+<h1 id="物理层">物理层</h1>
+<p>特性：<br>
+1.机械特性 （比如器件尺寸）2.电气特性（电压范围） 3.功能特性（某种电平意义） 4.规程特性（又名过程特性）（不同功能的各种事件出现顺序）</p>
+<p>通信交互方式：<br>
+单工（单向通信，一条信道）、半双工（双向交替通信，两条信道）、全双工（双向同时通信，两条信道）</p>
+<p>码元（ code）：<br>
+在使用时间域（或简称为时域）的波形来表示数字信号时，代表不同离散数值的基本波形。（码元离散状态有M种称为M进制码元）</p>
+<figure data-type="image" tabindex="2"><img src="https://lyhlyhaa.github.io/post-images/1597324427854.png" alt="" loading="lazy"></figure>
+<p>调制：<br>
+1.基带调制（编码）：不归零制、归零制、曼切斯特编码、差分曼切斯特编码<br>
+2.带通调制（转化为模拟信号）：调幅、调频、调相</p>
+<p><img src="https://lyhlyhaa.github.io/post-images/1597461915732.png" alt="" loading="lazy"><br>
+<strong>注意只有在奈式准则和香农定理中带宽才用Hz</strong></p>
+<p>香农定理：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597484235197.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1597479421625.png" alt="" loading="lazy"></p>
+<p><img src="https://lyhlyhaa.github.io/post-images/1597480711254.png" alt="" loading="lazy"><br>
+导向型：双绞线、同轴电缆、光纤</p>
+<p>物理层设备：中继器、集线器（再生、放大信号，星型拓扑、不具备定向传输功能，不能分割冲突域）</p>
+<p>信道复用：<br>
+频分复用：用户再分配到一定的频带后，在通信过程中至始至终都占据这个频带；（并行）<br>
+时分复用（TDM）：将时间划分为一段段等长的时分复用帧（TDM帧）。每一个时分复用的用户在每一个TDM帧中占用固定序号的时隙，所有用户轮流占用信道。（并发，类似于时间片）<br>
+统计时分复用STDM：（谁来给谁分配时间片，不是无脑每个人都给）<br>
+波分复用：就是光的频分复用<br>
+码分复用：<br>
+每个站被指派一个唯一的 m bit 码片序列。<br>
+如发送比特 1，则发送自己的 m bit 码片序列，如发送比特 0，则发送该码片序列的二进制反码<br>
+为表示方便，将0写为-1，1写为+1<br>
+<strong>注意：两个不同站的码片序列正交</strong><br>
+不同站的码片向量规格化内积为0**（规格化内积，对应位相乘之后相加，除以位数m）**<br>
+任何一个码片向量和该码片向量自己的规格化内积都是1 。一个码片向量和该码片反码的向量的规格化内积值是 –1<br>
+合并：各路数据在信道中线性相加；分离：合并的数据和源站规格化内积</p>
+<h1 id="数据链路层">数据链路层</h1>
+<p>结点:主机、路由器<br>
+链路:网络中两个结点之间的物理通道，链路的传输介质主要有双绞线、光纤和微波。分为有线链路、无线链路。<br>
+数据链路:网络中两个结点之间的逻辑通道，把实现控制数据传输协议的硬件和软件加到链路上就构成数据链路。<br>
+帧:链路层的协议数据单元，封装网络层数据报。</p>
+<p>封装成帧、<br>
+透明传输：字符填充法：转义字符ESC，开始SOH，结束EOT（<s>ETO，你被捕了，哈哈哈</s>）<br>
+零比特填充法</p>
+<p><strong>差错控制：有比特错和帧错两种，这里我们讨论比特错</strong><br>
+检错编码：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1597982457147.png" alt="" loading="lazy"><br>
+奇偶校验码：在传输的信息元前面加一位校验元（0 or 1），使1的个数为奇数或者偶数，检查收到的信息中1的个数是否与发送的相同（加了校验元后的）   特点：只能查出奇数个比特错误、检错能力为50%<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598061552412.png" alt="" loading="lazy"></p>
+<p>纠错编码：海明码：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598063025567.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598063088754.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598063184760.png" alt="" loading="lazy"><br>
+检验纠错：<img src="https://lyhlyhaa.github.io/post-images/1598063292458.png" alt="" loading="lazy"></p>
+<p><strong>流量控制：</strong>（在链路层窗口大小是确定的）<br>
+链路层实现方法：接收方收不下就不回复确认</p>
+<pre><code>停止等待协议：每发送一个帧之后发送，等待对方的确认，就停止收到确认之后再发送下一个
+信道利用率：发送方在一个发送周期内，有效地发送数据所需要的时间占整个发送周期的比率。发送时间/（发送时间+往返时间RTT+接收时间）
+信道吞吐率=信道利用率*发送方的发送速率
+
+</code></pre>
+<p><em>滑动窗口协议：</em></p>
+<pre><code>后退N帧协议（GBN）：
+1.累积确认（偶尔捎带确认）
+2.接收方只按顺序接收帧，不按序无情丢弃
+3.确认序列号最大的、按序到达的帧
+4.发送窗口最大为2n-1，接收窗口大小为1
+Go-back-N策略的基本原理：当接收方检测出失序的信息后，要求发送方重发最后一个正确接受的信息帧之后的所有未被确认的帧
+
+选择重传协议SR
+1.对数据帧逐一确认，收一个确认一个
+2.只重传出错帧
+3.接收方有缓存
+4.发送窗口=接收窗口，小于或等于序号空间大小的一半
+
+</code></pre>
+<p>两种链路：<br>
+点对点链路：两个相邻节点通过一条链路相连，应用：PPP协议，常用于广域网<br>
+广播式链路：常用于局域网，典型拓扑结构：总线型、星型（逻辑总线型）</p>
+<p><strong>以太网：无连接、不可靠</strong><br>
+MAC地址：48位二进制地址，前24位代表厂家<br>
+CSMA/CD：争用期<img src="https://lyhlyhaa.github.io/post-images/1598089775570.png" alt="" loading="lazy"><br>
+最小帧长：2τ *数据传输速率</p>
+<p><strong>广域网</strong><br>
+ppp协议（只支持全双工链路）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598148331247.png" alt="" loading="lazy"><br>
+除了字节填充，还可以采用零比特填充（当采用同步传输，即一连串的比特连续发送）<br>
+出现五个连续1，则立即填入一个0<br>
+地址字段A和控制字段C实践上不带信息，可通过协商取消</p>
+<p>HDLC协议：0比特插入法</p>
+<p><strong>链路层设备</strong>：网桥&amp;交换机（分割冲突域，不能分割广播域）<br>
+网桥根据MAC帧的目的地址对帧进行转发和过滤<br>
+自学习：每个设备都发一次信息，就可以形成一个完整的转发表<br>
+直接连接在交换机的设备独占带宽</p>
+<p>交换机可提供的最大带宽：端口数*相应端口速率*2（全双工模式）<br>
+物理层扩充以太网：使用集线器，集线器之间最远距离为100米（使用双绞线），主机与集线器的最远距离为100米</p>
+<pre><code>不可能发生冲突的MAC协议有 CDMA   TDMA     FDMA
+IEEE802.11g标准使用了IEEE802.11a的OFDM调制技术，和IEEE802.11b一样运行在2.4GHz的ISM频段内，理论速度可达54Mbps。
+
+</code></pre>
+<h1 id="网络层">网络层</h1>
+<pre><code>传输单位为数据报
+IP协议可将源主机的IP数据报分片后进行传输，在到达目的主机之前，在传输过程中可能再次分片，但是不会重组。
+提供无连接、尽最大努力交付（不可靠）的数据报服务
+</code></pre>
+<p><strong>数据交换</strong><br>
+电路交换： 建立连接（呼叫/电路建立） -&gt; 通信 -&gt; 释放连接（拆除电路）<br>
+传输时延最小<br>
+数据量大，传送时间远大于呼叫时间则采用电路交换<br>
+特点：独占资源（但是又有多路复用？什么东西！！！）</p>
+<p>报文交换：<br>
+类似分组交换，不过不分组<br>
+分组交换：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598153522928.png" alt="" loading="lazy"><br>
+计算题中要注意的几点:<br>
+1.单位换算:b/B,Mbps,kbps<br>
+2是否考虑传播延迟<br>
+3.时间至少是多少—选择最少跳数<br>
+4.起始时间（从发送开始到接收完为止/从发送开始到发送完毕）<br>
+5.是否有分组头部大小的开销<br>
+6.报文交换时延更长，分组交换时延可能不是整数</p>
+<p><img src="https://lyhlyhaa.github.io/post-images/1598155426118.png" alt="" loading="lazy"><br>
+虚电路：建立连接（虚电路建立）-&gt; 数据传输  -&gt; 释放连接（虚电路释放）</p>
+<p><code>数据链路层：MTU（最大传送单元）：以太网规定为1500字节，包含数据链路层以上所有数据</code></p>
+<p>IP数据报格式：<img src="https://lyhlyhaa.github.io/post-images/1598185535426.png" alt="" loading="lazy"></p>
+<pre><code>标识：同一数据报的分片使用同一标识。
+标志只有2位有意义x _ _
+中间位DF (Don't Fragment) :
+DF=1，禁止分片
+DF=0，允许分片
+最低位MF (More Fragment) :
+MF=1，后面“还有分片”
+MF=0，代表最后一片/没分片
+片偏移:指出较长分组分片后，某片在原分组中的相对位置。以8B为单位。
+除了最后一个分片，每个分片长度一定是8B的整数倍。
+</code></pre>
+<p>IP地址：全世界唯一的32位/4字节标识符，标识路由器主机的接口<br>
+&lt;网络号，主机号&gt;<br>
+特殊IP地址：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598175646432.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598175981780.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1600565949484.png" alt="" loading="lazy"></p>
+<p>子网掩码：<br>
+网络号全1，子网号全1，主机号全0<br>
+与IP地址逐位相与（即只有1与1才返回1）就可以得到子网的网络地址</p>
+<p>无分类编制CIDR<br>
+1.消除了传统A类、B类和C类以及划分子网的概念<br>
+2.把网络前缀都相同的IP地址组成一个CIDR地址块<img src="https://lyhlyhaa.github.io/post-images/1598186496327.png" alt="" loading="lazy"></p>
+<p><code>最长前缀匹配：使用CIDR时，查找路由表可能得到几个匹配结果，应选择具有最长网络前缀的路由。前缀越长，地址块越小，路由越具体</code></p>
+<p>ARP协议（完成主机或路由器IP地址到MAC地址的映射，解决下一跳走那的）：<br>
+先检查ARP高速缓存；<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598236165572.png" alt="" loading="lazy"><br>
+同一网段内（网络号相同）：直接广播找MAC地址<br>
+不是同一网段内：先找默认网关MAC地址，发到路由器</p>
+<p>ICMP协议<br>
+<code>注意：ICMP差错报告报文在**IP数据报的数据部分**</code><br>
+不发送ICMP差错报文的情况<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598238808462.png" alt="" loading="lazy"><br>
+<code>组播一点对多点，而不是广播向所有</code><br>
+ICMP询问报文<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598238725933.png" alt="" loading="lazy"></p>
+<pre><code>DHCP协议
+动态主机配置协议DHCP是应用层协议，使用客户/服务器方式，客户端和服务端通过广播方式进行交互，基于UDP。
+DHCP提供即插即用联网的机制，主机可以从服务器动态获取IP地址、子网掩码、默认网关、DNS服务器名称与P地址，
+允许地址重用，支持移动用户加入网络，支持在用地址续租。
+1.主机广播DHCP发现报文(DHCPDISCOVER)
+2.DHCP服务器广播DHCP提供报文(DHCPOFFER)
+3.主机广播DHCP请求报文(DHCPREQUEST)
+4.DHCP服务器广播DHCP确认报文(DHCPACK)
+</code></pre>
+<hr>
+<p><strong>路由算法</strong><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598240383909.png" alt="" loading="lazy"><br>
+<code>一个自治系统AS内的路由器不能完成强制的选择寻找路由</code><br>
+RIP（应用层协议，采用UDP协议）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598254304064.png" alt="" loading="lazy"><br>
+距离向量算法<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598242047926.png" alt="" loading="lazy"><br>
+慢收敛导致路由器接受了无效路由信息</p>
+<p>OSPF（开放最短路径优先），内部网关协议<br>
+使用链路状态路由算法<br>
+交换内容：与本路由器相邻的所有路由器的链路状态</p>
+<p>BGP（应用层协议，借助TCP传送），外部网关协议<br>
+使用路径-向量算法<br>
+交换内容：<br>
+首次：整个路由表<br>
+非首次：有变化的部分</p>
+<hr>
+<p>IPv6<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598256461195.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1598256909154.png" alt="" loading="lazy"></p>
+<p>IP多播<br>
+硬件组播</p>
+<p>网络层设备：路由器（包含数据链路层、物理层）</p>
+<h1 id="传输层">传输层</h1>
+<p>传输单位：报文段<br>
+功能：<br>
+1.提供进程与进程之间的逻辑通信<br>
+2.复用与分用</p>
+<pre><code>UDP只在IP数据报服务之上增加了很少功能，即复用分用和差错检测功能。
+UDP的主要特点:
+1.UDP是无连接的，减少开销和发送数据之前的时延。
+2.UDP使用最大努力交付，即不保证可靠交付。
+3.UDP是面向报文的，适合一次性传输少量数据的网络应用。
+4.UDP无拥塞控制，适合很多实时应用。
+5.首部开销小，8B，TCP20B
+(转化UDP数据报首部时，将每一位都先转化为二进制，然后转化十进制)
+例：一个UDP用户数据报的首部的十六进制表示是0632  0045  001C  E217。
+在UDP首部中，源端口占2个字节，即06 32 ，化为十进制是1586.
+目的端口占2字节，即00 45 ，化为十进制是69.
+用户数据报总长度也占2个字节，即00 1C ,十进制为：28。
+数据部分为数据报总长度减去首部长度8字节，28-8=20。
+此UDP用户数据报是从客户发给服务器（因为目的端口号&lt;1023，是熟知端口）
+</code></pre>
+<p><img src="https://lyhlyhaa.github.io/post-images/1598348556647.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1600521483569.png" alt="" loading="lazy"></p>
+<hr>
+<p>TCP报文段首部格式<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598496734676.png" alt="" loading="lazy"></p>
+<pre><code>序号:在一个TCP连接中传送的字节流中的每一个字节都按顺序编号，本字段表示本报文段所发送数据的第一个字节的序号。
+确认号:期望收到对方下一个报文段的第一个数据字节的序号。若确认号为N，则证明到序号N-1为止的所有数据都已正确收到。
+数据偏移（首部长度）:TCP报文段的数据起始处距离TCP报文段的起始处有多远，以4B位单位，即1个数值是4B。
+
+紧急位URG: URG=1时，标明此报文段中有紧急数据，是高优先级的数据，应尽快传送，不用在缓存里排队，配合紧急指针字段使用。
+确认位ACK:ACK=1时确认号有效，在连接建立后所有传送的报文段都必须把ACK置为1。
+同步位SYN:SYN=1时，表明是一个连接请求/连接接受报文。
+终止位FIN:FIN=1时，表明此报文段发送方数据己发完，要求释放连接。
+推送位PSH:PSH=1时，接收方尽快交付接收应用进程，不再等到缓存填满再向上交付。
+复位RST:RST=1时，表明TCP连接中出现严重差错，必须释放连接，然后再重新建立传输链接。
+
+窗口:指的是发送本报文段的一方的接收窗口，即现在允许对方发送的数据量。
+检验和:检验首部+数据，检验时要加上12B伪首部，第四个字段为6。
+紧急指针:URG=1时才有意义，指出本报文段中紧急数据的字节数。
+选项:最大报文段长度MSS、窗口扩大、时间截、选择确认...
+
+</code></pre>
+<p>可靠传输：<br>
+1.校验 2.序号 3.确认 4.重传<br>
+累计确认：</p>
+<pre><code>冗余ACK（冗余确认）
+每当比期望序号大的失序报文段到达时，发送一个冗余ACK，指明下一个期待字节的序号。
+发送方已发送1，2，3，4，5报文段
+接收方收到1，返回给1的确认（确认号为2的第一个字节）
+接收方收到3，仍返回给1的确认（确认号为2的第一个字节）
+接收方收到4，仍返回给1的确认（确认号为2的第一个字节)
+接收方收到5，仍返回给1的确认（确认号为2的第一个字节)
+发送方收到3个对于报文段1的冗余ACK一认为2报文段丢失，重传2号报文段快速重传
+</code></pre>
+<p>超时重传：重传时间的确定，采用自适应算法，动态改变重传时间RTTs<br>
+三次握手（TCP连接建立）：<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598500308347.png" alt="" loading="lazy"><br>
+四次握手（TCP连接释放）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598500673688.png" alt="" loading="lazy"></p>
+<hr>
+<p>流量控制：让发送方慢点，让接收方可以<br>
+在通信过程中，接收方根据自己接收缓存的大小，动态地调整发送方的发送窗口大小，即接收窗口rwnd(接收方设置确认报文段的窗口字段来将rwnd通知给发送方），发送方的发送窗口取接收窗口rwnd和拥塞窗口cwnd的最小值。<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598516547012.png" alt="" loading="lazy"></p>
+<p><code>拥塞控制和流量控制区别，拥塞控制是整个网络中数据太多导致发送的数据迟迟到不了目的地，是全局性问题，而流量控制是点对点的问题</code></p>
+<p>TCP拥塞控制(防止过多的数据注入到网络中)<br>
+慢开始和拥塞避免：<img src="https://lyhlyhaa.github.io/post-images/1598530881385.png" alt="" loading="lazy"><br>
+快重传和快恢复：<img src="https://lyhlyhaa.github.io/post-images/1598531031133.png" alt="" loading="lazy"></p>
+<h1 id="应用层">应用层</h1>
+<p>两种网络模型：c/s 客户/服务器模型；p2p模型</p>
+<p>域名：越右边越高，顶级域名  二级域名  三级域名等<br>
+域名服务器：<br>
+根域名服务器<br>
+顶级域名服务器<br>
+权限域名服务器（权威域名服务器）<br>
+本地域名服务器</p>
+<p>递归查询（一路查到底）、迭代查询（查一个回来一次）</p>
+<p>FTP TFTP<br>
+FTP使用TCP实现可靠传输<br>
+控制连接（端口21，始终保持）和数据连接（，保持一会）</p>
+<p>SMTP<br>
+组成结构：用户代理、邮件服务器、协议<br>
+用户代理---SMTP---邮件服务器--SMTP--邮件服务器---POP3---接收方<br>
+使用TCP连接  端口号25   C/S方式<br>
+MIME通用因特网邮件扩充：使支持多种类型数据传输</p>
+<pre><code>读取邮件协议：
+POP3邮局协议 ：TCP连接 端口号110  C/S；
+网际报文存取协议IMAP：想下就下
+</code></pre>
+<p>基于万维网的电子邮件<br>
+用户代理---HTTP---邮件服务器--SMTP--邮件服务器---HTTP---接收方</p>
+<p>HTTP(HTTP协议是无状态的)<br>
+统一资源定位符URL：唯一标识一个资源（文字、视频。<br>
+URL一般形式:<br>
+&lt;协议&gt;://&lt;主机&gt;:&lt;端口&gt;/&lt;路径&gt;http://www.pku.edu.cn<br>
+http          域名<br>
+ftp            IP地址</p>
+<pre><code>输入URL后的过程：
+1.浏览器分析URL
+2.浏览器向DNS请求解析IP地址
+3.DNS解析出IP地址
+4.浏览器与服务器建立TCP连接
+5.浏览器发出取文件命令
+6.服务器响应
+7.释放TCP连接
+8.浏览器显示
+</code></pre>
+<p>HTTP格式<img src="https://lyhlyhaa.github.io/post-images/1598583730914.png" alt="" loading="lazy"><br>
+状态码:<br>
+1xx表示通知信息的，如请求收到了或正在处理。<br>
+2xx表示成功，如接受或知道了。<br>
+3xx表示重定向，如要完成请求还必须采取进一步的行动。<br>
+4xx表示客户的差错，如请求中有错误的语法或不能完成。<br>
+5xx表示服务器的差错，如服务器失效无法完成请求。</p>
+<p>SNMP（网络管理协议）<br>
+SNMP 报文使用 UDP 来传送  C/S方式 端口号161<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598603145090.png" alt="" loading="lazy"><br>
+(1) T 字段，即标识符八位位组(identifier octet)，用于标识标记。<br>
+(2) L 字段，即长度用八位位组(length octet)，用于标识后面 V 字段的长度。<br>
+(3) V 字段，即内容八位位组(content octet)，用于标识数据元素的值。<br>
+INTEGER 15，其 T 字段是02， INTEGER 类型要用 4 字节编码。最后得出 TLV 编码为 02 04 00 00 00 0F。<br>
+又如 IPAddress 192.1.2.3，其 T 字段是 40，V 字段需要 4 字节表示，因此得出 IPAddress 192.1.2.3 的 TLV 编码是 40 04 C0 01 02 03</p>
+<h1 id="网络安全">网络安全</h1>
+<p>一般的数据加密模型 （即加密密钥与解密密钥是相同的密码体制。<br>
+这种加密系统又称为对称密钥系统。）<br>
+<img src="https://lyhlyhaa.github.io/post-images/1598600983595.png" alt="" loading="lazy"></p>
+<p>数字签名<img src="https://lyhlyhaa.github.io/post-images/1598601806438.png" alt="" loading="lazy"></p>
+<p>A向B发送消息Y，并使用公钥体制进行数字签名。 设私有密秘钥SKA和公开秘钥都PKA, E表示加密算法， D表示解密算法，则B要保留的证据是  DSKA(Y)</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[最短路径算法]]></title>
+        <id>https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/</id>
+        <link href="https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/">
+        </link>
+        <updated>2020-07-22T12:05:34.000Z</updated>
+        <content type="html"><![CDATA[<p>说起来这个算法做过很多次了，学图论的时候写过实验报告，可是现在做题又给忘了，惭愧。</p>
+<hr>
+<h1 id="dijkstra算法">Dijkstra算法</h1>
+<p>1.<strong>初始化</strong>:先找出从源点vo到各终点v的直达路径(Vo,Vk) ,<br>
+即通过一条弧到达的路径。<br>
+2.<strong>选择</strong>:从这些路径中找出一条长度最短的路径(Vo,u) 。<br>
+3.<strong>更新</strong>:然后对其余各条路径进行适当调整:<br>
+若在图中存在弧(u,Vk) ，且(V,U) + (u,Vk) &lt; (Vo,Vk),<br>
+则以路径(Vo,U,Vk) 代替(Vo,Vk) 。<br>
+在调整后的各条路径中，再找长度最短的路径，依此类推。<br>
+设计一个s[]数组，来存已经在最短路径中的点</p>
 ]]></content>
     </entry>
 </feed>
