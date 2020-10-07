@@ -2,13 +2,69 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-10-05T06:51:35.346Z</updated>
+    <updated>2020-10-07T13:18:56.104Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 混子协会会长</rights>
+    <entry>
+        <title type="html"><![CDATA[SLT]]></title>
+        <id>https://lyhlyhaa.github.io/post/slt/</id>
+        <link href="https://lyhlyhaa.github.io/post/slt/">
+        </link>
+        <updated>2020-10-07T13:07:06.000Z</updated>
+        <content type="html"><![CDATA[<p>sort函数<br>
+.sort函数包含在头文件为#include<algorithm>的c++标准库中，调用标准库里的排序方法可以实现对数据的排序，但是sort函数是如何实现的，我们不用考虑！<br>
+sort函数的模板有三个参数：<br>
+void sort (RandomAccessIterator first, RandomAccessIterator last, Compare comp);</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef struct Next{
+	int a;
+	int b;
+}next;
+bool cmp(int a,int b){
+	return a&gt;b;
+}//从大到小 
+bool cmp1(next x,next y){
+	return x.a&gt;y.a;
+}
+
+next x[10];
+int main()
+{
+	int a[]={1,3,5,7,9,8,2,4};
+	sort(a,a+8);//默认从小到大 
+	for(int i=0;i&lt;8;i++){
+		printf(&quot;%d &quot;,a[i]);
+	} 
+	printf(&quot;\n排序后\n&quot;);
+	sort(a,a+8,cmp);//从小到大排 
+	for(int i=0;i&lt;8;i++){
+		printf(&quot;%d &quot;,a[i]);
+	}
+	cout&lt;&lt;endl;
+	
+	for(int i=0;i&lt;10;i++){
+		x[i].a=i;
+		x[i].b=10-i;
+	}
+	for(int i=0;i&lt;10;i++){
+		printf(&quot;%d %d\n&quot;,x[i].a,x[i].b);
+	}
+	printf(&quot;排序后\n&quot;);
+	sort(x,x+10,cmp1);
+	for(int i=0;i&lt;10;i++){
+		printf(&quot;%d %d\n&quot;,x[i].a,x[i].b);
+	}
+	printf(&quot;\n&quot;);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[一个微信小程序]]></title>
         <id>https://lyhlyhaa.github.io/post/yi-ge-wei-xin-xiao-cheng-xu/</id>
@@ -752,25 +808,6 @@ INTEGER 15，其 T 字段是02， INTEGER 类型要用 4 字节编码。最后�
 <img src="https://lyhlyhaa.github.io/post-images/1598600983595.png" alt="" loading="lazy"></p>
 <p>数字签名<img src="https://lyhlyhaa.github.io/post-images/1598601806438.png" alt="" loading="lazy"></p>
 <p>A向B发送消息Y，并使用公钥体制进行数字签名。 设私有密秘钥SKA和公开秘钥都PKA, E表示加密算法， D表示解密算法，则B要保留的证据是  DSKA(Y)</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[最短路径算法]]></title>
-        <id>https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/</id>
-        <link href="https://lyhlyhaa.github.io/post/zui-duan-lu-jing-suan-fa/">
-        </link>
-        <updated>2020-07-22T12:05:34.000Z</updated>
-        <content type="html"><![CDATA[<p>说起来这个算法做过很多次了，学图论的时候写过实验报告，可是现在做题又给忘了，惭愧。</p>
-<hr>
-<h1 id="dijkstra算法">Dijkstra算法</h1>
-<p>1.<strong>初始化</strong>:先找出从源点vo到各终点v的直达路径(Vo,Vk) ,<br>
-即通过一条弧到达的路径。<br>
-2.<strong>选择</strong>:从这些路径中找出一条长度最短的路径(Vo,u) 。<br>
-3.<strong>更新</strong>:然后对其余各条路径进行适当调整:<br>
-若在图中存在弧(u,Vk) ，且(V,U) + (u,Vk) &lt; (Vo,Vk),<br>
-则以路径(Vo,U,Vk) 代替(Vo,Vk) 。<br>
-在调整后的各条路径中，再找长度最短的路径，依此类推。<br>
-设计一个s[]数组，来存已经在最短路径中的点</p>
 ]]></content>
     </entry>
 </feed>
