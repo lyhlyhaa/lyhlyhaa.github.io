@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-12-14T13:52:00.327Z</updated>
+    <updated>2020-12-14T14:51:11.220Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -26,7 +26,8 @@ token：&lt; 种别码，属性值 &gt;</p>
 识别出各类短语，并构造语法分析树(parse tree)</p>
 <h3 id="语义分析">语义分析：</h3>
 <p>收集标识符的属性信息<br>
-语义检查</p>
+语义检查<br>
+1x2=9</p>
 <h3 id="中间代码生成器">中间代码生成器</h3>
 <p>三地址码 (Three-address Code)<br>
 三地址码由类似于汇编语言的指令序列组成，<br>
