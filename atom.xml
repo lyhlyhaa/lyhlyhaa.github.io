@@ -2,32 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2020-12-14T14:51:11.220Z</updated>
+    <updated>2021-01-06T14:19:41.362Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
     <logo>https://lyhlyhaa.github.io/images/avatar.png</logo>
     <icon>https://lyhlyhaa.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 混子协会会长</rights>
+    <rights>All rights reserved 2021, 混子协会会长</rights>
     <entry>
-        <title type="html"><![CDATA[编译原理]]></title>
+        <title type="html"><![CDATA[网络协议]]></title>
         <id>https://lyhlyhaa.github.io/post/bian-yi-yuan-li/</id>
         <link href="https://lyhlyhaa.github.io/post/bian-yi-yuan-li/">
         </link>
         <updated>2020-12-14T12:55:14.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="绪论">绪论</h1>
-<figure data-type="image" tabindex="1"><img src="https://lyhlyhaa.github.io/post-images/1607951292337.png" alt="" loading="lazy"></figure>
-<h3 id="词法分析">词法分析：</h3>
-<p>从左向右逐行扫描源程序的字符，识别出各个单词，确定单词的类型。<br>
-将识别出的单词转换成统一的机内表示——词法单元(token)形式<br>
-token：&lt; 种别码，属性值 &gt;</p>
-<h3 id="语法分析">语法分析：</h3>
-<p>语法分析器(parser)从词法分析器输出的token序列中<br>
-识别出各类短语，并构造语法分析树(parse tree)</p>
-<h3 id="语义分析">语义分析：</h3>
-<p>收集标识符的属性信息<br>
-语义检查<br>
-1x2=9</p>
+        <content type="html"><![CDATA[<h2 id="udp校验">UDP校验</h2>
+<p><img src="https://lyhlyhaa.github.io/post-images/1609928762438.png" alt="" loading="lazy"><br>
+<img src="https://lyhlyhaa.github.io/post-images/1609930032844.png" alt="" loading="lazy"><br>
+<a href="https://lyhlyhaa.github.io/post-images/1609930146525.png">回卷</a></p>
+<h2 id="ip分片">IP分片：</h2>
+<h2 id="arp欺骗">ARP欺骗：</h2>
+<h2 id="ip校验">IP校验：</h2>
+<p><a href="https://blog.51cto.com/12047117/1887860">看这里</a></p>
 <h3 id="中间代码生成器">中间代码生成器</h3>
 <p>三地址码 (Three-address Code)<br>
 三地址码由类似于汇编语言的指令序列组成，<br>
@@ -44,7 +39,7 @@ token：&lt; 种别码，属性值 &gt;</p>
 <img src="https://lyhlyhaa.github.io/post-images/1607953572656.png" alt="" loading="lazy"><br>
 <img src="https://lyhlyhaa.github.io/post-images/1607953575677.png" alt="" loading="lazy"><br>
 <img src="https://lyhlyhaa.github.io/post-images/1607953578234.png" alt="" loading="lazy"></p>
-<h2 id="词法分析-2">词法分析</h2>
+<h2 id="词法分析">词法分析</h2>
 ]]></content>
     </entry>
     <entry>
