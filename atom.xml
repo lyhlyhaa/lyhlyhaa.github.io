@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyhlyhaa.github.io</id>
     <title>混子协会会长</title>
-    <updated>2021-01-06T14:19:41.362Z</updated>
+    <updated>2021-01-30T12:28:30.682Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyhlyhaa.github.io"/>
     <link rel="self" href="https://lyhlyhaa.github.io/atom.xml"/>
@@ -23,11 +23,10 @@
 <h2 id="arp欺骗">ARP欺骗：</h2>
 <h2 id="ip校验">IP校验：</h2>
 <p><a href="https://blog.51cto.com/12047117/1887860">看这里</a></p>
-<h3 id="中间代码生成器">中间代码生成器</h3>
-<p>三地址码 (Three-address Code)<br>
-三地址码由类似于汇编语言的指令序列组成，<br>
-每个指令最多有三个操作数(operand)</p>
-<p>语法结构树/语法树 (Syntax Trees)</p>
+<p>##路由选择<br>
+新的项目，添加进去；<br>
+相同的下一跳，直接更新；<br>
+不同的下一跳，比较是否更短，更短则更新。</p>
 <h3 id="目标代码生成">目标代码生成</h3>
 <p>以源程序的中间表示形式作为输入，并把它映射到目标语言<br>
 目标代码生成的一个重要任务是为程序中使用的变量合理分配寄存器</p>
